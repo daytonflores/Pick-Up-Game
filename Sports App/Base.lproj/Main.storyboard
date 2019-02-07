@@ -155,43 +155,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7g-G7-ecW">
-                                <rect key="frame" x="16" y="129" width="136" height="32"/>
+                                <rect key="frame" x="16" y="64" width="136" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDO-20-GD3">
-                                <rect key="frame" x="16" y="169" width="97" height="30"/>
+                                <rect key="frame" x="16" y="104" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DhZ-LN-qlD">
-                                <rect key="frame" x="121" y="169" width="97" height="30"/>
+                                <rect key="frame" x="121" y="104" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sports App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXd-Nn-BJK">
-                                <rect key="frame" x="104" y="64" width="167" height="57"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="167" id="22U-ws-e2S"/>
-                                    <constraint firstAttribute="height" constant="38.5" id="o0w-4W-arX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4uK-jY-DLn">
+                                <rect key="frame" x="16" y="142" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="uXd-Nn-BJK" firstAttribute="top" secondItem="bSa-ZA-xHr" secondAttribute="top" id="2Cu-xg-qyJ"/>
-                            <constraint firstItem="bSa-ZA-xHr" firstAttribute="trailing" secondItem="uXd-Nn-BJK" secondAttribute="trailing" constant="104" id="6rN-0D-t6R"/>
-                            <constraint firstItem="uXd-Nn-BJK" firstAttribute="leading" secondItem="bSa-ZA-xHr" secondAttribute="leading" constant="104" id="G39-tx-OUH"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bSa-ZA-xHr"/>
                     </view>
                     <navigationItem key="navigationItem" id="RxX-Af-kii">
