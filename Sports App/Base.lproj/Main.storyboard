@@ -104,55 +104,6 @@
             </objects>
             <point key="canvasLocation" x="-2591.1999999999998" y="1464.9175412293855"/>
         </scene>
-        <!--inboxTab-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController title="inboxTab" id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Inbox" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="145" y="312" width="85" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-gV-5hX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="8xg-mS-yc8"/>
-                                    <constraint firstAttribute="height" constant="44" id="hRR-hP-VEa"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sports App" id="Neb-hN-Jgf">
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="YND-fC-x8u">
-                                            <connections>
-                                                <segue destination="fAQ-Dm-dyl" kind="presentation" modalTransitionStyle="crossDissolve" id="VlJ-yH-245"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ytb-gV-5hX" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="JRl-9f-sFY"/>
-                            <constraint firstItem="ytb-gV-5hX" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="jco-Tr-j47"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                            <constraint firstItem="ytb-gV-5hX" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="wfR-mP-sH5"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Inbox" image="second" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" id="fWt-sL-7L0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2591" y="2274"/>
-        </scene>
         <!--profileTab-->
         <scene sceneID="bie-MA-LQe">
             <objects>
@@ -180,62 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhz-ko-7Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2591" y="3077"/>
-        </scene>
-        <!--friendsTab-->
-        <scene sceneID="4dd-LG-3yR">
-            <objects>
-                <viewController title="friendsTab" id="plB-YX-d5Q" customClass="friendsTab" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="G5D-pg-Ye5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Friends" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-11-uVf">
-                                <rect key="frame" x="130" y="312" width="115" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qS-jS-ZKi">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="04P-Ow-uO9"/>
-                                    <constraint firstAttribute="height" constant="44" id="SP4-gt-KzE"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="kub-Fl-r8y"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sports App" id="Mgp-mP-yxI">
-                                        <barButtonItem key="leftBarButtonItem" title="Requests" id="Bop-wK-DH9">
-                                            <connections>
-                                                <segue destination="8aF-Fw-2fo" kind="presentation" modalTransitionStyle="crossDissolve" id="GA3-jI-uib"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="NUy-Zh-FEM">
-                                            <connections>
-                                                <segue destination="UhI-45-WZH" kind="presentation" modalTransitionStyle="crossDissolve" id="c9H-4a-mGO"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ehZ-11-uVf" firstAttribute="centerY" secondItem="G5D-pg-Ye5" secondAttribute="centerY" id="7g3-R8-Ivg"/>
-                            <constraint firstItem="4qS-jS-ZKi" firstAttribute="leading" secondItem="Xgv-Bh-R3f" secondAttribute="leading" id="DQW-sB-Phl"/>
-                            <constraint firstItem="ehZ-11-uVf" firstAttribute="centerX" secondItem="G5D-pg-Ye5" secondAttribute="centerX" id="GU1-6A-AIm"/>
-                            <constraint firstItem="4qS-jS-ZKi" firstAttribute="trailing" secondItem="Xgv-Bh-R3f" secondAttribute="trailing" id="bgO-Te-SPn"/>
-                            <constraint firstItem="4qS-jS-ZKi" firstAttribute="top" secondItem="Xgv-Bh-R3f" secondAttribute="top" id="zx4-tO-xZK"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Xgv-Bh-R3f"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Friends" id="ASG-Ye-zhH"/>
-                    <navigationItem key="navigationItem" id="hxm-To-bC5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="slN-0b-InW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2591" y="3832"/>
+            <point key="canvasLocation" x="-2591" y="2382"/>
         </scene>
         <!--settingsTab-->
         <scene sceneID="dwc-si-T1i">
@@ -265,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhO-nl-ure" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2591" y="4610"/>
+            <point key="canvasLocation" x="-2591" y="3268"/>
         </scene>
         <!--loginPage-->
         <scene sceneID="l6h-5V-cdL">
@@ -487,9 +383,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="exJ-s7-Wb4"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="2Jg-mE-cnX"/>
                         <segue destination="g9N-BE-i8l" kind="relationship" relationship="viewControllers" id="r64-vr-94P"/>
-                        <segue destination="plB-YX-d5Q" kind="relationship" relationship="viewControllers" id="owo-12-9HD"/>
                         <segue destination="9KI-N4-ET5" kind="relationship" relationship="viewControllers" id="6pb-hR-Skr"/>
                     </connections>
                 </tabBarController>
@@ -567,106 +461,6 @@
             </objects>
             <point key="canvasLocation" x="-1642" y="1465"/>
         </scene>
-        <!--composeMessage-->
-        <scene sceneID="aSk-j8-DIe">
-            <objects>
-                <viewController title="composeMessage" id="fAQ-Dm-dyl" customClass="composeMessage" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="j6p-wn-TaC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AY-qQ-63x">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="B3o-a5-uyq"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="pad-UD-skj"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="uZ9-Wv-y2K"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sports App" id="VmU-XJ-w5F">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="NlJ-Wv-Ez8">
-                                            <connections>
-                                                <segue destination="qNM-Ge-RrX" kind="unwind" unwindAction="inboxTabUnwindWithSegue:" id="DdE-bk-jB9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Send" id="wX6-l7-2iv"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Compose Message" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="qk1-TX-Tn2">
-                                <rect key="frame" x="38" y="312" width="299" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qk1-TX-Tn2" firstAttribute="centerX" secondItem="j6p-wn-TaC" secondAttribute="centerX" id="3GO-MK-ruG"/>
-                            <constraint firstItem="qk1-TX-Tn2" firstAttribute="centerY" secondItem="j6p-wn-TaC" secondAttribute="centerY" id="7br-85-827"/>
-                            <constraint firstItem="4AY-qQ-63x" firstAttribute="trailing" secondItem="mAH-e6-Nm5" secondAttribute="trailing" id="AOK-vc-owe"/>
-                            <constraint firstItem="4AY-qQ-63x" firstAttribute="leading" secondItem="mAH-e6-Nm5" secondAttribute="leading" id="NUz-La-eHx"/>
-                            <constraint firstItem="4AY-qQ-63x" firstAttribute="top" secondItem="mAH-e6-Nm5" secondAttribute="top" id="a9L-UD-GY9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="mAH-e6-Nm5"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5HY-vZ-sTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="qNM-Ge-RrX" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-1642" y="2274"/>
-        </scene>
-        <!--friendRequests-->
-        <scene sceneID="Kti-2t-rOg">
-            <objects>
-                <viewController title="friendRequests" id="8aF-Fw-2fo" customClass="friendRequests" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="b1b-aI-2Yr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21z-dO-npu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="bZu-2k-Rdi"/>
-                                    <constraint firstAttribute="height" constant="44" id="rkk-KO-6ms"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="yFt-km-fgd"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sports App" id="lNw-0v-KJX">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="UkH-Bn-c7D">
-                                            <connections>
-                                                <segue destination="pSG-pY-eO3" kind="unwind" unwindAction="friendsTabUnwindWithSegue:" id="aFw-n9-3qB"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Add" id="w1x-mu-voI"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Friend Requests" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nCr-zu-cKK">
-                                <rect key="frame" x="62.5" y="312" width="250" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="21z-dO-npu" firstAttribute="trailing" secondItem="XGk-uE-KAb" secondAttribute="trailing" id="37r-k6-Oy1"/>
-                            <constraint firstItem="nCr-zu-cKK" firstAttribute="centerX" secondItem="b1b-aI-2Yr" secondAttribute="centerX" id="5zM-RX-fRx"/>
-                            <constraint firstItem="nCr-zu-cKK" firstAttribute="centerY" secondItem="b1b-aI-2Yr" secondAttribute="centerY" id="KJC-iJ-hgY"/>
-                            <constraint firstItem="21z-dO-npu" firstAttribute="leading" secondItem="XGk-uE-KAb" secondAttribute="leading" id="dh8-0i-el0"/>
-                            <constraint firstItem="21z-dO-npu" firstAttribute="top" secondItem="XGk-uE-KAb" secondAttribute="top" id="qNT-1T-F0d"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="XGk-uE-KAb"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ytX-FF-tYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="pSG-pY-eO3" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-1642.4000000000001" y="3831.6341829085459"/>
-        </scene>
         <!--editProfile-->
         <scene sceneID="pJW-KL-gkp">
             <objects>
@@ -715,7 +509,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="io2-40-Lw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bLI-Mn-Szv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1642" y="4610"/>
+            <point key="canvasLocation" x="-1642" y="3268"/>
         </scene>
         <!--editStatus-->
         <scene sceneID="2OC-48-CYq">
@@ -743,127 +537,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xl-mz-PxZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703" y="4610"/>
-        </scene>
-        <!--addFriend-->
-        <scene sceneID="Pig-Y0-P3s">
-            <objects>
-                <viewController title="addFriend" id="UhI-45-WZH" customClass="addFriend" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q46-LT-mA3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="viA-R5-svF">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="1NA-Va-lye"/>
-                                    <constraint firstAttribute="height" constant="44" id="IIk-40-Tff"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="L4j-qf-pZb"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sports App" id="79z-0J-Xq5">
-                                        <barButtonItem key="leftBarButtonItem" title="Friends" id="Dka-4i-AlV">
-                                            <connections>
-                                                <segue destination="aU3-C5-VYG" kind="unwind" unwindAction="friendsTabUnwindWithSegue:" id="YmD-Zu-SDj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="kPi-71-kUQ"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Add Friend" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="L8l-CF-fmc">
-                                <rect key="frame" x="103" y="312" width="169" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="viA-R5-svF" firstAttribute="leading" secondItem="rOB-wW-U99" secondAttribute="leading" id="3iS-ix-X2G"/>
-                            <constraint firstItem="L8l-CF-fmc" firstAttribute="centerX" secondItem="q46-LT-mA3" secondAttribute="centerX" id="BME-2s-WRz"/>
-                            <constraint firstItem="viA-R5-svF" firstAttribute="trailing" secondItem="rOB-wW-U99" secondAttribute="trailing" id="G2g-Yz-lgT"/>
-                            <constraint firstItem="viA-R5-svF" firstAttribute="top" secondItem="rOB-wW-U99" secondAttribute="top" id="Ped-l3-654"/>
-                            <constraint firstItem="L8l-CF-fmc" firstAttribute="centerY" secondItem="q46-LT-mA3" secondAttribute="centerY" id="pqv-iG-nco"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="rOB-wW-U99"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="762-Ds-MYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="aU3-C5-VYG" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-703" y="3832"/>
-        </scene>
-        <!--friendProfile-->
-        <scene sceneID="bJx-vf-v6J">
-            <objects>
-                <viewController title="friendProfile" id="j2p-me-eZk" customClass="friendProfile" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pTn-bV-gu4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="uSJ-ov-akL"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FIt-Cv-jpj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="254" y="3832"/>
-        </scene>
-        <!--inMessage-->
-        <scene sceneID="5YC-Ti-fnM">
-            <objects>
-                <viewController title="inMessage" id="bSz-X9-kff" customClass="inMessage" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6c6-pk-Uqh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLF-R9-hth">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="UeU-9m-w5r"/>
-                                    <constraint firstAttribute="height" constant="44" id="YSe-ns-Z6X"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="cAN-V2-MB2"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Sports App" id="rmR-Sw-egY">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="SeR-89-EJD">
-                                            <connections>
-                                                <segue destination="5TW-JY-OIH" kind="unwind" unwindAction="inboxTabUnwindWithSegue:" id="LKR-2B-2Ys"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="D3E-nk-8nY"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="In Message" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-4J-ej7">
-                                <rect key="frame" x="99" y="312" width="177" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qLF-R9-hth" firstAttribute="trailing" secondItem="6lC-fj-BDq" secondAttribute="trailing" id="Ntc-fS-fRM"/>
-                            <constraint firstItem="O6H-4J-ej7" firstAttribute="centerY" secondItem="6c6-pk-Uqh" secondAttribute="centerY" id="O6C-h3-tKv"/>
-                            <constraint firstItem="qLF-R9-hth" firstAttribute="leading" secondItem="6lC-fj-BDq" secondAttribute="leading" id="jDw-Dp-nLM"/>
-                            <constraint firstItem="qLF-R9-hth" firstAttribute="top" secondItem="6lC-fj-BDq" secondAttribute="top" id="qea-d4-Xyv"/>
-                            <constraint firstItem="O6H-4J-ej7" firstAttribute="centerX" secondItem="6c6-pk-Uqh" secondAttribute="centerX" id="wY8-BX-83N"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6lC-fj-BDq"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PaE-Ua-gXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5TW-JY-OIH" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-703" y="2274"/>
+            <point key="canvasLocation" x="-703" y="3268"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="qwp-dS-8M2"/>
