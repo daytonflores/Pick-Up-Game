@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class createAccountPage: UIViewController {
 
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+//    @IBOutlet weak var _email: UITextField!
+//    @IBOutlet weak var _password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,4 +31,12 @@ class createAccountPage: UIViewController {
     }
     */
 
+    @IBAction func Create(_ sender: Any) {
+//        let Username = _email.text
+//        let Password = _password.text
+//        Auth.auth().createUser(withEmail: Username!, password: Password!) { (authResult, error) in
+//            guard let user = authResult?.user else {return}
+//        }
+
+    }
 }
