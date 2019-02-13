@@ -27,12 +27,12 @@ class createAccountPage: UIViewController {
     }
     */
 
-    @IBAction func Create(_ sender: Any) {
+    //@IBAction func Create(_ sender: Any) {
 //        let Username = _email.text
 //        let Password = _password.text
 //        Auth.auth().createUser(withEmail: Username!, password: Password!) { (authResult, error) in
 //            guard let user = authResult?.user else {return}
 //        }
 
-    }
+    
 }
