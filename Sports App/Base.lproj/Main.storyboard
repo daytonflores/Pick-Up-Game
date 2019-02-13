@@ -366,10 +366,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="login" destination="4uK-jY-DLn" id="5nE-h6-f2t"/>
-                        <outlet property="password" destination="6Ii-pD-B8R" id="wrE-7l-XO3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekm-V4-pCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SnZ-dS-dgJ" userLabel="Exit" sceneMemberID="exit"/>

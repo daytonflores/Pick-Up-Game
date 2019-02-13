@@ -7,12 +7,9 @@
 //
 
 import UIKit
-import Firebase
 
 class createAccountPage: UIViewController {
-
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
