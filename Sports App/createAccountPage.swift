@@ -32,6 +32,7 @@ class createAccountPage: UIViewController {
     }
     */
 
+    
     @IBAction func CreateAccount(_ sender: Any) {
         if _Password.text != _PasswordConfirm.text {
             let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
@@ -54,6 +55,6 @@ class createAccountPage: UIViewController {
                 }
             }
         }
-  
     }
+    
 }
