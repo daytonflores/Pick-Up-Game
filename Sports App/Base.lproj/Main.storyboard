@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dl9-7D-xjG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="keb-uM-4j5"/>
                                 </constraints>
@@ -34,20 +34,20 @@
                                 </items>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Lc-J5-k06">
-                                <rect key="frame" x="16" y="64" width="343" height="50"/>
+                                <rect key="frame" x="16" y="108" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GH1-Yl-gJT"/>
                                     <constraint firstAttribute="width" constant="343" id="NgA-En-zSC"/>
                                 </constraints>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTr-r0-9sq">
-                                <rect key="frame" x="16" y="122" width="167.5" height="50"/>
+                                <rect key="frame" x="16" y="166" width="167.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tBG-vS-zEu"/>
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aE-o2-KE4">
-                                <rect key="frame" x="191.5" y="180" width="167.5" height="51"/>
+                                <rect key="frame" x="191.5" y="224" width="167.5" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="HNo-iA-m4k"/>
                                 </constraints>
@@ -55,13 +55,13 @@
                                 <state key="normal" title="Search"/>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-6y-5L7">
-                                <rect key="frame" x="191.5" y="122" width="167.5" height="50"/>
+                                <rect key="frame" x="191.5" y="166" width="167.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="85T-8W-Shm"/>
                                 </constraints>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dTZ-4P-GR5">
-                                <rect key="frame" x="16" y="180" width="167.5" height="50"/>
+                                <rect key="frame" x="16" y="224" width="167.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="stE-Uj-4ff"/>
                                 </constraints>
@@ -188,7 +188,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="presentation" modalTransitionStyle="crossDissolve" id="GYw-Xi-WsS"/>
+                                    <action selector="loginAccount:" destination="5Yl-Wk-PPi" eventType="touchUpInside" id="eG8-JT-CHH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzq-TT-Ykx">
@@ -220,7 +220,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYl-DT-IqT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aYl-DT-IqT">
                                 <rect key="frame" x="16" y="175" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="srh-Qf-ACt"/>
@@ -261,6 +261,11 @@
                         <viewLayoutGuide key="safeArea" id="e8j-2H-6DS"/>
                     </view>
                     <navigationItem key="navigationItem" id="3mG-9z-YGC"/>
+                    <connections>
+                        <outlet property="_Email" destination="aYl-DT-IqT" id="I7M-uO-76K"/>
+                        <outlet property="_Password" destination="IY5-uH-Rnj" id="p5V-6S-A2B"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginToHome" id="TGQ-fy-CcE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI6-0K-n2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,16 +307,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odI-Rj-r5S">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odI-Rj-r5S">
                                 <rect key="frame" x="16" y="188" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qqe-I6-qd4"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ii-pD-B8R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Confirm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ii-pD-B8R">
                                 <rect key="frame" x="16" y="226" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="T6G-7M-6ZI"/>
@@ -362,15 +367,21 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="db2-TR-WoU">
                             <connections>
-                                <segue destination="49e-Tb-3d3" kind="presentation" modalTransitionStyle="crossDissolve" id="qwp-dS-8M2"/>
+                                <action selector="CreateAccount:" destination="Uxb-rT-zrm" id="Clb-g3-4xj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="_Email" destination="4uK-jY-DLn" id="HU5-c0-I8m"/>
+                        <outlet property="_Password" destination="odI-Rj-r5S" id="gKw-Er-NFL"/>
+                        <outlet property="_PasswordConfirm" destination="6Ii-pD-B8R" id="Q9v-as-RkR"/>
+                        <segue destination="9pv-A4-QxB" kind="show" identifier="gotoHomeTab" id="TpG-zi-7HS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ekm-V4-pCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SnZ-dS-dgJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2591.1999999999998" y="-84.107946026986511"/>
+            <point key="canvasLocation" x="-2591" y="-84"/>
         </scene>
         <!--mainTabBarController-->
         <scene sceneID="yl2-sM-qoP">
@@ -544,6 +555,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qwp-dS-8M2"/>
+        <segue reference="TpG-zi-7HS"/>
     </inferredMetricsTieBreakers>
 </document>

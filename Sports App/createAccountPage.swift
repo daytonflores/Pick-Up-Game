@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class createAccountPage: UIViewController {
     
+    @IBOutlet weak var _Email: UITextField!
+    @IBOutlet weak var _Password: UITextField!
+    @IBOutlet weak var _PasswordConfirm: UITextField!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,12 +32,28 @@ class createAccountPage: UIViewController {
     }
     */
 
-    //@IBAction func Create(_ sender: Any) {
-//        let Username = _email.text
-//        let Password = _password.text
-//        Auth.auth().createUser(withEmail: Username!, password: Password!) { (authResult, error) in
-//            guard let user = authResult?.user else {return}
-//        }
-
-    
+    @IBAction func CreateAccount(_ sender: Any) {
+        if _Password.text != _PasswordConfirm.text {
+            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else{
+            Auth.auth().createUser(withEmail: _Email.text!, password: _Password.text!){ (user, error) in
+                if error == nil {
+                    self.performSegue(withIdentifier: "gotoHomeTab", sender: nil)
+                }
+                else{
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+  
+    }
 }

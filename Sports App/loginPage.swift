@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class loginPage: UIViewController {
 
+    @IBOutlet weak var _Email: UITextField!
+    @IBOutlet weak var _Password: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,4 +35,18 @@ class loginPage: UIViewController {
     {
     }
     
+    @IBAction func loginAccount(_ sender: Any) {
+        Auth.auth().signIn(withEmail: _Email.text!, password: _Password.text!) { (user, error) in
+            if error == nil{
+                self.performSegue(withIdentifier: "loginToHome", sender: self)
+            }
+            else{
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
 }
