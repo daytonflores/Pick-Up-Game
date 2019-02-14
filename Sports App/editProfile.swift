@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class editProfile: UIViewController {
 
+    @IBOutlet weak var _ProfilePic: UIImageView!
+    @IBOutlet weak var _Username: UITextField!
+    @IBOutlet weak var _Zipcode: UITextField!
+    @IBOutlet weak var _AboutMe: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +32,9 @@ class editProfile: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    @IBAction func EditProfileSave(_ sender: Any) {
+    }
+    
 }
