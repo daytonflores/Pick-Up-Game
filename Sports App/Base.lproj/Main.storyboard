@@ -403,33 +403,41 @@
                                                 <segue destination="Yyq-ac-cU2" kind="unwind" unwindAction="homeTabUnwindWithSegue:" id="6rq-QS-fXB"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Post" id="ccb-ZK-hQ8"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ccb-ZK-hQ8">
+                                            <connections>
+                                                <action selector="searchButton:" destination="Wyw-VM-ABl" id="4Q2-Dd-RHr"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Create Event" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="psR-Rd-S4P">
-                                <rect key="frame" x="88.5" y="312" width="198" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sRu-Ne-klr">
+                                <rect key="frame" x="16" y="64" width="343" height="183"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Wyw-VM-ABl" id="gJ4-u2-Zrx"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="psR-Rd-S4P" firstAttribute="centerX" secondItem="Wbr-uc-0Wj" secondAttribute="centerX" id="BzA-GC-hL4"/>
                             <constraint firstItem="T9R-G0-m0S" firstAttribute="trailing" secondItem="QZf-Oo-jXW" secondAttribute="trailing" id="G6Z-1T-hkm"/>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="bottom" secondItem="sRu-Ne-klr" secondAttribute="bottom" constant="420" id="IYS-4z-bpT"/>
                             <constraint firstItem="T9R-G0-m0S" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" id="Lcb-zP-JN4"/>
-                            <constraint firstItem="psR-Rd-S4P" firstAttribute="centerY" secondItem="Wbr-uc-0Wj" secondAttribute="centerY" id="bev-4N-tdK"/>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="trailing" secondItem="sRu-Ne-klr" secondAttribute="trailing" constant="16" id="Z37-Ir-f6P"/>
+                            <constraint firstItem="sRu-Ne-klr" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" constant="16" id="Zm5-aI-wWr"/>
+                            <constraint firstItem="sRu-Ne-klr" firstAttribute="top" secondItem="T9R-G0-m0S" secondAttribute="bottom" id="dnM-xF-vw9"/>
                             <constraint firstItem="T9R-G0-m0S" firstAttribute="top" secondItem="QZf-Oo-jXW" secondAttribute="top" id="uQE-Yu-dJz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QZf-Oo-jXW"/>
                     </view>
+                    <connections>
+                        <outlet property="_myMapView" destination="sRu-Ne-klr" id="QYS-C3-dBN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL9-8W-Kn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Yyq-ac-cU2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1642" y="1465"/>
+            <point key="canvasLocation" x="-1642.4000000000001" y="1464.9175412293855"/>
         </scene>
         <!--editProfile-->
         <scene sceneID="pJW-KL-gkp">
