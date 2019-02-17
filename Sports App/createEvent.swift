@@ -12,9 +12,16 @@ import MapKit
 class createEvent: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var _myMapView: MKMapView!
+    @IBOutlet weak var _selectSport: UIButton!
+    @IBOutlet weak var _sportTable: UITableView!
+    @IBOutlet weak var _dateLabel: UILabel!
+    @IBOutlet weak var _datePicker: UIDatePicker!
+    
+    var _sportList = ["Baskeball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _sportTable.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +36,50 @@ class createEvent: UIViewController, UISearchBarDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    /////////// Create Event Button
+    @IBAction func createEventButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "eventCreated", sender: nil)
+    }
+    
+    /////////// Date/Time Picker
+    @IBAction func datePickerChanged(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        
+        let strDate = dateFormatter.string(from: _datePicker.date)
+        _dateLabel.text = strDate
+    }
+    
+    /////////// Drop Down Section
+    @IBAction func sportDropDown(_ sender: Any) {
+        if _sportTable.isHidden {
+            animate(togle: true)
+        } else {
+            animate(togle: false)
+        }
+    }
+    func animate(togle: Bool) {
+        if togle {
+            UIView.animate(withDuration: 0.3) {
+                self._sportTable.isHidden = false
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self._sportTable.isHidden = true
+            }
+        }
+    }
+    
+    
+    /////////// Map Section
+    @IBAction func searchButton(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //Ignore user
@@ -88,10 +139,19 @@ class createEvent: UIViewController, UISearchBarDelegate {
         
     }
     
-    @IBAction func searchButton(_ sender: Any) {
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.delegate = self
-        present(searchController, animated: true, completion: nil)
+}
+
+extension createEvent: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return _sportList.count
     }
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = _sportList[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _selectSport.setTitle("\(_sportList[indexPath.row])", for: .normal)
+        animate(togle: false)
+    }
 }

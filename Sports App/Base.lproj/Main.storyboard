@@ -405,7 +405,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="ccb-ZK-hQ8">
                                             <connections>
-                                                <action selector="searchButton:" destination="Wyw-VM-ABl" id="4Q2-Dd-RHr"/>
+                                                <action selector="searchButton:" destination="Wyw-VM-ABl" id="EJ9-Po-jNw"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -413,25 +413,135 @@
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sRu-Ne-klr">
                                 <rect key="frame" x="16" y="64" width="343" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="2tg-6Q-WUP"/>
+                                    <constraint firstAttribute="width" constant="343" id="TyN-Kv-CSg"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="Wyw-VM-ABl" id="gJ4-u2-Zrx"/>
                                 </connections>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u6K-VU-fst">
+                                <rect key="frame" x="16" y="267" width="121" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2I-Im-BTq">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="30"/>
+                                        <color key="backgroundColor" red="0.86520401550000003" green="0.86520401550000003" blue="0.86520401550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="brt-5S-x8K"/>
+                                        </constraints>
+                                        <state key="normal" title="Select Sport"/>
+                                        <connections>
+                                            <action selector="sportDropDown:" destination="Wyw-VM-ABl" eventType="touchUpInside" id="e7O-ci-s3V"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n5A-3D-ONp">
+                                        <rect key="frame" x="0.0" y="30" width="121" height="200"/>
+                                        <color key="backgroundColor" red="0.86520401554404147" green="0.86520401554404147" blue="0.86520401554404147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="121" id="dPc-K6-ilV"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="gi4-q4-neG"/>
+                                            <constraint firstAttribute="height" constant="200" id="shK-6f-KF2"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="nMX-lG-IdV" style="IBUITableViewCellStyleDefault" id="4g6-lZ-cLA">
+                                                <rect key="frame" x="0.0" y="28" width="121" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4g6-lZ-cLA" id="hQ4-uC-zQ9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nMX-lG-IdV">
+                                                            <rect key="frame" x="15" y="0.0" width="91" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.81694599352970021" green="0.81694599352970021" blue="0.81694599352970021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Wyw-VM-ABl" id="zI6-co-Op1"/>
+                                            <outlet property="delegate" destination="Wyw-VM-ABl" id="suz-dV-nEg"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM/DD/YY HH:MM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS9-I4-dfO">
+                                <rect key="frame" x="145" y="267" width="230" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="About the Event" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IBk-jj-d4N">
+                                <rect key="frame" x="16" y="517" width="343" height="80"/>
+                                <color key="backgroundColor" red="0.86520401550000003" green="0.86520401550000003" blue="0.86520401550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3Y-tk-Wtw">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <action selector="createEventButton:" destination="Wyw-VM-ABl" eventType="touchUpInside" id="8HH-Fi-Sbg"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mEK-Gm-TTV">
+                                <rect key="frame" x="145" y="301" width="230" height="196"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="Vcs-jw-3Ip"/>
+                                    <constraint firstAttribute="height" constant="196" id="joZ-j1-BZk"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="572126731.92344201">
+                                    <!--2019-02-17 20:05:31 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="Wyw-VM-ABl" eventType="valueChanged" id="Ki0-gx-bEa"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="trailing" secondItem="IBk-jj-d4N" secondAttribute="trailing" constant="16" id="0KK-hF-TtW"/>
+                            <constraint firstItem="GS9-I4-dfO" firstAttribute="trailing" secondItem="QZf-Oo-jXW" secondAttribute="trailing" id="0LQ-1A-Osd"/>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="trailing" secondItem="u6K-VU-fst" secondAttribute="trailing" constant="238" id="4Qk-yR-8tS"/>
+                            <constraint firstItem="IBk-jj-d4N" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" constant="16" id="5oH-N4-x2i"/>
+                            <constraint firstItem="GS9-I4-dfO" firstAttribute="top" secondItem="sRu-Ne-klr" secondAttribute="bottom" constant="20" id="BRY-Xw-emU"/>
+                            <constraint firstItem="mEK-Gm-TTV" firstAttribute="top" secondItem="GS9-I4-dfO" secondAttribute="bottom" constant="8" id="EW6-Zy-fMm"/>
                             <constraint firstItem="T9R-G0-m0S" firstAttribute="trailing" secondItem="QZf-Oo-jXW" secondAttribute="trailing" id="G6Z-1T-hkm"/>
-                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="bottom" secondItem="sRu-Ne-klr" secondAttribute="bottom" constant="420" id="IYS-4z-bpT"/>
+                            <constraint firstItem="mEK-Gm-TTV" firstAttribute="top" secondItem="GS9-I4-dfO" secondAttribute="bottom" constant="8" id="GHL-XT-6EC"/>
+                            <constraint firstItem="IBk-jj-d4N" firstAttribute="top" secondItem="u6K-VU-fst" secondAttribute="bottom" constant="20" id="HYy-oD-UUb"/>
+                            <constraint firstItem="GS9-I4-dfO" firstAttribute="leading" secondItem="u6K-VU-fst" secondAttribute="trailing" constant="8" id="Hju-JG-VZf"/>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="bottom" secondItem="d3Y-tk-Wtw" secondAttribute="bottom" constant="20" id="IwE-uR-dnS"/>
                             <constraint firstItem="T9R-G0-m0S" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" id="Lcb-zP-JN4"/>
+                            <constraint firstItem="IBk-jj-d4N" firstAttribute="top" secondItem="mEK-Gm-TTV" secondAttribute="bottom" constant="20" id="NyU-Ze-Sc9"/>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="trailing" secondItem="sRu-Ne-klr" secondAttribute="trailing" constant="16" id="P9O-iY-57i"/>
+                            <constraint firstItem="u6K-VU-fst" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" constant="16" id="SKA-IZ-CXn"/>
+                            <constraint firstItem="d3Y-tk-Wtw" firstAttribute="top" secondItem="IBk-jj-d4N" secondAttribute="bottom" constant="20" id="XYd-Rk-338"/>
                             <constraint firstItem="QZf-Oo-jXW" firstAttribute="trailing" secondItem="sRu-Ne-klr" secondAttribute="trailing" constant="16" id="Z37-Ir-f6P"/>
+                            <constraint firstItem="QZf-Oo-jXW" firstAttribute="trailing" secondItem="d3Y-tk-Wtw" secondAttribute="trailing" constant="16" id="Z38-GA-zQm"/>
+                            <constraint firstItem="mEK-Gm-TTV" firstAttribute="trailing" secondItem="QZf-Oo-jXW" secondAttribute="trailing" id="ZZQ-ao-H3u"/>
                             <constraint firstItem="sRu-Ne-klr" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" constant="16" id="Zm5-aI-wWr"/>
                             <constraint firstItem="sRu-Ne-klr" firstAttribute="top" secondItem="T9R-G0-m0S" secondAttribute="bottom" id="dnM-xF-vw9"/>
+                            <constraint firstItem="d3Y-tk-Wtw" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" constant="16" id="gnu-Tw-hfR"/>
+                            <constraint firstItem="sRu-Ne-klr" firstAttribute="leading" secondItem="QZf-Oo-jXW" secondAttribute="leading" constant="16" id="lCy-lg-qWi"/>
+                            <constraint firstItem="u6K-VU-fst" firstAttribute="top" secondItem="sRu-Ne-klr" secondAttribute="bottom" constant="20" id="rVI-wt-OSJ"/>
                             <constraint firstItem="T9R-G0-m0S" firstAttribute="top" secondItem="QZf-Oo-jXW" secondAttribute="top" id="uQE-Yu-dJz"/>
+                            <constraint firstItem="sRu-Ne-klr" firstAttribute="top" secondItem="T9R-G0-m0S" secondAttribute="bottom" id="wWI-gl-v3y"/>
+                            <constraint firstItem="u6K-VU-fst" firstAttribute="top" secondItem="sRu-Ne-klr" secondAttribute="bottom" constant="20" id="xFd-GH-b62"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QZf-Oo-jXW"/>
                     </view>
                     <connections>
+                        <outlet property="_dateLabel" destination="GS9-I4-dfO" id="3St-5o-Fu3"/>
+                        <outlet property="_datePicker" destination="mEK-Gm-TTV" id="a0e-Bn-CJc"/>
                         <outlet property="_myMapView" destination="sRu-Ne-klr" id="QYS-C3-dBN"/>
+                        <outlet property="_selectSport" destination="s2I-Im-BTq" id="A1U-Hl-ScP"/>
+                        <outlet property="_sportTable" destination="n5A-3D-ONp" id="688-e9-XN6"/>
+                        <segue destination="9pv-A4-QxB" kind="presentation" identifier="eventCreated" id="fCu-zM-hVk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL9-8W-Kn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -587,5 +697,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zgj-Ms-F5O"/>
+        <segue reference="fCu-zM-hVk"/>
     </inferredMetricsTieBreakers>
 </document>
