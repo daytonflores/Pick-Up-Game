@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class settingsTab: UIViewController {
 
@@ -29,6 +30,17 @@ class settingsTab: UIViewController {
 
     @IBAction func settingsTabUnwind(segue: UIStoryboardSegue)
     {
+    }
+    
+    @IBAction func _logoutButton(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            self.performSegue(withIdentifier: "logoutToLogin", sender: self)
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
 }
