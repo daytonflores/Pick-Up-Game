@@ -1,0 +1,63 @@
+
+
+
+{
+	users: {
+		"USEREMAIL1": {					// general  format
+			"username": "USERNAME"
+			"description": "DESCRIPTION"
+			"photo": 					// reference to however Firebase stores photos
+			"sports": {
+				"SPORT": true
+				// ... list of user's interested sports
+			}
+			"events":{
+				"EVENTID": true
+				// ... list of of user's events
+			}
+		}
+		"USEREMAIL2": {					// example
+			"username": "shirley"
+			"zipcode": 89999
+			"description": "sports are fun. let's play some sports."
+			"photo": 					// reference to however Firebase stores photos
+			"sports": {
+				"basketball": true,
+				"baseball": true
+			}
+			"events":{
+				"eventID1": true,
+				"eventID2": true
+			}
+		}
+	}
+
+	event: {
+		"EVENTID1": { 					// general format
+			"sport": "SPORT"
+			"description": "DESCRIPTION"
+			"date": DATE
+			"time": TIME
+			"location": LOCATION
+		}
+		"EVENTID2": {					// example
+			"sport": "basketball"
+			"description": "game at the park"
+			"date": 					// date data
+			"time": 					// time data
+			"location": 				// location data
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
