@@ -307,7 +307,7 @@
                     <connections>
                         <outlet property="_Email" destination="aYl-DT-IqT" id="I7M-uO-76K"/>
                         <outlet property="_Password" destination="IY5-uH-Rnj" id="p5V-6S-A2B"/>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginToHome" id="TGQ-fy-CcE"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="loginToHome" modalTransitionStyle="crossDissolve" id="TGQ-fy-CcE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qI6-0K-n2d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -749,7 +749,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RBv-Xb-wa2"/>
         <segue reference="MAX-Sc-GlL"/>
     </inferredMetricsTieBreakers>
 </document>
