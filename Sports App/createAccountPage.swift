@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class createAccountPage: UIViewController {
+class createAccountPage: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var _Email: UITextField!
     @IBOutlet weak var _Password: UITextField!
@@ -17,6 +17,9 @@ class createAccountPage: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self._Email.delegate = self
+        self._Password.delegate = self
+        self._PasswordConfirm.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -31,7 +34,30 @@ class createAccountPage: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    //hides keyboard if user touches outside of it
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //hides keyboard if user touches return key in Email Field
+    func EmailShouldReturn(_ _Email: UITextField) -> Bool {
+        _Email.resignFirstResponder()
+        return true
+    }
+    
+    //hides keyboard if user touches return key in Password Field
+    func PasswordShouldReturn(_ _Password: UITextField) -> Bool {
+        _Password.resignFirstResponder()
+        return true
+    }
+    
+    //hides keyboard if user touches return key in Password Confirm Field
+    func PasswordConfirmShouldReturn(_ _PasswordConfirm: UITextField) -> Bool {
+        _PasswordConfirm.resignFirstResponder()
+        return true
+    }
+    
     
     @IBAction func CreateAccount(_ sender: Any) {
         if _Password.text != _PasswordConfirm.text {
