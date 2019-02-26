@@ -148,7 +148,7 @@
                                 <rect key="frame" x="16" y="96" width="382" height="30"/>
                                 <state key="normal" title="Edit Profile"/>
                                 <connections>
-                                    <segue destination="zJb-by-n0h" kind="presentation" id="Q30-Ha-6qq"/>
+                                    <segue destination="zJb-by-n0h" kind="presentation" modalTransitionStyle="crossDissolve" id="Q30-Ha-6qq"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-w7-JON">
@@ -174,7 +174,7 @@
                                 <rect key="frame" x="16" y="134" width="382" height="30"/>
                                 <state key="normal" title="Edit Status"/>
                                 <connections>
-                                    <segue destination="hzg-DL-Fag" kind="presentation" id="Y5R-qb-NJy"/>
+                                    <segue destination="hzg-DL-Fag" kind="presentation" modalTransitionStyle="crossDissolve" id="Y5R-qb-NJy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -199,7 +199,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" id="4n9-vb-RYM"/>
                     <navigationItem key="navigationItem" id="oNR-iu-Ego"/>
                     <connections>
-                        <segue destination="5Yl-Wk-PPi" kind="presentation" identifier="logoutToLogin" id="8Po-fp-hAi"/>
+                        <segue destination="5Yl-Wk-PPi" kind="presentation" identifier="logoutToLogin" modalTransitionStyle="crossDissolve" id="8Po-fp-hAi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhO-nl-ure" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,7 +594,7 @@
                         <outlet property="_myMapView" destination="sRu-Ne-klr" id="QYS-C3-dBN"/>
                         <outlet property="_selectSport" destination="s2I-Im-BTq" id="A1U-Hl-ScP"/>
                         <outlet property="_sportTable" destination="n5A-3D-ONp" id="688-e9-XN6"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="eventCreated" id="MAX-Sc-GlL"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="eventCreated" modalTransitionStyle="crossDissolve" id="MAX-Sc-GlL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL9-8W-Kn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -749,6 +749,7 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TGQ-fy-CcE"/>
+        <segue reference="RBv-Xb-wa2"/>
+        <segue reference="MAX-Sc-GlL"/>
     </inferredMetricsTieBreakers>
 </document>
