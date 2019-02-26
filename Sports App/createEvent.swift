@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class createEvent: UIViewController, UISearchBarDelegate {
     
@@ -16,12 +17,14 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var _sportTable: UITableView!
     @IBOutlet weak var _dateLabel: UILabel!
     @IBOutlet weak var _datePicker: UIDatePicker!
-
+    @IBOutlet weak var _aboutEvent: UITextView!
     
     var location: String?
     var datetime: String?
     var selectedsport: String?
     var aboutevent: String?
+    
+    var ref: DatabaseReference!
     
     var _sportList = ["Basketball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
     
@@ -45,10 +48,21 @@ class createEvent: UIViewController, UISearchBarDelegate {
     
     /////////// Create Event Button
     @IBAction func createEventButton(_ sender: Any) {
-        if selectedsport == nil && location == nil && datetime == nil{
+        aboutevent = _aboutEvent.text
+        selectedsport = _selectSport.currentTitle
+        if ((selectedsport == "Select Sport") || (location == nil) || (datetime == nil)) {
             print("Error")
         }
         else {
+            ref = Database.database().reference()
+            let timeStamp = "EventID" + String(Int(NSDate.timeIntervalSinceReferenceDate)*1000)
+            if(aboutevent == "About the Event") {
+                aboutevent = ""
+            }
+            self.ref.child("event").child(timeStamp).setValue(["sport": selectedsport,
+                                                               "datetime": datetime,
+                                                               "location": location,
+                                                               "description": aboutevent])
             self.performSegue(withIdentifier: "eventCreated", sender: nil)
         }
     }
@@ -71,7 +85,6 @@ class createEvent: UIViewController, UISearchBarDelegate {
         } else {
             animate(togle: false)
         }
-        selectedsport = _selectSport.currentTitle
     }
     func animate(togle: Bool) {
         if togle {

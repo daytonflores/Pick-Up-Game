@@ -588,6 +588,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="850"/>
                     <connections>
+                        <outlet property="_aboutEvent" destination="IBk-jj-d4N" id="Mbb-ox-Hd9"/>
                         <outlet property="_dateLabel" destination="GS9-I4-dfO" id="3St-5o-Fu3"/>
                         <outlet property="_datePicker" destination="mEK-Gm-TTV" id="a0e-Bn-CJc"/>
                         <outlet property="_myMapView" destination="sRu-Ne-klr" id="QYS-C3-dBN"/>
