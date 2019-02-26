@@ -16,8 +16,14 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var _sportTable: UITableView!
     @IBOutlet weak var _dateLabel: UILabel!
     @IBOutlet weak var _datePicker: UIDatePicker!
+
     
-    var _sportList = ["Baskeball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
+    var location: String?
+    var datetime: String?
+    var selectedsport: String?
+    var aboutevent: String?
+    
+    var _sportList = ["Basketball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +45,13 @@ class createEvent: UIViewController, UISearchBarDelegate {
     
     /////////// Create Event Button
     @IBAction func createEventButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "eventCreated", sender: nil)
+        if selectedsport == nil && location == nil && datetime == nil{
+            print("Error")
+        }
+        else {
+            self.performSegue(withIdentifier: "eventCreated", sender: nil)
+        }
     }
-    
     /////////// Date/Time Picker
     @IBAction func datePickerChanged(_ sender: Any) {
         let dateFormatter = DateFormatter()
@@ -50,6 +60,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         let strDate = dateFormatter.string(from: _datePicker.date)
+        datetime = strDate
         _dateLabel.text = strDate
     }
     
@@ -60,6 +71,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
         } else {
             animate(togle: false)
         }
+        selectedsport = _selectSport.currentTitle
     }
     func animate(togle: Bool) {
         if togle {
@@ -132,7 +144,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
                 let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self._myMapView.setRegion(region, animated: true)
-                
+                self.location = annotation.title
             }
             
         }
