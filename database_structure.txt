@@ -3,49 +3,46 @@
 
 {
 	users: {
-		"USEREMAIL1": {					// general  format
-			"username": "USERNAME"
+		USERUID1: {					// general  format
 			"description": "DESCRIPTION"
-			"photo": 					// reference to however Firebase stores photos
-			"sports": {
-				"SPORT": true
-				// ... list of user's interested sports
-			}
 			"events":{
-				"EVENTID": true
+				EVENTID1,
 				// ... list of of user's events
 			}
-		}
-		"USEREMAIL2": {					// example
-			"username": "shirley"
-			"zipcode": 89999
-			"description": "sports are fun. let's play some sports."
 			"photo": 					// reference to however Firebase stores photos
 			"sports": {
-				"basketball": true,
-				"baseball": true
+				SPORT1,
+				// ... list of user's interested sports
 			}
+			"username": "USERNAME"
+		}
+		"USERUID2": {					// example
+			"description": "sports are fun. let's play some sports."
 			"events":{
-				"eventID1": true,
-				"eventID2": true
+				EVENTID1,
+				EVENTID2
 			}
+			"photo": 					// reference to however Firebase stores photos
+			"sports": {
+				"basketball",
+				"baseball"
+			}
+			"username": "shirley"
 		}
 	}
 
 	event: {
 		"EVENTID1": { 					// general format
+			"datetime": "DATE, TIME"
+			"description": "DESCRIPTION"	
+			"location": LOCATION				
 			"sport": "SPORT"
-			"description": "DESCRIPTION"
-			"date": DATE
-			"time": TIME
-			"location": LOCATION
 		}
 		"EVENTID2": {					// example
-			"sport": "basketball"
+			"datetime": "2/26/19, 11:46 AM"
 			"description": "game at the park"
-			"date": 					// date data
-			"time": 					// time data
-			"location": 				// location data
+			"location": "Unlv"
+			"sport": "Basketball"
 		}
 	}
 

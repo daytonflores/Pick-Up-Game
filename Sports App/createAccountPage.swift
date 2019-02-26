@@ -15,6 +15,8 @@ class createAccountPage: UIViewController {
     @IBOutlet weak var _Password: UITextField!
     @IBOutlet weak var _PasswordConfirm: UITextField!
    
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,8 +44,16 @@ class createAccountPage: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         else{
+            
             Auth.auth().createUser(withEmail: _Email.text!, password: _Password.text!){ (user, error) in
                 if error == nil {
+                    let uid = String((Auth.auth().currentUser!).uid)
+                    self.ref = Database.database().reference()
+                    self.ref.child("users").child(uid).setValue(["username": "",
+                                                                 "description": "",
+                                                                 "photo": "",
+                                                                 "sports": "",
+                                                                 "events": ""])
                     self.performSegue(withIdentifier: "gotoHomeTab", sender: nil)
                 }
                 else{

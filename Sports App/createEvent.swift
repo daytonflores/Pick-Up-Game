@@ -55,7 +55,9 @@ class createEvent: UIViewController, UISearchBarDelegate {
         }
         else {
             ref = Database.database().reference()
-            let timeStamp = "EventID" + String(Int(NSDate.timeIntervalSinceReferenceDate)*1000)
+            let timeStamp = "EventID " + String(Int(NSDate.timeIntervalSinceReferenceDate)*1000)
+            let uid = String((Auth.auth().currentUser!).uid)
+            
             if(aboutevent == "About the Event") {
                 aboutevent = ""
             }
@@ -63,6 +65,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
                                                                "datetime": datetime,
                                                                "location": location,
                                                                "description": aboutevent])
+            self.ref.child("users").child(uid).child("events").child(timeStamp).setValue(timeStamp)
             self.performSegue(withIdentifier: "eventCreated", sender: nil)
         }
     }
