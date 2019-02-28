@@ -9,18 +9,28 @@
 import UIKit
 import Firebase
 
-class loginPage: UIViewController, UITextFieldDelegate {
+class loginPage: UIViewController/*, UITextFieldDelegate */{
 
     @IBOutlet weak var _Email: UITextField!
     @IBOutlet weak var _Password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self._Email.delegate = self
-        self._Password.delegate = self
+        //self._Email.delegate = self
+        //self._Password.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "loginToHome", sender: nil)
+        }
+    }
+    
+    
+/*
     //hides keyboard if user touches outside of it
    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -39,7 +49,7 @@ class loginPage: UIViewController, UITextFieldDelegate {
         _Password.resignFirstResponder()
         return true
     }
-    
+*/
     
     /*
     // MARK: - Navigation
