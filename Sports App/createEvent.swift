@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class createEvent: UIViewController, UISearchBarDelegate {
     
@@ -16,8 +17,16 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var _sportTable: UITableView!
     @IBOutlet weak var _dateLabel: UILabel!
     @IBOutlet weak var _datePicker: UIDatePicker!
+    @IBOutlet weak var _aboutEvent: UITextView!
     
-    var _sportList = ["Baskeball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
+    var location: String?
+    var datetime: String?
+    var selectedsport: String?
+    var aboutevent: String?
+    
+    var ref: DatabaseReference!
+    
+    var _sportList = ["Basketball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +48,26 @@ class createEvent: UIViewController, UISearchBarDelegate {
     
     /////////// Create Event Button
     @IBAction func createEventButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "eventCreated", sender: nil)
+        aboutevent = _aboutEvent.text
+        selectedsport = _selectSport.currentTitle
+        if ((selectedsport == "select Sport") || (location == nil || datetime == nil)) {
+            print("Error")
+        }
+        else {
+            ref = Database.database().reference()
+            let timeStamp = "EventID " + String(Int(NSDate.timeIntervalSinceReferenceDate)*1000)
+            let uid = String((Auth.auth().currentUser!).uid)
+            
+            if(aboutevent == "About the Event"){
+                aboutevent = ""
+            }
+            self.ref.child("event").child(timeStamp).setValue(["sports": selectedsport,
+                                                              "datetime": datetime,
+                                                              "location": location,
+                                                              "description": aboutevent])
+            self.ref.child("users").child(uid).child("events").child(timeStamp).setValue(timeStamp)
+            self.performSegue(withIdentifier: "eventCreated", sender: nil)
+        }
     }
     
     /////////// Date/Time Picker
@@ -50,6 +78,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         let strDate = dateFormatter.string(from: _datePicker.date)
+        datetime = strDate
         _dateLabel.text = strDate
     }
     
@@ -132,6 +161,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
                 let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self._myMapView.setRegion(region, animated: true)
+                self.location = annotation.title
                 
             }
             
