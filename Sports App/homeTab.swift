@@ -8,45 +8,48 @@
 
 import UIKit
 
-class homeTab: UIViewController/*, UIPickerViewDelegate, UIPickerViewDataSource*/ {
-   
-/*    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return SportData.count
-    }
-*/
+class homeTab: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    //picker view filter to select sport
-    //@IBOutlet weak var Sports: UIPickerView!
+    //variable for sport label
+    @IBOutlet weak var Label: UILabel!
     
-    //picker view filter to select radius to your location
-    //@IBOutlet weak var Radius: UIPickerView!
+    //variable for picker view for sports
+    @IBOutlet weak var Sports: UIPickerView!
     
-    //var SportData: [String] = [String]()
-    //var RadiusData: [String] = [String]()
+    //list for sports picker view
+    let Sports_List = ["Baseball", "Basketball", "Football", "Hockey", "Soccer", "Tennis", "Volleyball"]
+    
+    //list for radius picker view
+    let Radius_List = ["1 mile", "2 miles", "3 miles", "4 miles", "5 miles", "10 miles", "15 miles", "20 miles", "30 miles"]
+    
+    //column amount function for picker view
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1   //only one column
+    }
+    
+    //name for each row function in picker view
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return Sports_List[row]
+    }
+    
+    //row amount function for picker view
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Sports_List.count
+    }
+    
+    //places selected sport in label
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        Label.text = Sports_List[row]
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-/*
-        self.Sports.delegate = self
-        self.Sports.dataSource = self
-        
-        self.Radius.delegate = self
-        self.Radius.dataSource = self
-        
-        //picker view options for sports
-        SportData = ["Basketball", "Football", "Baseball", "Volleyball", "Hockey", "Soccer", "Tennis"]
-        
-        //picker view options for radius
-        RadiusData = ["1 mile", "2 miles", "3 miles", "4 miles", "5 miles", "6 miles", "7 miles", "8 miles", "9 miles", "10 miles", "15 miles", "20 miles", "25 miles", "30 miles", ]
-*/    }
-    
 
+  }
+    
     
     /*
     // MARK: - Navigation
