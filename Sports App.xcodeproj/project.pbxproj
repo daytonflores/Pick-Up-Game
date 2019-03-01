@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03063A872213B48D008BFD7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03063A862213B48D008BFD7C /* GoogleService-Info.plist */; };
-		2FCA1ED72224A4FF0073BCF4 /* Logo.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = 2FCA1ED62224A4FE0073BCF4 /* Logo.JPEG */; };
 		3C7DE515220CE84A00F5941F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7DE514220CE84A00F5941F /* AppDelegate.swift */; };
 		3C7DE51C220CE84A00F5941F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C7DE51A220CE84A00F5941F /* Main.storyboard */; };
 		3C7DE51E220CE84C00F5941F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C7DE51D220CE84C00F5941F /* Assets.xcassets */; };
@@ -22,13 +21,13 @@
 		3C924FFA220F31970070866F /* editProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FF9220F31970070866F /* editProfile.swift */; };
 		3C924FFC220F31AD0070866F /* editStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FFB220F31AD0070866F /* editStatus.swift */; };
 		3C924FFE220F338B0070866F /* mainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FFD220F338B0070866F /* mainTabBarController.swift */; };
+		DC1106142228AF0200D170FF /* Logo.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = DC1106132228AF0200D170FF /* Logo.JPEG */; };
 		E7D2020910D03F8626548D41 /* Pods_Sports_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B6A11211C9F8B65D4983AF /* Pods_Sports_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03063A862213B48D008BFD7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0E15E669458D914DC5284D9A /* Pods-Sports App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.release.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.release.xcconfig"; sourceTree = "<group>"; };
-		2FCA1ED62224A4FE0073BCF4 /* Logo.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Logo.JPEG; path = ../../Logo.JPEG; sourceTree = "<group>"; };
 		37B6A11211C9F8B65D4983AF /* Pods_Sports_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sports_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7DE511220CE84A00F5941F /* Sports App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7DE514220CE84A00F5941F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		3C924FFB220F31AD0070866F /* editStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editStatus.swift; sourceTree = "<group>"; };
 		3C924FFD220F338B0070866F /* mainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarController.swift; sourceTree = "<group>"; };
 		C63DDE856B5977F2334DD732 /* Pods-Sports App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.debug.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.debug.xcconfig"; sourceTree = "<group>"; };
+		DC1106132228AF0200D170FF /* Logo.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.JPEG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +81,13 @@
 		3C7DE513220CE84A00F5941F /* Sports App */ = {
 			isa = PBXGroup;
 			children = (
-				2FCA1ED62224A4FE0073BCF4 /* Logo.JPEG */,
 				3C7DE514220CE84A00F5941F /* AppDelegate.swift */,
 				3C7DE51A220CE84A00F5941F /* Main.storyboard */,
 				3C924FDF220F0FDD0070866F /* loginPage.swift */,
 				3C924FE1220F100E0070866F /* createAccountPage.swift */,
 				3C924FFD220F338B0070866F /* mainTabBarController.swift */,
 				3C924FE3220F2B800070866F /* homeTab.swift */,
+				DC1106132228AF0200D170FF /* Logo.JPEG */,
 				3C924FE5220F2BBB0070866F /* createEvent.swift */,
 				3C924FED220F30DE0070866F /* profileTab.swift */,
 				3C924FF7220F317F0070866F /* settingsTab.swift */,
@@ -180,7 +180,7 @@
 			files = (
 				3C7DE521220CE84C00F5941F /* LaunchScreen.storyboard in Resources */,
 				03063A872213B48D008BFD7C /* GoogleService-Info.plist in Resources */,
-				2FCA1ED72224A4FF0073BCF4 /* Logo.JPEG in Resources */,
+				DC1106142228AF0200D170FF /* Logo.JPEG in Resources */,
 				3C7DE51E220CE84C00F5941F /* Assets.xcassets in Resources */,
 				3C7DE51C220CE84A00F5941F /* Main.storyboard in Resources */,
 			);
