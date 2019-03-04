@@ -36,10 +36,6 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEo-PE-M0N">
                                 <rect key="frame" x="14" y="176" width="386" height="157"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="euI-Hh-7PU"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="rcC-jK-0v7"/>
-                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbO-9W-9Qg">
                                 <rect key="frame" x="20" y="123" width="374" height="36"/>
@@ -68,10 +64,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="Sports_FIlter:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="OZP-al-olH"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="SYe-Ov-SOv"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-DM-oGi">
                                 <rect key="frame" x="28" y="566" width="347" height="30"/>
@@ -79,10 +71,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="Radius:" destination="9pv-A4-QxB" eventType="valueChanged" id="hPO-Bx-7IN"/>
-                                    <outlet property="delegate" destination="9pv-A4-QxB" id="fkf-5A-rXG"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,12 +85,6 @@
                     <navigationItem key="navigationItem" id="e3N-IW-H3G">
                         <barButtonItem key="rightBarButtonItem" title="Create" id="k7A-sB-vBb"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="Label" destination="nbO-9W-9Qg" id="JGT-BT-E5L"/>
-                        <outlet property="Radius_Filter" destination="VRc-DM-oGi" id="LDL-OJ-Zb8"/>
-                        <outlet property="Sports" destination="aEo-PE-M0N" id="M0F-qU-sQJ"/>
-                        <outlet property="Sports_Filter" destination="8V8-9K-XuE" id="m69-7c-aLs"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -731,6 +713,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zgj-Ms-F5O"/>
+        <segue reference="TGQ-fy-CcE"/>
     </inferredMetricsTieBreakers>
 </document>
