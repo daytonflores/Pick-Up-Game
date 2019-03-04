@@ -19,7 +19,8 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var _datePicker: UIDatePicker!
     @IBOutlet weak var _aboutEvent: UITextView!
     
-    var location: String?
+    var latitudevalue: String?
+    var longitudevalue: String?
     var datetime: String?
     var selectedsport: String?
     var aboutevent: String?
@@ -50,7 +51,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBAction func createEventButton(_ sender: Any) {
         aboutevent = _aboutEvent.text
         selectedsport = _selectSport.currentTitle
-        if ((selectedsport == "select Sport") || (location == nil || datetime == nil)) {
+        if ((selectedsport == "select Sport") || (latitudevalue == nil || datetime == nil)) {
             print("Error")
         }
         else {
@@ -63,7 +64,8 @@ class createEvent: UIViewController, UISearchBarDelegate {
             }
             self.ref.child("event").child(timeStamp).setValue(["sports": selectedsport,
                                                               "datetime": datetime,
-                                                              "location": location,
+                                                              "latitude": latitudevalue,
+                                                              "longitude": longitudevalue,
                                                               "description": aboutevent])
             self.ref.child("users").child(uid).child("events").child(timeStamp).setValue(timeStamp)
             self.performSegue(withIdentifier: "eventCreated", sender: nil)
@@ -161,8 +163,8 @@ class createEvent: UIViewController, UISearchBarDelegate {
                 let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
                 let region = MKCoordinateRegion(center: coordinate, span: span)
                 self._myMapView.setRegion(region, animated: true)
-                self.location = annotation.title
-                
+                self.latitudevalue = String(latitude!)
+                self.longitudevalue = String(longitude!)
             }
             
         }

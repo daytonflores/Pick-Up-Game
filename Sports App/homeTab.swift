@@ -8,92 +8,91 @@
 
 import UIKit
 
-class homeTab: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class homeTab: UIViewController/*, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource*/ {
+
+/*
+    //variable for sport label
+    @IBOutlet weak var Label: UILabel!
+    
+    //variable for picker view for sports
+    @IBOutlet weak var Sports: UIPickerView!
 
     
-    @IBOutlet weak var textbox1: UITextField!
-    @IBOutlet weak var textbox2: UITextField!
+    var currentTextField = UITextField()
+    var pickerView = UIPickerView()
     
-    @IBOutlet weak var dropdown1: UIPickerView!
-    
-    @IBOutlet weak var dropdown2: UIPickerView!
-    
-    var Sports_List = ["Baseball", "Basketball", "Football", "Hockey", "Soccer", "Tennis", "Volleyball"]
-    
-    var Radius_List = ["1 mile", "2 miles", "3 miles", "4 miles", "5 miles", "10 miles", "15 miles", "20 miles", "30 miles"]
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        var countrows : Int = Sports_List.count
-        if pickerView == dropdown2 {
-            
-            countrows = self.Radius_List.count
-        }
-        return countrows
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == dropdown1 {
-            
-            let titleRow = Sports_List[row]
-            
-            return titleRow
-        }
-        else if pickerView == dropdown2 {
-            
-            let titleRow = Radius_List[row]
-            
-            return titleRow
-        }
-        return ""
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-     
-        if pickerView == dropdown1 {
-            
-            self.textbox1.text = Sports_List[row]
-            self.dropdown1.isHidden = true
-        }
-        else if pickerView == dropdown2 {
-            
-            self.textbox2.text = Radius_List[row]
-            self.dropdown2.isHidden = true
-            
-        }
-        
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if (textField == self.textbox1) {
-            
-            self.dropdown1.isHidden = false
-        }
-        else if (textField == self.textbox2) {
-            
-            self.dropdown2.isHidden = false
-        }
-        
-    }
+    var SportsList:[String] = []
+    var RadiusList:[String] = []
+ 
     
     
+    @IBOutlet weak var Sports_Field: UITextField!
+
+    @IBOutlet weak var Radius_Field: UITextField!
     
-    
+*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+//        SportsList = ["Baseball", "Basketball", "Football", "Hockey", "Soccer", "Tennis", "Volleyball"]
+//        RadiusList = ["1 mile", "2 miles", "3 miles", "4 miles", "5 miles", "10 miles", "15 miles", "20 miles", "30 miles"]
+        
   }
+
+/*
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1   //only one column
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if currentTextField == Sports_Field {
+            return SportsList.count
+        }
+        else if currentTextField == Radius_Field {
+            return RadiusList.count
+        }
+        else {
+            return 0
+        }
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if currentTextField == Sports_Field {
+            return SportsList[row]
+        }
+        else if currentTextField == Radius_Field {
+            return RadiusList[row]
+        }
+        else {
+            return ""
+        }
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if currentTextField == Sports_Field {
+            Sports_Field.text = SportsList[row]
+            self.view.endEditing(true)
+        }
+        else if currentTextField == Radius_Field {
+            Radius_Field.text = RadiusList[row]
+            self.view.endEditing(true)
+        }
+    }
+    
+    //text field delegate used
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        currentTextField = textField
+        if currentTextField == Sports_Field {
+            currentTextField.inputView = pickerView
+        }
+        else if currentTextField == Radius_Field {
+            currentTextField.inputView = pickerView
+        }
     }
 
 
@@ -108,8 +107,10 @@ class homeTab: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPi
     }
     */
     
-  /*  @IBAction func homeTabUnwind(segue: UIStoryboardSegue)
+    @IBAction func homeTabUnwind(segue: UIStoryboardSegue)
     {
-    } */
+    }
  
 }
+
+
