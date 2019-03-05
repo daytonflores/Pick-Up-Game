@@ -92,16 +92,31 @@ class editProfile: UIViewController {
             username = _Username.placeholder
         }
         
+        if(aboutme == "About Me"){
+            aboutme = ""
+        }
+        
         if(selectedsport == "Select Sport"){
             selectedsport = ""
         }
         
-        self.readRef.setValue(["username": username,
-                               "description": aboutme,
-                               "photo": "",
-                               "sports": selectedsport])
-            
-        self.performSegue(withIdentifier: "editProfileToSettings", sender: nil)
+        let refreshAlert = UIAlertController(title: "Save Changes?", message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
+            self.readRef.setValue(["username": self.username,
+                                   "description": self.aboutme,
+                                   "photo": "",
+                                   "sports": self.selectedsport])
+            self.performSegue(withIdentifier: "editProfileToSettings", sender: nil)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
         
     }
     
