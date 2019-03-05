@@ -51,7 +51,8 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBAction func createEventButton(_ sender: Any) {
         aboutevent = _aboutEvent.text
         selectedsport = _selectSport.currentTitle
-        if ((selectedsport == "select Sport") || (latitudevalue == nil || datetime == nil)) {
+
+        if ((selectedsport == "Select Sport") || (latitudevalue == nil || datetime == nil)) {
             print("Error")
         }
         else {

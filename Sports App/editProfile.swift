@@ -13,11 +13,59 @@ class editProfile: UIViewController {
 
     @IBOutlet weak var _ProfilePic: UIImageView!
     @IBOutlet weak var _Username: UITextField!
-    @IBOutlet weak var _Zipcode: UITextField!
     @IBOutlet weak var _AboutMe: UITextView!
+    @IBOutlet weak var _selectSport: UIButton!
+    @IBOutlet weak var _sportTable: UITableView!
+    
+    var username: String?
+    var aboutme: String?
+    var selectedsport: String?
+    
+    var readRef: DatabaseReference!
+    var dbHandle: DatabaseHandle!
+    
+    let uid = String((Auth.auth().currentUser!).uid)
+    
+    var _sportList = ["Basketball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _sportTable.isHidden = true
+        
+        readRef = Database.database().reference().child("users").child(uid)
+        
+        readRef.child("description").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.aboutme = snapshot.value as? String
+            if(self.aboutme == ""){
+                self._AboutMe.text = "About Me"
+            }
+            else{
+                self._AboutMe.text = self.aboutme
+            }
+        }
+        
+        readRef.child("username").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.username = snapshot.value as? String
+            if(self.username == ""){
+                self._Username.placeholder = "Username"
+            }
+            else{
+                self._Username.placeholder = self.username
+            }
+        }
+        
+        readRef.child("sports").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.selectedsport = snapshot.value as? String
+            if(self.selectedsport == ""){
+                self._selectSport.setTitle("Select Sport", for: .normal)
+            }
+            else{
+                self._selectSport.setTitle(self.selectedsport, for: .normal)
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -33,8 +81,68 @@ class editProfile: UIViewController {
     }
     */
     
+    @IBAction func saveProfile(_ sender: Any) {
+        readRef = Database.database().reference().child("users").child(uid)
+        
+        username = _Username.text
+        aboutme = _AboutMe.text
+        selectedsport = _selectSport.currentTitle
+        
+        if(username == ""){
+            username = _Username.placeholder
+        }
+        
+        if(selectedsport == "Select Sport"){
+            selectedsport = ""
+        }
+        
+        self.readRef.setValue(["username": username,
+                               "description": aboutme,
+                               "photo": "",
+                               "sports": selectedsport])
+            
+        self.performSegue(withIdentifier: "editProfileToSettings", sender: nil)
+        
+    }
+    
+    
+    /////////// Drop Down Section
+    @IBAction func buttonClicked(_ sender: Any) {
+        if _sportTable.isHidden {
+            animate(togle: true)
+        } else {
+            animate(togle: false)
+        }
+    }
+    
+    func animate(togle: Bool) {
+        if togle {
+            UIView.animate(withDuration: 0.3) {
+                self._sportTable.isHidden = false
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self._sportTable.isHidden = true
+            }
+        }
+    }
     
     @IBAction func EditProfileSave(_ sender: Any) {
     }
     
+}
+
+extension editProfile: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return _sportList.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = _sportList[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _selectSport.setTitle("\(_sportList[indexPath.row])", for: .normal)
+        animate(togle: false)
+    }
 }
