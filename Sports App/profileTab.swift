@@ -13,33 +13,41 @@ import FirebaseDatabase
 class profileTab: UIViewController {
     
     @IBOutlet weak var _UserName: UITextView!
-    @IBOutlet weak var _UserDescription: UIView!
     @IBOutlet weak var _UserSport: UITextView!
+//    @IBOutlet weak var _UserDescription: UILabel!
+    @IBOutlet weak var _UserDescription: UITextView!
     
     let uid = String((Auth.auth().currentUser!).uid)
     let userID = Auth.auth().currentUser?.uid
     let ref = Database.database().reference()
     
+    var handle: DatabaseHandle?
+    var userName: String?
+    var userSport: String?
+    var userDescription: String?
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         // get user data from database
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            
+//        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in    // only updates on first load
+        ref.child("users").child(userID!).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
             let value = snapshot.value as? NSDictionary
-            let userName = value?["username"] as? String ?? ""
-            let userSport = value?["sports"] as? String ?? ""
-            let userDescription = value?["description"] as? String ?? ""
+            self.userName = value?["username"] as? String ?? ""
+            self.userSport = value?["sports"] as? String ?? ""
+            self.userDescription = value?["description"] as? String ?? ""
+
+            print(self.userName)
+            print(self.userSport)
+            print(self.userDescription)
+
+            // set text fields
+            self._UserName.text = self.userName
+            self._UserSport.text = self.userSport
+            self._UserDescription.text = self.userDescription
             
-            print(userName)
-            print(userSport)
-            print(userDescription)
         })
         
-        super.viewDidLoad()
-        print(uid)
-//        print(userDescription)
-
-        // Do any additional setup after loading the view.
     }
     
 

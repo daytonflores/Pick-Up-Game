@@ -141,7 +141,7 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Username Placeholder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vYs-P5-4Az">
                                                 <rect key="frame" x="129" y="461" width="156.5" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axz-Vs-yh6">
@@ -151,15 +151,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GSD-R3-V0h">
-                                                <rect key="frame" x="87" y="658" width="240" height="128"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sport Placeholder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wkZ-dO-3Fv">
+                                                <rect key="frame" x="144" y="545" width="126" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sport Placeholder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wkZ-dO-3Fv">
-                                                <rect key="frame" x="144" y="545" width="126" height="33"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description Placeholder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-Tu-DZW">
+                                                <rect key="frame" x="94" y="668" width="240" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -209,14 +208,14 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="SJT-Io-J9Y"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="_UserDescription" destination="sIr-eL-vES" id="1xS-Gz-Ph5"/>
+                        <outlet property="_UserDescription" destination="0PJ-Tu-DZW" id="RtC-uv-svz"/>
                         <outlet property="_UserName" destination="vYs-P5-4Az" id="8Dh-0X-6Lp"/>
                         <outlet property="_UserSport" destination="wkZ-dO-3Fv" id="ZFM-or-ifa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mhz-ko-7Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3859" y="2462"/>
+            <point key="canvasLocation" x="-3859.420289855073" y="2461.6071428571427"/>
         </scene>
         <!--settingsTab-->
         <scene sceneID="dwc-si-T1i">
@@ -243,7 +242,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6x-Jb-J5L">
-                                <rect key="frame" x="16" y="782" width="382" height="80"/>
+                                <rect key="frame" x="16" y="733" width="382" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="IHD-JG-8ms"/>
                                 </constraints>
@@ -843,6 +842,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zgj-Ms-F5O"/>
-        <segue reference="RI8-nH-llX"/>
+        <segue reference="6pb-hR-Skr"/>
     </inferredMetricsTieBreakers>
 </document>
