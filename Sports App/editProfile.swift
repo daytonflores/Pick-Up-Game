@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class editProfile: UIViewController {
+class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var _ProfilePic: UIImageView!
     @IBOutlet weak var _Username: UITextField!
@@ -30,6 +30,8 @@ class editProfile: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self._Username.delegate = self
+        self._AboutMe.delegate = self
         _sportTable.isHidden = true
         
         readRef = Database.database().reference().child("users").child(uid)
@@ -70,6 +72,10 @@ class editProfile: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //hides keyboard if user touches outside of it
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
