@@ -7,11 +7,37 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class profileTab: UIViewController {
-
+    
+    @IBOutlet weak var _UserName: UITextView!
+    @IBOutlet weak var _UserDescription: UIView!
+    @IBOutlet weak var _UserSport: UITextView!
+    
+    let uid = String((Auth.auth().currentUser!).uid)
+    let userID = Auth.auth().currentUser?.uid
+    let ref = Database.database().reference()
+    
     override func viewDidLoad() {
+        
+        // get user data from database
+        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            let userName = value?["username"] as? String ?? ""
+            let userSport = value?["sports"] as? String ?? ""
+            let userDescription = value?["description"] as? String ?? ""
+            
+            print(userName)
+            print(userSport)
+            print(userDescription)
+        })
+        
         super.viewDidLoad()
+        print(uid)
+//        print(userDescription)
 
         // Do any additional setup after loading the view.
     }
