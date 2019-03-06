@@ -8,13 +8,11 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
 
 class profileTab: UIViewController {
     
     @IBOutlet weak var _UserName: UITextView!
     @IBOutlet weak var _UserSport: UITextView!
-//    @IBOutlet weak var _UserDescription: UILabel!
     @IBOutlet weak var _UserDescription: UITextView!
     
     let uid = String((Auth.auth().currentUser!).uid)
@@ -37,9 +35,9 @@ class profileTab: UIViewController {
             self.userSport = value?["sports"] as? String ?? ""
             self.userDescription = value?["description"] as? String ?? ""
 
-            print(self.userName)
-            print(self.userSport)
-            print(self.userDescription)
+//            print(self.userName)
+//            print(self.userSport)
+//            print(self.userDescription)
 
             // set text fields
             self._UserName.text = self.userName
