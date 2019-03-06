@@ -40,14 +40,27 @@ class profileTab: UIViewController {
 //            print(self.userDescription)
 
             // set text fields
-            self._UserName.text = self.userName
-            self._UserSport.text = self.userSport
-            self._UserDescription.text = self.userDescription
-            
+            if self.userName == "" {
+                self._UserName.text = "Username"
+            }
+            else {
+                self._UserName.text = self.userName
+            }
+            if self.userSport == "" {
+                self._UserSport.text = "Sports"
+            }
+            else {
+                self._UserSport.text = self.userSport
+            }
+            if self.userDescription == "" {
+                self._UserDescription.text = "I haven't put anything here yet..."
+            }
+            else {
+                self._UserDescription.text = self.userDescription
+            }
         })
-        
-    }
     
+    }
 
     /*
     // MARK: - Navigation
