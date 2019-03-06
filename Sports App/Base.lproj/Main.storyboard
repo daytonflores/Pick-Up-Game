@@ -114,7 +114,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="829"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axz-Vs-yh6">
-                                                <rect key="frame" x="170" y="539" width="74.5" height="20.5"/>
+                                                <rect key="frame" x="170" y="494" width="74.5" height="20.5"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
@@ -123,7 +123,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Sport" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkZ-dO-3Fv">
-                                                <rect key="frame" x="28" y="474" width="358" height="45"/>
+                                                <rect key="frame" x="28" y="429" width="358" height="45"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                     <bool key="isElement" value="YES"/>
@@ -135,7 +135,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm interested in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCt-VF-GPw">
-                                                <rect key="frame" x="146" y="453" width="122" height="21"/>
+                                                <rect key="frame" x="146" y="408" width="122" height="21"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
@@ -144,7 +144,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Username" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYs-P5-4Az">
-                                                <rect key="frame" x="0.0" y="395" width="414" height="38"/>
+                                                <rect key="frame" x="0.0" y="350" width="414" height="38"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
@@ -156,7 +156,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-Tu-DZW">
-                                                <rect key="frame" x="28" y="559.5" width="358" height="249.5"/>
+                                                <rect key="frame" x="20" y="519.5" width="374" height="289.5"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
@@ -177,24 +177,23 @@
                                             <constraint firstAttribute="bottom" secondItem="0PJ-Tu-DZW" secondAttribute="bottom" constant="20" id="76M-tL-7Vb"/>
                                             <constraint firstItem="r6z-UR-OK3" firstAttribute="width" secondItem="sIr-eL-vES" secondAttribute="height" multiplier="414:829" id="87r-Vq-xxG"/>
                                             <constraint firstItem="vYs-P5-4Az" firstAttribute="centerX" secondItem="sIr-eL-vES" secondAttribute="centerX" id="8EU-xs-9JO"/>
-                                            <constraint firstItem="vYs-P5-4Az" firstAttribute="top" secondItem="sIr-eL-vES" secondAttribute="top" constant="395" id="CZI-qA-w9G"/>
+                                            <constraint firstItem="vYs-P5-4Az" firstAttribute="top" secondItem="sIr-eL-vES" secondAttribute="top" constant="350" id="CZI-qA-w9G"/>
                                             <constraint firstItem="axz-Vs-yh6" firstAttribute="centerX" secondItem="sIr-eL-vES" secondAttribute="centerX" id="IQ8-SH-vvy"/>
                                             <constraint firstItem="r6z-UR-OK3" firstAttribute="leading" secondItem="sIr-eL-vES" secondAttribute="leading" id="JTS-31-G5C"/>
                                             <constraint firstItem="0PJ-Tu-DZW" firstAttribute="centerX" secondItem="sIr-eL-vES" secondAttribute="centerX" id="OfY-iS-sGm"/>
-                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="top" secondItem="axz-Vs-yh6" secondAttribute="bottom" id="QrJ-9R-qkb"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="0PJ-Tu-DZW" secondAttribute="trailing" constant="20" id="TIA-gE-oyg"/>
+                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="leading" secondItem="sIr-eL-vES" secondAttribute="leading" constant="20" id="Qjv-uk-vZE"/>
+                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="top" secondItem="axz-Vs-yh6" secondAttribute="bottom" constant="5" id="QrJ-9R-qkb"/>
+                                            <constraint firstAttribute="trailing" secondItem="0PJ-Tu-DZW" secondAttribute="trailing" constant="20" id="RBs-ws-mkX"/>
                                             <constraint firstItem="axz-Vs-yh6" firstAttribute="top" secondItem="wkZ-dO-3Fv" secondAttribute="bottom" constant="20" id="Tr3-W1-fh4"/>
-                                            <constraint firstAttribute="bottom" secondItem="0PJ-Tu-DZW" secondAttribute="bottom" constant="20" id="WAh-fc-eZq"/>
+                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="bottom" secondItem="sIr-eL-vES" secondAttribute="bottom" constant="-20" id="WAh-fc-eZq"/>
                                             <constraint firstItem="ZCt-VF-GPw" firstAttribute="centerX" secondItem="vYs-P5-4Az" secondAttribute="centerX" id="XRW-39-Oun"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="wkZ-dO-3Fv" secondAttribute="trailing" constant="20" id="XaB-Tv-Cq7"/>
                                             <constraint firstAttribute="trailing" secondItem="r6z-UR-OK3" secondAttribute="trailing" id="lAI-br-eoG"/>
                                             <constraint firstItem="ZCt-VF-GPw" firstAttribute="top" secondItem="vYs-P5-4Az" secondAttribute="bottom" constant="20" id="lIg-wl-kJZ"/>
                                             <constraint firstItem="wkZ-dO-3Fv" firstAttribute="leading" secondItem="sIr-eL-vES" secondAttribute="leadingMargin" constant="20" id="mBA-Ic-B87"/>
                                             <constraint firstItem="r6z-UR-OK3" firstAttribute="bottom" secondItem="sIr-eL-vES" secondAttribute="top" constant="350" id="mjt-Hi-TDL"/>
-                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="leading" secondItem="sIr-eL-vES" secondAttribute="leadingMargin" constant="20" id="oiO-GL-6cH"/>
                                             <constraint firstItem="wkZ-dO-3Fv" firstAttribute="top" secondItem="ZCt-VF-GPw" secondAttribute="bottom" id="sc0-gS-0lR"/>
                                             <constraint firstItem="r6z-UR-OK3" firstAttribute="centerX" secondItem="sIr-eL-vES" secondAttribute="centerX" id="vuK-XX-Fhz"/>
-                                            <constraint firstItem="axz-Vs-yh6" firstAttribute="top" secondItem="wkZ-dO-3Fv" secondAttribute="bottom" constant="20" id="w5F-2c-Cpw"/>
                                             <constraint firstItem="r6z-UR-OK3" firstAttribute="top" secondItem="sIr-eL-vES" secondAttribute="top" id="z2u-fH-5cf"/>
                                         </constraints>
                                     </view>
