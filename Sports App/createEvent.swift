@@ -51,7 +51,8 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBAction func createEventButton(_ sender: Any) {
         aboutevent = _aboutEvent.text
         selectedsport = _selectSport.currentTitle
-        if ((selectedsport == "select Sport") || (latitudevalue == nil || datetime == nil)) {
+
+        if ((selectedsport == "Select Sport") || (latitudevalue == nil || datetime == nil)) {
             print("Error")
         }
         else {
@@ -62,13 +63,24 @@ class createEvent: UIViewController, UISearchBarDelegate {
             if(aboutevent == "About the Event"){
                 aboutevent = ""
             }
-            self.ref.child("event").child(timeStamp).setValue(["sports": selectedsport,
-                                                              "datetime": datetime,
-                                                              "latitude": latitudevalue,
-                                                              "longitude": longitudevalue,
-                                                              "description": aboutevent])
-            self.ref.child("users").child(uid).child("events").child(timeStamp).setValue(timeStamp)
-            self.performSegue(withIdentifier: "eventCreated", sender: nil)
+
+            let refreshAlert = UIAlertController(title: "Create Event?", message: "", preferredStyle: UIAlertController.Style.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action: UIAlertAction!) in
+                self.ref.child("event").child(timeStamp).setValue(["sports": self.selectedsport,
+                                                                   "datetime": self.datetime,
+                                                                   "latitude": self.latitudevalue,
+                                                                   "longitude": self.longitudevalue,
+                                                                   "description": self.aboutevent])
+                self.ref.child("users").child(uid).child("events").child(timeStamp).setValue(timeStamp)
+                self.performSegue(withIdentifier: "eventCreated", sender: nil)
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                print("Handle Cancel Logic here")
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
         }
     }
     

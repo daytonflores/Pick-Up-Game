@@ -7,15 +7,60 @@
 //
 
 import UIKit
+import Firebase
 
 class profileTab: UIViewController {
-
+    
+    @IBOutlet weak var _UserName: UITextView!
+    @IBOutlet weak var _UserSport: UITextView!
+    @IBOutlet weak var _UserDescription: UITextView!
+    
+    let uid = String((Auth.auth().currentUser!).uid)
+    let userID = Auth.auth().currentUser?.uid
+    let ref = Database.database().reference()
+    
+    var handle: DatabaseHandle?
+    var userName: String?
+    var userSport: String?
+    var userDescription: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // get user data from database
+//        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in    // only updates on first load
+        ref.child("users").child(userID!).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
+            let value = snapshot.value as? NSDictionary
+            self.userName = value?["username"] as? String ?? ""
+            self.userSport = value?["sports"] as? String ?? ""
+            self.userDescription = value?["description"] as? String ?? ""
 
-        // Do any additional setup after loading the view.
-    }
+//            print(self.userName)
+//            print(self.userSport)
+//            print(self.userDescription)
+
+            // set text fields
+            if self.userName == "" {
+                self._UserName.text = "Username"
+            }
+            else {
+                self._UserName.text = self.userName
+            }
+            if self.userSport == "" {
+                self._UserSport.text = "Sports"
+            }
+            else {
+                self._UserSport.text = self.userSport
+            }
+            if self.userDescription == "" {
+                self._UserDescription.text = "I haven't put anything here yet..."
+            }
+            else {
+                self._UserDescription.text = self.userDescription
+            }
+        })
     
+    }
 
     /*
     // MARK: - Navigation
