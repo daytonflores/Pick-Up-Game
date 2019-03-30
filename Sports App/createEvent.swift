@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Firebase
+import CoreLocation
 
 class createEvent: UIViewController, UISearchBarDelegate {
     
@@ -24,6 +25,10 @@ class createEvent: UIViewController, UISearchBarDelegate {
     var datetime: String?
     var selectedsport: String?
     var aboutevent: String?
+    var address: String?
+    var timeplace: String?
+    var city: String?
+    var state: String?
     
     var ref: DatabaseReference!
     
@@ -52,7 +57,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
         aboutevent = _aboutEvent.text
         selectedsport = _selectSport.currentTitle
 
-        if ((selectedsport == "Select Sport") || (latitudevalue == nil || datetime == nil)) {
+        if ((selectedsport == "Select Sport") || (latitudevalue == nil || datetime == nil || address == nil)) {
             print("Error")
         }
         else {
@@ -67,8 +72,11 @@ class createEvent: UIViewController, UISearchBarDelegate {
             let refreshAlert = UIAlertController(title: "Create Event?", message: "", preferredStyle: UIAlertController.Style.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action: UIAlertAction!) in
+                self.timeplace = self.state! + self.city! + self.datetime!
                 self.ref.child("event").child(timeStamp).setValue(["sports": self.selectedsport,
                                                                    "datetime": self.datetime,
+                                                                   "address": self.address,
+                                                                   "timeplace": self.timeplace,
                                                                    "latitude": self.latitudevalue,
                                                                    "longitude": self.longitudevalue,
                                                                    "description": self.aboutevent])
@@ -92,8 +100,10 @@ class createEvent: UIViewController, UISearchBarDelegate {
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         let strDate = dateFormatter.string(from: _datePicker.date)
-        datetime = strDate
         _dateLabel.text = strDate
+        let timestamp = self._datePicker?.date.timeIntervalSince1970
+        let time = Double(timestamp ?? 0)
+        datetime = String(time)
     }
     
     /////////// Drop Down Section
@@ -177,6 +187,36 @@ class createEvent: UIViewController, UISearchBarDelegate {
                 self._myMapView.setRegion(region, animated: true)
                 self.latitudevalue = String(latitude!)
                 self.longitudevalue = String(longitude!)
+                ////////////////
+                
+                let center = CLLocation(latitude: latitude!, longitude: longitude!)
+                let geoCoder = CLGeocoder()
+                
+                geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
+                    guard let self = self else {return}
+                    
+                    if let _ = error {
+                        return
+                    }
+                    guard let placemark = placemarks?.first else{
+                        return
+                    }
+                    
+
+                    print(placemark)
+                    
+                    let streetNumber = placemark.subThoroughfare ?? ""
+                    let streetName = placemark.thoroughfare ?? ""
+                    self.city = placemark.locality ?? ""
+                    let city1 = placemark.locality ?? ""
+                    self.state = placemark.administrativeArea ?? ""
+                    let state1 = placemark.administrativeArea ?? ""
+                    let country = placemark.country ?? ""
+                    
+                    self.address = "\(streetNumber) \(streetName), \(city1), \(state1), \(country)"
+
+                }
+                
             }
             
         }
@@ -199,3 +239,4 @@ extension createEvent: UITableViewDelegate, UITableViewDataSource {
         animate(togle: false)
     }
 }
+
