@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
-class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var _ProfilePic: UIImageView!
+    
+   
+    @IBOutlet var _ProfilePic: UIImageView!
     @IBOutlet weak var _Username: UITextField!
     @IBOutlet weak var _AboutMe: UITextView!
     @IBOutlet weak var _selectSport: UIButton!
@@ -20,21 +22,53 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     var username: String?
     var aboutme: String?
     var selectedsport: String?
+    var photourl: String?
+    var photoext: String?
     
     var readRef: DatabaseReference!
     var dbHandle: DatabaseHandle!
     
     let uid = String((Auth.auth().currentUser!).uid)
+    let storageRef = Storage.storage().reference()
     
     var _sportList = ["Basketball", "Baseball", "Football", "Soccer", "Hockey", "Volleyball", "Tennis"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         self._Username.delegate = self
         self._AboutMe.delegate = self
         _sportTable.isHidden = true
         
         readRef = Database.database().reference().child("users").child(uid)
+        
+        photoext = String(uid + ".jpeg")
+        
+        readRef.child("photo").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.photourl = snapshot.value as? String
+            if(self.photourl == ""){
+                
+            }
+            else{
+                // Create a reference to the file you want to download
+                let picRef = self.storageRef.child(self.photoext!)
+                
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                picRef.getData(maxSize: 1 * 1024 * 1024 * 5) { data, error in
+                    if let error = error {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        // Data for "images/island.jpg" is returned
+                        let image = UIImage(data: data!)
+                        self._ProfilePic.image = image
+                    }
+                }
+            }
+
+            // Load the image using SDWebImage
+
+        }
         
         readRef.child("description").observeSingleEvent(of: .value){
             (snapshot) in
@@ -73,9 +107,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     }
     
     //hides keyboard if user touches outside of it
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+
 
     /*
     // MARK: - Navigation
@@ -87,7 +119,31 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     }
     */
     
+
+    @IBAction func importPhoto(_ sender: AnyObject) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        image.allowsEditing = false
+        
+        self.present(image, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            _ProfilePic.image = image
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func saveProfile(_ sender: Any) {
+        let data = _ProfilePic.image!.jpegData(compressionQuality: 0.8)!
+        
+        photoext = String(uid + ".jpeg")
+        let profilePicRef = storageRef.child(photoext!)
+        
         readRef = Database.database().reference().child("users").child(uid)
         
         aboutme = _AboutMe.text
@@ -114,10 +170,25 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         let refreshAlert = UIAlertController(title: "Save Changes?", message: "", preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
-            /*self.readRef.setValue(["username": self.username,
-                                   "description": self.aboutme,
-                                   "photo": "",
-                                   "sports": self.selectedsport])*/
+
+            _ = profilePicRef.putData(data, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    // 4 Uh-oh, an error occurred!
+                    return
+                }
+                
+                // 5
+                profilePicRef.downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        return
+                    }
+                    guard let url = url else { return }
+                    // 6
+                    self.photourl = url.absoluteString
+                    self.readRef.child("photo").setValue(self.photourl)
+                })
+            }
+            
             self.readRef.child("username").setValue(self.username)
             self.readRef.child("description").setValue(self.aboutme)
             self.readRef.child("sport").setValue(self.selectedsport)
@@ -174,4 +245,16 @@ extension editProfile: UITableViewDelegate, UITableViewDataSource {
         _selectSport.setTitle("\(_sportList[indexPath.row])", for: .normal)
         animate(togle: false)
     }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+}
 }
