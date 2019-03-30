@@ -11,11 +11,106 @@ import Firebase
 
 class settingsTab: UIViewController {
 
+    var baseball: String?
+    var basketball: String?
+    var football: String?
+    var hockey: String?
+    var soccer: String?
+    var tennis: String?
+    var volleyball: String?
+    
+    @IBOutlet var _baseballSwitch: UISwitch!
+    @IBOutlet var _basketballSwitch: UISwitch!
+    @IBOutlet var _footballSwitch: UISwitch!
+    @IBOutlet var _hockeySwitch: UISwitch!
+    @IBOutlet var _soccerSwitch: UISwitch!
+    @IBOutlet var _tennisSwitch: UISwitch!
+    @IBOutlet var _volleyballSwitch: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         readRef = Database.database().reference().child("users").child(uid).child("filters")
         // Do any additional setup after loading the view.
+        
+        readRef.child("baseball").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.baseball = snapshot.value as? String
+            if(self.baseball == "on"){
+                self._baseballSwitch.setOn(true, animated:false)
+            }
+            else{
+                self._baseballSwitch.setOn(false, animated:false)
+            }
+        }
+        
+        readRef.child("basketball").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.basketball = snapshot.value as? String
+            if(self.basketball == "on"){
+                self._basketballSwitch.setOn(true, animated:false)
+            }
+            else{
+                self._basketballSwitch.setOn(false, animated:false)
+            }
+        }
+        
+        readRef.child("football").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.football = snapshot.value as? String
+            if(self.football == "on"){
+                self._footballSwitch.setOn(true, animated:false)
+            }
+            else{
+                self._footballSwitch.setOn(false, animated:false)
+            }
+        }
+        
+        readRef.child("hockey").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.hockey = snapshot.value as? String
+            if(self.hockey == "on"){
+                self._hockeySwitch.setOn(true, animated:false)
+            }
+            else{
+                self._hockeySwitch.setOn(false, animated:false)
+            }
+        }
+        
+        readRef.child("soccer").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.soccer = snapshot.value as? String
+            if(self.soccer == "on"){
+                self._soccerSwitch.setOn(true, animated:false)
+            }
+            else{
+                self._soccerSwitch.setOn(false, animated:false)
+            }
+        }
+        
+        readRef.child("tennis").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.tennis = snapshot.value as? String
+            if(self.tennis == "on"){
+                self._tennisSwitch.setOn(true, animated:false)
+            }
+            else{
+                self._tennisSwitch.setOn(false, animated:false)
+            }
+        }
+        
+        readRef.child("volleyball").observeSingleEvent(of: .value){
+            (snapshot) in
+            self.volleyball = snapshot.value as? String
+            if(self.volleyball == "on"){
+                self._volleyballSwitch.setOn(true, animated:false)
+            }
+            else{
+                self._volleyballSwitch.setOn(false, animated:false)
+            }
+        }
+        
     }
     
     var readRef: DatabaseReference!
@@ -41,6 +136,7 @@ class settingsTab: UIViewController {
             self.readRef.child("baseball").setValue("off")
         }
     }
+    
     
     @IBAction func basketballSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {

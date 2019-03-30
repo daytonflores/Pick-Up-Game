@@ -50,7 +50,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         readRef.child("username").observeSingleEvent(of: .value){
             (snapshot) in
             self.username = snapshot.value as? String
-            if(self.username == "" || self.username == "Anonymous"){
+            if(self.username == "Anonymous"){
                 self._Username.placeholder = "Username"
             }
             else{
@@ -58,7 +58,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
             }
         }
         
-        readRef.child("sports").observeSingleEvent(of: .value){
+        readRef.child("sport").observeSingleEvent(of: .value){
             (snapshot) in
             self.selectedsport = snapshot.value as? String
             if(self.selectedsport == ""){
@@ -90,12 +90,17 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBAction func saveProfile(_ sender: Any) {
         readRef = Database.database().reference().child("users").child(uid)
         
-        username = _Username.text
         aboutme = _AboutMe.text
         selectedsport = _selectSport.currentTitle
         
-        if(username == ""){
+        if(_Username.text == "" && _Username.placeholder == "Username"){
             username = "Anonymous"
+        }
+        else if(_Username.text == "" && _Username.placeholder != "Username"){
+            username = _Username.placeholder
+        }
+        else{
+            username = _Username.text
         }
         
         if(aboutme == "About Me"){
@@ -109,10 +114,13 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         let refreshAlert = UIAlertController(title: "Save Changes?", message: "", preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
-            self.readRef.setValue(["username": self.username,
+            /*self.readRef.setValue(["username": self.username,
                                    "description": self.aboutme,
                                    "photo": "",
-                                   "sports": self.selectedsport])
+                                   "sports": self.selectedsport])*/
+            self.readRef.child("username").setValue(self.username)
+            self.readRef.child("description").setValue(self.aboutme)
+            self.readRef.child("sport").setValue(self.selectedsport)
             self.performSegue(withIdentifier: "editProfileToSettings", sender: nil)
         }))
         
