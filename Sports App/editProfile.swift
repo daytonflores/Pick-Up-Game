@@ -95,7 +95,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         selectedsport = _selectSport.currentTitle
         
         if(username == ""){
-            username = _Username.placeholder
+            username = "Anonymous"
         }
         
         if(aboutme == "About Me"){
