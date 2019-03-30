@@ -75,11 +75,18 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                 if error == nil {
                     let uid = String((Auth.auth().currentUser!).uid)
                     self.ref = Database.database().reference()
-                    self.ref.child("users").child(uid).setValue(["username": "",
+                    self.ref.child("users").child(uid).setValue(["username": "Anonymous",
                                                                  "description": "",
                                                                  "photo": "",
                                                                  "sports": "",
                                                                  "events": ""])
+                    self.ref.child("users").child(uid).child("filters").child("baseball").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("basketball").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("football").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("hockey").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("soccer").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("tennis").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("volleyball").setValue("off")
                     self.performSegue(withIdentifier: "gotoHomeTab", sender: nil)
                 }
                 else{

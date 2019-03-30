@@ -1,15 +1,15 @@
 //
-//  editStatus.swift
+//  eventDetails.swift
 //  Sports App
 //
-//  Created by Dayton Flores on 2/9/19.
+//  Created by Dayton Flores on 3/29/19.
 //  Copyright © 2019 CS 472. All rights reserved.
 //
 
 import UIKit
 
-class editStatus: UIViewController {
-    
+class eventDetails: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +26,5 @@ class editStatus: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 }

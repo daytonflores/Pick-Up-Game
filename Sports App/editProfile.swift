@@ -50,7 +50,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         readRef.child("username").observeSingleEvent(of: .value){
             (snapshot) in
             self.username = snapshot.value as? String
-            if(self.username == ""){
+            if(self.username == "" || self.username == "Anonymous"){
                 self._Username.placeholder = "Username"
             }
             else{
