@@ -29,6 +29,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
     var timeplace: String?
     var city: String?
     var state: String?
+    var creator: String?
     
     var ref: DatabaseReference!
     
@@ -56,6 +57,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBAction func createEventButton(_ sender: Any) {
         aboutevent = _aboutEvent.text
         selectedsport = _selectSport.currentTitle
+        creator = String((Auth.auth().currentUser!).uid)
 
         if ((selectedsport == "Select Sport") || (latitudevalue == nil || datetime == nil || address == nil)) {
             print("Error")
@@ -74,6 +76,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
             refreshAlert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (action: UIAlertAction!) in
                 self.timeplace = self.state! + self.city! + self.datetime!
                 self.ref.child("event").child(timeStamp).setValue(["sports": self.selectedsport,
+                                                                   "creator": self.creator,
                                                                    "datetime": self.datetime,
                                                                    "address": self.address,
                                                                    "timeplace": self.timeplace,
