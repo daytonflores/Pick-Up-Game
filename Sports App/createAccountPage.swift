@@ -77,7 +77,7 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                     self.ref = Database.database().reference()
                     self.ref.child("users").child(uid).setValue(["username": "Anonymous",
                                                                  "description": "",
-                                                                 "photo": "",
+                                                                 "photo": "https://firebasestorage.googleapis.com/v0/b/tryone-de29a.appspot.com/o/Anonymous.jpg?alt=media&token=4ed6f927-cfc7-4693-91dc-8774c36ce257",
                                                                  "sports": "",
                                                                  "events": ""])
                     self.ref.child("users").child(uid).child("filters").child("baseball").setValue("off")

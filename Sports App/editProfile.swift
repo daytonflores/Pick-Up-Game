@@ -47,8 +47,20 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
         readRef.child("photo").observeSingleEvent(of: .value){
             (snapshot) in
             self.photourl = snapshot.value as? String
-            if(self.photourl == ""){
+            if(self.photourl == "https://firebasestorage.googleapis.com/v0/b/tryone-de29a.appspot.com/o/Anonymous.jpg?alt=media&token=4ed6f927-cfc7-4693-91dc-8774c36ce257"){
                 
+                let picRef = self.storageRef.child("Anonymous.jpg")
+                
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                picRef.getData(maxSize: 1 * 1024 * 1024 * 5) { data, error in
+                    if error != nil {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        // Data for "images/island.jpg" is returned
+                        let image = UIImage(data: data!)
+                        self._ProfilePic.image = image
+                    }
+                }
             }
             else{
                 // Create a reference to the file you want to download
@@ -56,7 +68,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
                 
                 // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
                 picRef.getData(maxSize: 1 * 1024 * 1024 * 5) { data, error in
-                    if let error = error {
+                    if error != nil {
                         // Uh-oh, an error occurred!
                     } else {
                         // Data for "images/island.jpg" is returned
@@ -139,6 +151,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
     }
     
     @IBAction func saveProfile(_ sender: Any) {
+        
         let data = _ProfilePic.image!.jpegData(compressionQuality: 0.8)!
         
         photoext = String(uid + ".jpeg")
