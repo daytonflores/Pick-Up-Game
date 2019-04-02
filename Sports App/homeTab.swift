@@ -26,12 +26,10 @@ class homeTab: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-}
-
-    
-func homeTabUnwind(segue: UIStoryboardSegue)
+    @IBAction func homeTabUnwind(segue: UIStoryboardSegue)
     {
     }
+}
 
 extension homeTab: UITableViewDataSource {
     func tableView (_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
