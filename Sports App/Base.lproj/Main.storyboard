@@ -1140,7 +1140,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jxf-Ic-fEZ"/>
         <segue reference="pNM-cw-h25"/>
     </inferredMetricsTieBreakers>
 </document>
