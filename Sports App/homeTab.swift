@@ -12,25 +12,46 @@ import FirebaseDatabase
 
 class homeTab: UIViewController {
 
+    var tableView:UITableView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        loadEvents()
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.backgroundColor = UIColor.blue
+        view.addSubview(tableView)
+        
+        var layoutGuide:UILayoutGuide
+        
+        layoutGuide = view.safeAreaLayoutGuide
+        
+        //adding constraints
+        tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
+        
+        
     }
     
+    /*
     func loadEvents() {
         Database.database().reference().child("event").observe(.value) { (snapshot: DataSnapshot) in
             print(snapshot.value as Any)
         }
-    }
+    } */
     
-    @IBOutlet weak var tableView: UITableView!
+   // @IBOutlet weak var tableView: UITableView!
     
     @IBAction func homeTabUnwind(segue: UIStoryboardSegue)
     {
     }
 }
 
+/*
 extension homeTab: UITableViewDataSource {
     func tableView (_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -42,4 +63,4 @@ extension homeTab: UITableViewDataSource {
         cell.backgroundColor = UIColor.blue
         return cell
     }
-}
+} */
