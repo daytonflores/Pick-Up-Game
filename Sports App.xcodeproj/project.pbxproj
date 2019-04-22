@@ -25,6 +25,7 @@
 		3C924FFA220F31970070866F /* editProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FF9220F31970070866F /* editProfile.swift */; };
 		3C924FFE220F338B0070866F /* mainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FFD220F338B0070866F /* mainTabBarController.swift */; };
 		DC1106142228AF0200D170FF /* Logo.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = DC1106132228AF0200D170FF /* Logo.JPEG */; };
+		DCD08856226E7E0200EC1E04 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD08855226E7E0200EC1E04 /* Post.swift */; };
 		E7D2020910D03F8626548D41 /* Pods_Sports_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B6A11211C9F8B65D4983AF /* Pods_Sports_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		3C924FFD220F338B0070866F /* mainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarController.swift; sourceTree = "<group>"; };
 		C63DDE856B5977F2334DD732 /* Pods-Sports App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.debug.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.debug.xcconfig"; sourceTree = "<group>"; };
 		DC1106132228AF0200D170FF /* Logo.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.JPEG; sourceTree = "<group>"; };
+		DCD08855226E7E0200EC1E04 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				2F1EBC9D226664980043D388 /* EventTableViewCell.xib */,
 				2FEB0DD52265C79000428CA5 /* EventModel.swift */,
 				3C8D73F2224F3C7100AA7713 /* eventDetails.swift */,
+				DCD08854226E7DDB00EC1E04 /* Model */,
 				3C924FDF220F0FDD0070866F /* loginPage.swift */,
 				3C924FE1220F100E0070866F /* createAccountPage.swift */,
 				3C924FFD220F338B0070866F /* mainTabBarController.swift */,
@@ -125,6 +128,14 @@
 				0E15E669458D914DC5284D9A /* Pods-Sports App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DCD08854226E7DDB00EC1E04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DCD08855226E7E0200EC1E04 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				3C924FEE220F30DE0070866F /* profileTab.swift in Sources */,
 				3C924FFA220F31970070866F /* editProfile.swift in Sources */,
 				3C8D73F3224F3C7100AA7713 /* eventDetails.swift in Sources */,
+				DCD08856226E7E0200EC1E04 /* Post.swift in Sources */,
 				3C924FE4220F2B800070866F /* homeTab.swift in Sources */,
 				3C924FE0220F0FDD0070866F /* loginPage.swift in Sources */,
 				3C924FE6220F2BBB0070866F /* createEvent.swift in Sources */,

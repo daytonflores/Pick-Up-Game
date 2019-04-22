@@ -11,56 +11,39 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class homeTab: UIViewController {
-
-    var tableView:UITableView!
     
-    
-    
-    
+    @IBOutlet weak var tableView: UITableView!
+    var post = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView = UITableView(frame: view.bounds, style: .plain)
-        tableView.backgroundColor = UIColor.blue
-        view.addSubview(tableView)
-        
-        var layoutGuide:UILayoutGuide
-        
-        layoutGuide = view.safeAreaLayoutGuide
-        
-        //adding constraints
-        tableView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
-        
-        
+        tableView.dataSource = self
+        loadPosts()
     }
     
-    /*
-    func loadEvents() {
-        Database.database().reference().child("event").observe(.value) { (snapshot: DataSnapshot) in
-            print(snapshot.value as Any)
+    func loadPosts() {
+        Database.database().reference().child("event").observe(.childAdded) { (snapshot: DataSnapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let locationText = dict["address"] as! String
+                let timeText = dict["datetime"] as! String
+                let sportText = dict["sports"] as! String
+                let creatorText = dict["creator"] as! String
+                let post = Post(locationText: locationText, timeText: timeText, sportText: sportText, creatorText: creatorText)
+                self.post.append(post)
+                print(self.post)
+                self.tableView.reloadData()
+            }
         }
-    } */
-    
-   // @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func homeTabUnwind(segue: UIStoryboardSegue)
-    {
     }
 }
 
-/*
 extension homeTab: UITableViewDataSource {
-    func tableView (_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return post.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt
-        indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.row)"
-        cell.backgroundColor = UIColor.blue
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        cell.textLabel?.text = post[indexPath.row].location
         return cell
     }
-} */
+}
