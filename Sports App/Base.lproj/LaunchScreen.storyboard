@@ -18,17 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LAUNCHSCREEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2N-xV-KqR">
-                                <rect key="frame" x="63.5" y="314.5" width="248.5" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.JPEG" translatesAutoresizingMaskIntoConstraints="NO" id="rSe-g4-RfY">
+                                <rect key="frame" x="20" y="77" width="334" height="308"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rSe-g4-RfY" secondAttribute="height" multiplier="167:154" id="W3b-Q1-BIO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Play!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h76-hO-gkY">
+                                <rect key="frame" x="124" y="393" width="127" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h76-hO-gkY" secondAttribute="height" multiplier="127:42" id="K0A-dx-vWF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="v2N-xV-KqR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FgP-WH-gOd"/>
-                            <constraint firstItem="v2N-xV-KqR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rGS-oM-ct1"/>
+                            <constraint firstItem="h76-hO-gkY" firstAttribute="top" secondItem="rSe-g4-RfY" secondAttribute="bottom" constant="8" id="3vJ-Aq-hke"/>
+                            <constraint firstItem="rSe-g4-RfY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="BwO-O7-0K7"/>
+                            <constraint firstItem="rSe-g4-RfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="E4a-EE-iBp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h76-hO-gkY" secondAttribute="trailing" constant="124" id="N6V-Sf-Uai"/>
+                            <constraint firstItem="h76-hO-gkY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="fLz-d0-MiA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h76-hO-gkY" secondAttribute="bottom" constant="232" id="sKG-qz-YTq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rSe-g4-RfY" secondAttribute="trailing" constant="21" id="tah-Jw-taU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +52,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo.JPEG" width="3464" height="3464"/>
+    </resources>
 </document>
