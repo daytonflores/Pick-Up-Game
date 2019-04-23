@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Yl-Wk-PPi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Yl-Wk-PPi">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,14 +101,14 @@
                                                 </items>
                                             </navigationBar>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7vS-Ye-BNZ">
-                                                <rect key="frame" x="57" y="84" width="300" height="300"/>
+                                                <rect key="frame" x="57" y="52" width="300" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="1BG-Vv-j4h"/>
                                                     <constraint firstAttribute="height" constant="300" id="uQ8-sb-H6j"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Username" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYs-P5-4Az">
-                                                <rect key="frame" x="8" y="408" width="398" height="38"/>
+                                                <rect key="frame" x="8" y="376" width="398" height="38"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
@@ -119,7 +119,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm interested in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCt-VF-GPw">
-                                                <rect key="frame" x="146" y="454" width="122" height="21"/>
+                                                <rect key="frame" x="146" y="422" width="122" height="21"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
@@ -131,7 +131,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axz-Vs-yh6">
-                                                <rect key="frame" x="170" y="548" width="74.5" height="20.5"/>
+                                                <rect key="frame" x="170" y="516" width="74.5" height="20.5"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
@@ -143,7 +143,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Sport" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkZ-dO-3Fv">
-                                                <rect key="frame" x="28" y="483" width="358" height="45"/>
+                                                <rect key="frame" x="28" y="451" width="358" height="45"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                     <bool key="isElement" value="YES"/>
@@ -155,7 +155,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-Tu-DZW">
-                                                <rect key="frame" x="20" y="573" width="374" height="288.5"/>
+                                                <rect key="frame" x="20" y="544.5" width="374" height="288.5"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
@@ -171,27 +171,28 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="wkZ-dO-3Fv" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="02W-LP-WoS"/>
                                             <constraint firstItem="xeq-Pv-Jxx" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" id="0Zi-52-RDb"/>
                                             <constraint firstAttribute="trailing" secondItem="vYs-P5-4Az" secondAttribute="trailing" constant="8" id="3fD-89-lux"/>
+                                            <constraint firstItem="7vS-Ye-BNZ" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="4rR-Q0-HAK"/>
+                                            <constraint firstItem="axz-Vs-yh6" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="BaX-KD-Uxx"/>
                                             <constraint firstItem="axz-Vs-yh6" firstAttribute="top" secondItem="wkZ-dO-3Fv" secondAttribute="bottom" constant="20" id="CgC-za-HgP"/>
-                                            <constraint firstItem="7vS-Ye-BNZ" firstAttribute="centerX" secondItem="vYs-P5-4Az" secondAttribute="centerX" id="Cza-9i-eEy"/>
                                             <constraint firstAttribute="trailing" secondItem="0PJ-Tu-DZW" secondAttribute="trailing" constant="20" id="DuE-9k-BKD"/>
                                             <constraint firstItem="xeq-Pv-Jxx" firstAttribute="top" secondItem="c5g-6a-e4s" secondAttribute="top" id="FIL-q8-FcL"/>
                                             <constraint firstItem="wkZ-dO-3Fv" firstAttribute="top" secondItem="ZCt-VF-GPw" secondAttribute="bottom" constant="8" id="Hbo-F0-8Yd"/>
                                             <constraint firstItem="vYs-P5-4Az" firstAttribute="top" secondItem="7vS-Ye-BNZ" secondAttribute="bottom" constant="24" id="OsD-2L-S8I"/>
                                             <constraint firstItem="ZCt-VF-GPw" firstAttribute="top" secondItem="vYs-P5-4Az" secondAttribute="bottom" constant="8" id="TYF-b7-OfN"/>
-                                            <constraint firstAttribute="trailing" secondItem="ZCt-VF-GPw" secondAttribute="trailing" constant="146" id="cSU-4m-Yjz"/>
-                                            <constraint firstItem="axz-Vs-yh6" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="170" id="fnB-eh-hKg"/>
-                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="top" secondItem="axz-Vs-yh6" secondAttribute="bottom" constant="4.5" id="jFN-Pw-Thw"/>
+                                            <constraint firstItem="ZCt-VF-GPw" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="iaG-61-un3"/>
+                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="top" secondItem="axz-Vs-yh6" secondAttribute="bottom" constant="8" id="jFN-Pw-Thw"/>
+                                            <constraint firstItem="vYs-P5-4Az" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="mAZ-7p-7jG"/>
+                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="nyx-dt-iEx"/>
                                             <constraint firstAttribute="trailing" secondItem="wkZ-dO-3Fv" secondAttribute="trailing" constant="28" id="pDn-CA-F3h"/>
                                             <constraint firstItem="vYs-P5-4Az" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="8" id="qSN-Sz-c9d"/>
-                                            <constraint firstAttribute="trailing" secondItem="axz-Vs-yh6" secondAttribute="trailing" constant="169.5" id="rNn-Ru-Qb9"/>
                                             <constraint firstAttribute="height" constant="1000" id="raJ-5N-dXY"/>
                                             <constraint firstItem="0PJ-Tu-DZW" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="20" id="sUF-eq-E5R"/>
-                                            <constraint firstItem="7vS-Ye-BNZ" firstAttribute="top" secondItem="xeq-Pv-Jxx" secondAttribute="bottom" constant="40" id="wa0-ZJ-gxW"/>
+                                            <constraint firstItem="7vS-Ye-BNZ" firstAttribute="top" secondItem="xeq-Pv-Jxx" secondAttribute="bottom" constant="8" id="wa0-ZJ-gxW"/>
                                             <constraint firstItem="wkZ-dO-3Fv" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="28" id="xZP-W5-emR"/>
                                             <constraint firstAttribute="trailing" secondItem="xeq-Pv-Jxx" secondAttribute="trailing" id="yrJ-mH-H3u"/>
-                                            <constraint firstItem="ZCt-VF-GPw" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="146" id="zHn-Pw-bdE"/>
                                         </constraints>
                                     </view>
                                 </subviews>
