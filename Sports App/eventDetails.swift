@@ -22,19 +22,49 @@ class eventDetails: UIViewController {
     let ref = Database.database().reference()
     
     var readRef: DatabaseReference!
-    var username: String?
+    var creator: String?
     var latitudevalue: String?
     var longitudevalue: String?
     var datetime: String?
     var selectedsport: String?
     var aboutevent: String?
-    var eventid: String?
+    var address: String?
+    var username: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.eventid = "EventID "
         
+        self._eventSport.text = selectedsport
+        self._aboutEvent.text = aboutevent
+        let date = NSDate(timeIntervalSince1970: Double(datetime!) as! TimeInterval)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy hh:mm a" //yyyy
+        let datestring = formatter.string(from: date as Date)
+        self._dateLabel.text = datestring
+        
+        let annotations = self._myMapView.annotations
+        self._myMapView.removeAnnotations(annotations)
+        
+        //getting data
+        let latitude = Double(latitudevalue!)
+        let longitude = Double(longitudevalue!)
+        
+        //create annotation
+        let annotation = MKPointAnnotation()
+        annotation.title = address
+        annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+        self._myMapView.addAnnotation(annotation)
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
+        self._myMapView.setRegion(region, animated: true)
+        
+        ref.child("users").child(creator!).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
+            let value = snapshot.value as? NSDictionary
+            self.username = value?["username"] as? String ?? ""
+            self._creator.setTitle(self.username, for: [])
+        })
+        /*
         ref.child("events").child(eventid!).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
             let value = snapshot.value as? NSDictionary
             self.username = value?["creator"] as? String ?? ""
@@ -51,7 +81,7 @@ class eventDetails: UIViewController {
             // set text fields
             self._eventSport.text = self.selectedsport
             self._aboutEvent.text = self.aboutevent
-        })
+        })*/
         // Do any additional setup after loading the view.
     }
     
