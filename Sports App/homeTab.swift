@@ -14,6 +14,7 @@ import FirebaseDatabase
 
 class homeTab: UIViewController {
     
+    @IBOutlet weak var locationCell: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var post = [Post]()
     var creator: String?
@@ -61,7 +62,12 @@ extension homeTab: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-        cell.textLabel?.text = post[indexPath.row].location
+            as! EventTableViewCell
+        let eventCell = post[indexPath.row]
+        cell.setCell(post: eventCell)
+        
+        //cell.textLabel?.text = post[indexPath.row].location
+        //cell.location.text = post[indexPath.row].location
         return cell
     }
 }

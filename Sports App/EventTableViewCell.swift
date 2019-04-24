@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
 class EventTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var user: UILabel!
+    @IBOutlet weak var sport: UILabel!
+    @IBOutlet weak var time: UILabel!
+    
+    var username: String?
+    
+    let ref = Database.database().reference()
+    
+    func setCell(post: Post) {
+        location?.text = post.location
+        sport?.text = post.sport
+        time?.text = post.time
+        
+        let date = NSDate(timeIntervalSince1970: Double(post.time) as! TimeInterval)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy hh:mm a" //yyyy
+        let datestring = formatter.string(from: date as Date)
+        time.text = datestring
+        
+        ref.child("users").child(post.creator).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
+            let value = snapshot.value as? NSDictionary
+            self.user?.text = value?["username"] as? String ?? ""
+        })
     }
     
 }

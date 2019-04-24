@@ -75,7 +75,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="78.400000000000006" y="172.26386806596702"/>
+            <connections>
+                <outlet property="location" destination="Z32-2A-xGH" id="UX3-mz-STv"/>
+            </connections>
+            <point key="canvasLocation" x="77" y="170"/>
         </tableViewCell>
     </objects>
 </document>
