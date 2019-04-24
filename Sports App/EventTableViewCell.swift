@@ -13,7 +13,7 @@ class EventTableViewCell: UITableViewCell {
     
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var user: UILabel!
-    @IBOutlet weak var sport: UILabel!
+    //@IBOutlet weak var sport: UILabel!
     @IBOutlet weak var time: UILabel!
     
     var username: String?
@@ -22,7 +22,7 @@ class EventTableViewCell: UITableViewCell {
     
     func setCell(post: Post) {
         location?.text = post.location
-        sport?.text = post.sport
+        //sport?.text = post.sport
         time?.text = post.time
         
         let date = NSDate(timeIntervalSince1970: Double(post.time) as! TimeInterval)
@@ -33,8 +33,10 @@ class EventTableViewCell: UITableViewCell {
         
         ref.child("users").child(post.creator).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
             let value = snapshot.value as? NSDictionary
-            self.user?.text = value?["username"] as? String ?? ""
+            self.username = value?["username"] as? String ?? ""
+            self.user?.text = self.username! + "\n wants to play \n" + post.sport
         })
+        
     }
     
 }
