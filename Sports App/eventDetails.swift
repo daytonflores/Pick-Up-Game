@@ -85,7 +85,21 @@ class eventDetails: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "eventToCreator") {
+            if let vc = segue.destination as? creatorProfile{
+                vc.uid = creator
+            }
+            
+        }
+    }
+    
+    @IBAction func eventDetailsUnwind(segue: UIStoryboardSegue)
+    {
+    }
+    
     @IBAction func _clickCreatedBy(_ sender: Any) {
+        self.performSegue(withIdentifier: "eventToCreator", sender: nil)
     }
     
     /*

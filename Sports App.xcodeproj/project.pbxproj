@@ -24,6 +24,7 @@
 		3C924FF8220F317F0070866F /* settingsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FF7220F317F0070866F /* settingsTab.swift */; };
 		3C924FFA220F31970070866F /* editProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FF9220F31970070866F /* editProfile.swift */; };
 		3C924FFE220F338B0070866F /* mainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C924FFD220F338B0070866F /* mainTabBarController.swift */; };
+		549C6CE6226FF1940035625F /* creatorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549C6CE5226FF1940035625F /* creatorProfile.swift */; };
 		DC1106142228AF0200D170FF /* Logo.JPEG in Resources */ = {isa = PBXBuildFile; fileRef = DC1106132228AF0200D170FF /* Logo.JPEG */; };
 		DCD08856226E7E0200EC1E04 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD08855226E7E0200EC1E04 /* Post.swift */; };
 		E7D2020910D03F8626548D41 /* Pods_Sports_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B6A11211C9F8B65D4983AF /* Pods_Sports_App.framework */; };
@@ -51,6 +52,7 @@
 		3C924FF7220F317F0070866F /* settingsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsTab.swift; sourceTree = "<group>"; };
 		3C924FF9220F31970070866F /* editProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfile.swift; sourceTree = "<group>"; };
 		3C924FFD220F338B0070866F /* mainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarController.swift; sourceTree = "<group>"; };
+		549C6CE5226FF1940035625F /* creatorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = creatorProfile.swift; sourceTree = "<group>"; };
 		C63DDE856B5977F2334DD732 /* Pods-Sports App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.debug.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.debug.xcconfig"; sourceTree = "<group>"; };
 		DC1106132228AF0200D170FF /* Logo.JPEG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Logo.JPEG; sourceTree = "<group>"; };
 		DCD08855226E7E0200EC1E04 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				3C7DE514220CE84A00F5941F /* AppDelegate.swift */,
 				3C7DE51A220CE84A00F5941F /* Main.storyboard */,
+				549C6CE5226FF1940035625F /* creatorProfile.swift */,
 				2F1EBC9C226664980043D388 /* EventTableViewCell.swift */,
 				2F1EBC9D226664980043D388 /* EventTableViewCell.xib */,
 				2FEB0DD52265C79000428CA5 /* EventModel.swift */,
@@ -279,6 +282,7 @@
 				3C924FE6220F2BBB0070866F /* createEvent.swift in Sources */,
 				3C924FE2220F100E0070866F /* createAccountPage.swift in Sources */,
 				2FEB0DD62265C79000428CA5 /* EventModel.swift in Sources */,
+				549C6CE6226FF1940035625F /* creatorProfile.swift in Sources */,
 				3C924FFE220F338B0070866F /* mainTabBarController.swift in Sources */,
 				3C924FF8220F317F0070866F /* settingsTab.swift in Sources */,
 				3C7DE515220CE84A00F5941F /* AppDelegate.swift in Sources */,
