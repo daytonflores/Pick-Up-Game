@@ -34,6 +34,7 @@ class homeTab: UIViewController {
     
     func loadPosts() {
         Database.database().reference().child("event").observe(.childAdded) { (snapshot: DataSnapshot) in
+
             if let dict = snapshot.value as? [String: Any] {
                 let locationText = dict["address"] as! String
                 let timeText = dict["datetime"] as! String
@@ -43,9 +44,15 @@ class homeTab: UIViewController {
                 let longitudeText = dict["longitude"] as! String
                 let descriptionText = dict["description"] as! String
                 let post = Post(locationText: locationText, timeText: timeText, sportText: sportText, creatorText: creatorText, latitudeText: latitudeText, longitudeText: longitudeText, descriptionText: descriptionText)
-                self.post.append(post)
-                print(self.post)
-                self.tableView.reloadData()
+                
+                let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
+                let dateString:String = String(format:"%f", dateDouble)
+                if post.time > dateString {
+                    self.post.append(post)
+                    self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
+                    print(self.post)
+                    self.tableView.reloadData()
+                }
             }
         }
         

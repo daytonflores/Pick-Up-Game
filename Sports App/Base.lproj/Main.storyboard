@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Yl-Wk-PPi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Yl-Wk-PPi">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -242,7 +242,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ifJ-Yv-gpd"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="cwS-j7-a22"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="first" id="cwS-j7-a22"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="_ProfilePic" destination="7vS-Ye-BNZ" id="dNt-go-GfY"/>
@@ -283,16 +283,6 @@
                                     <navigationItem title="Settings" id="qjd-4N-5Ce"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6x-Jb-J5L">
-                                <rect key="frame" x="16" y="733" width="382" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="IHD-JG-8ms"/>
-                                </constraints>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="_logoutButton:" destination="9KI-N4-ET5" eventType="touchUpInside" id="doz-wy-8kG"/>
-                                </connections>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKS-A5-WOO">
                                 <rect key="frame" x="349" y="140" width="51" height="31"/>
                                 <connections>
@@ -407,6 +397,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6x-Jb-J5L">
+                                <rect key="frame" x="16" y="733" width="382" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="IHD-JG-8ms"/>
+                                </constraints>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="_logoutButton:" destination="9KI-N4-ET5" eventType="touchUpInside" id="doz-wy-8kG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -467,7 +467,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i8V-bG-3V9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="4n9-vb-RYM"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="first" id="4n9-vb-RYM"/>
                     <navigationItem key="navigationItem" id="oNR-iu-Ego"/>
                     <connections>
                         <outlet property="_baseballSwitch" destination="NKS-A5-WOO" id="cZx-DH-taC"/>
@@ -1319,7 +1319,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RBv-Xb-wa2"/>
         <segue reference="LkN-xU-BI1"/>
     </inferredMetricsTieBreakers>
 </document>
