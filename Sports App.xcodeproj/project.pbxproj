@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03063A872213B48D008BFD7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03063A862213B48D008BFD7C /* GoogleService-Info.plist */; };
+		1769A53D22728632000BFE8E /* PasswordRecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1769A53C22728632000BFE8E /* PasswordRecoverViewController.swift */; };
 		2F1EBC9E226664980043D388 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1EBC9C226664980043D388 /* EventTableViewCell.swift */; };
 		2F1EBC9F226664980043D388 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1EBC9D226664980043D388 /* EventTableViewCell.xib */; };
 		2FEB0DD62265C79000428CA5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0DD52265C79000428CA5 /* EventModel.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		03063A862213B48D008BFD7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0E15E669458D914DC5284D9A /* Pods-Sports App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.release.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.release.xcconfig"; sourceTree = "<group>"; };
+		1769A53C22728632000BFE8E /* PasswordRecoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoverViewController.swift; sourceTree = "<group>"; };
 		2F1EBC9C226664980043D388 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		2F1EBC9D226664980043D388 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		2FEB0DD52265C79000428CA5 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				3C7DE514220CE84A00F5941F /* AppDelegate.swift */,
 				3C7DE51A220CE84A00F5941F /* Main.storyboard */,
+				1769A53C22728632000BFE8E /* PasswordRecoverViewController.swift */,
 				549C6CE5226FF1940035625F /* creatorProfile.swift */,
 				2F1EBC9C226664980043D388 /* EventTableViewCell.swift */,
 				2F1EBC9D226664980043D388 /* EventTableViewCell.xib */,
@@ -283,6 +286,7 @@
 				3C924FE2220F100E0070866F /* createAccountPage.swift in Sources */,
 				2FEB0DD62265C79000428CA5 /* EventModel.swift in Sources */,
 				549C6CE6226FF1940035625F /* creatorProfile.swift in Sources */,
+				1769A53D22728632000BFE8E /* PasswordRecoverViewController.swift in Sources */,
 				3C924FFE220F338B0070866F /* mainTabBarController.swift in Sources */,
 				3C924FF8220F317F0070866F /* settingsTab.swift in Sources */,
 				3C7DE515220CE84A00F5941F /* AppDelegate.swift in Sources */,

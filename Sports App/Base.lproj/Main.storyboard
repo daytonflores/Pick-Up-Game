@@ -578,19 +578,22 @@
             </objects>
             <point key="canvasLocation" x="-3472.4637681159425" y="-849.77678571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Password Recover View Controller-->
         <scene sceneID="Os3-Fb-AQE">
             <objects>
-                <viewController id="8mv-hX-wwl" sceneMemberID="viewController">
+                <viewController id="8mv-hX-wwl" customClass="PasswordRecoverViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tFU-mf-RUo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="19" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nZ7-JM-kcB">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZ7-JM-kcB">
                                 <rect key="frame" x="32" y="302" width="351" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <connections>
+                                    <action selector="UserEmail:" destination="PrY-SC-a8K" eventType="editingDidEnd" id="gw3-RX-qzg"/>
+                                </connections>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-4C-9xv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -608,6 +611,10 @@
                                 <rect key="frame" x="144" y="351" width="126" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Recover Password"/>
+                                <connections>
+                                    <action selector="RecoverButtonTapped:" destination="8mv-hX-wwl" eventType="touchUpInside" id="Ae0-Y5-M00"/>
+                                    <action selector="recoverButtonTapped:" destination="8mv-hX-wwl" eventType="touchUpInside" id="YEI-cy-jug"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -626,6 +633,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5kY-XR-XAi"/>
                     </view>
+                    <connections>
+                        <outlet property="UserEmail" destination="nZ7-JM-kcB" id="zHl-Zs-dgl"/>
+                        <outlet property="UserEmailTextField" destination="nZ7-JM-kcB" id="krm-K6-fgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mz4-g9-5Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="PrY-SC-a8K" userLabel="Exit" sceneMemberID="exit"/>
@@ -1382,6 +1393,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zgj-Ms-F5O"/>
+        <segue reference="TGQ-fy-CcE"/>
     </inferredMetricsTieBreakers>
 </document>
