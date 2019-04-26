@@ -15,10 +15,15 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var user: UILabel!
     //@IBOutlet weak var sport: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet var _ProfilePic: UIImageView!
     
     var username: String?
+    var readRef: DatabaseReference!
+    var photoext: String?
+    var photourl: String?
     
     let ref = Database.database().reference()
+    let storageRef = Storage.storage().reference()
     
     func setCell(post: Post) {
         location?.text = post.location
@@ -27,9 +32,52 @@ class EventTableViewCell: UITableViewCell {
         
         let date = NSDate(timeIntervalSince1970: Double(post.time) as! TimeInterval)
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy hh:mm a" //yyyy
+        formatter.dateFormat = "MM/dd/yyyy\n hh:mm a" 
         let datestring = formatter.string(from: date as Date)
         time.text = datestring
+        
+        readRef = Database.database().reference().child("users").child(post.creator)
+        
+        photoext = String(post.creator + ".jpeg")
+        
+        readRef.child("photo").observe(.value){
+            (snapshot) in
+            self.photourl = snapshot.value as? String
+            if(self.photourl == "https://firebasestorage.googleapis.com/v0/b/tryone-de29a.appspot.com/o/Anonymous.jpg?alt=media&token=4ed6f927-cfc7-4693-91dc-8774c36ce257"){
+                
+                let picRef = self.storageRef.child("Anonymous.jpg")
+                
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                picRef.getData(maxSize: 1 * 1024 * 1024 * 5) { data, error in
+                    if error != nil {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        // Data for "images/island.jpg" is returned
+                        let image = UIImage(data: data!)
+                        self._ProfilePic.image = image
+                    }
+                }
+                
+            }
+            else{
+                // Create a reference to the file you want to download
+                let picRef = self.storageRef.child(self.photoext!)
+                
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                picRef.getData(maxSize: 1 * 1024 * 1024 * 5) { data, error in
+                    if error != nil {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        // Data for "images/island.jpg" is returned
+                        let image = UIImage(data: data!)
+                        self._ProfilePic.image = image
+                    }
+                }
+            }
+            
+            // Load the image using SDWebImage
+            
+        }
         
         ref.child("users").child(post.creator).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
             let value = snapshot.value as? NSDictionary
