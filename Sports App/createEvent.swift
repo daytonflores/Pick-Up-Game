@@ -37,6 +37,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         _sportTable.isHidden = true
 
         // Do any additional setup after loading the view.
@@ -225,6 +226,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
         }
         
     }
+
     
 }
 
@@ -242,4 +244,3 @@ extension createEvent: UITableViewDelegate, UITableViewDataSource {
         animate(togle: false)
     }
 }
-
