@@ -217,7 +217,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
                     let state1 = placemark.administrativeArea ?? ""
                     let country = placemark.country ?? ""
                     
-                    self.address = "\(streetNumber) \(streetName), \(city1), \(state1), \(country)"
+                    self.address = "\(streetNumber) \(streetName),\n \(city1), \(state1),\n \(country)"
 
                 }
                 
