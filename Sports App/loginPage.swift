@@ -14,9 +14,6 @@ class loginPage: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var _Email: UITextField!
     @IBOutlet weak var _Password: UITextField!
     
-    @IBOutlet weak var ForgotPassword: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self._Email.delegate = self
