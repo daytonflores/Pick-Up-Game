@@ -24,6 +24,9 @@ class homeTab: UIViewController {
     var selectedsport: String?
     var aboutevent: String?
     var address: String?
+    var readRef: DatabaseReference!
+    
+    let uid = String((Auth.auth().currentUser!).uid)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +50,14 @@ class homeTab: UIViewController {
                 
                 let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
                 let dateString:String = String(format:"%f", dateDouble)
-                if post.time > dateString {
+                self.readRef = Database.database().reference().child("users").child(self.uid).child("filters")
+                if (post.time > dateString) && (true) {
                     self.post.append(post)
                     self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
-                    print(self.post)
+                    //print(self.post)
                     self.tableView.reloadData()
                 }
+
             }
         }
         

@@ -16,6 +16,7 @@ class EventTableViewCell: UITableViewCell {
     //@IBOutlet weak var sport: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet var _ProfilePic: UIImageView!
+    @IBOutlet weak var _Sport: UILabel!
     
     var username: String?
     var readRef: DatabaseReference!
@@ -82,7 +83,8 @@ class EventTableViewCell: UITableViewCell {
         ref.child("users").child(post.creator).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
             let value = snapshot.value as? NSDictionary
             self.username = value?["username"] as? String ?? ""
-            self.user?.text = self.username! + "\n wants to play \n" + post.sport
+            self.user?.text = self.username! + " wants to play"
+            self._Sport?.text = post.sport
         })
         
     }

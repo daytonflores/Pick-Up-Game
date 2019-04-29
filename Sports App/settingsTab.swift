@@ -34,7 +34,7 @@ class settingsTab: UIViewController {
         readRef = Database.database().reference().child("users").child(uid).child("filters")
         // Do any additional setup after loading the view.
         
-        readRef.child("baseball").observeSingleEvent(of: .value){
+        readRef.child("Baseball").observeSingleEvent(of: .value){
             (snapshot) in
             self.baseball = snapshot.value as? String
             if(self.baseball == "on"){
@@ -45,7 +45,7 @@ class settingsTab: UIViewController {
             }
         }
         
-        readRef.child("basketball").observeSingleEvent(of: .value){
+        readRef.child("Basketball").observeSingleEvent(of: .value){
             (snapshot) in
             self.basketball = snapshot.value as? String
             if(self.basketball == "on"){
@@ -56,7 +56,7 @@ class settingsTab: UIViewController {
             }
         }
         
-        readRef.child("football").observeSingleEvent(of: .value){
+        readRef.child("Football").observeSingleEvent(of: .value){
             (snapshot) in
             self.football = snapshot.value as? String
             if(self.football == "on"){
@@ -67,7 +67,7 @@ class settingsTab: UIViewController {
             }
         }
         
-        readRef.child("hockey").observeSingleEvent(of: .value){
+        readRef.child("Hockey").observeSingleEvent(of: .value){
             (snapshot) in
             self.hockey = snapshot.value as? String
             if(self.hockey == "on"){
@@ -78,7 +78,7 @@ class settingsTab: UIViewController {
             }
         }
         
-        readRef.child("soccer").observeSingleEvent(of: .value){
+        readRef.child("Soccer").observeSingleEvent(of: .value){
             (snapshot) in
             self.soccer = snapshot.value as? String
             if(self.soccer == "on"){
@@ -89,7 +89,7 @@ class settingsTab: UIViewController {
             }
         }
         
-        readRef.child("tennis").observeSingleEvent(of: .value){
+        readRef.child("Tennis").observeSingleEvent(of: .value){
             (snapshot) in
             self.tennis = snapshot.value as? String
             if(self.tennis == "on"){
@@ -100,7 +100,7 @@ class settingsTab: UIViewController {
             }
         }
         
-        readRef.child("volleyball").observeSingleEvent(of: .value){
+        readRef.child("Volleyball").observeSingleEvent(of: .value){
             (snapshot) in
             self.volleyball = snapshot.value as? String
             if(self.volleyball == "on"){
@@ -130,65 +130,65 @@ class settingsTab: UIViewController {
 
     @IBAction func baseballSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("baseball").setValue("on")
+            self.readRef.child("Baseball").setValue("on")
         }
         else{
-            self.readRef.child("baseball").setValue("off")
+            self.readRef.child("Baseball").setValue("off")
         }
     }
     
     
     @IBAction func basketballSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("basketball").setValue("on")
+            self.readRef.child("Basketball").setValue("on")
         }
         else{
-            self.readRef.child("basketball").setValue("off")
+            self.readRef.child("Basketball").setValue("off")
         }
     }
     
     @IBAction func footballSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("football").setValue("on")
+            self.readRef.child("Football").setValue("on")
         }
         else{
-            self.readRef.child("football").setValue("off")
+            self.readRef.child("Football").setValue("off")
         }
     }
     
     @IBAction func hockeySwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("hockey").setValue("on")
+            self.readRef.child("Hockey").setValue("on")
         }
         else{
-            self.readRef.child("hockey").setValue("off")
+            self.readRef.child("Hockey").setValue("off")
         }
     }
     
     @IBAction func soccerSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("soccer").setValue("on")
+            self.readRef.child("Soccer").setValue("on")
         }
         else{
-            self.readRef.child("soccer").setValue("off")
+            self.readRef.child("Soccer").setValue("off")
         }
     }
     
     @IBAction func tennisSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("tennis").setValue("on")
+            self.readRef.child("Tennis").setValue("on")
         }
         else{
-            self.readRef.child("tennis").setValue("off")
+            self.readRef.child("Tennis").setValue("off")
         }
     }
     
     @IBAction func volleyballSwitch(_ sender: UISwitch) {
         if (sender.isOn == true) {
-            self.readRef.child("volleyball").setValue("on")
+            self.readRef.child("Volleyball").setValue("on")
         }
         else{
-            self.readRef.child("volleyball").setValue("off")
+            self.readRef.child("Volleyball").setValue("off")
         }
     }
     
