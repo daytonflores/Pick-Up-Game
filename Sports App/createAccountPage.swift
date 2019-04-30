@@ -88,7 +88,13 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                     self.ref.child("users").child(uid).child("filters").child("Soccer").setValue("off")
                     self.ref.child("users").child(uid).child("filters").child("Tennis").setValue("off")
                     self.ref.child("users").child(uid).child("filters").child("Volleyball").setValue("off")
-                    self.performSegue(withIdentifier: "gotoHomeTab", sender: nil)
+                    let alertController = UIAlertController(title: "Check Your Email", message: "A verification link has been sent to your email.", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: { (alert) -> Void in
+                        self.performSegue(withIdentifier: "createToLogin", sender: nil)
+                    })
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
                     }
                 }
                 else{

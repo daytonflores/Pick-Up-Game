@@ -24,8 +24,10 @@ class loginPage: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "loginToHome", sender: nil)
+        if let autologinuser = Auth.auth().currentUser {
+            if autologinuser.isEmailVerified {
+                self.performSegue(withIdentifier: "loginToHome", sender: nil)
+            }
         }
     }
     
@@ -68,7 +70,21 @@ class loginPage: UIViewController, UITextFieldDelegate {
     @IBAction func loginAccount(_ sender: Any) {
         Auth.auth().signIn(withEmail: _Email.text!, password: _Password.text!) { (user, error) in
             if error == nil{
-                self.performSegue(withIdentifier: "loginToHome", sender: self)
+                if let user = Auth.auth().currentUser {
+                    if !user.isEmailVerified{
+                        let alertVC = UIAlertController(title: "Error", message: "Sorry. Your email address has not yet been verified. Do you want us to send another verification email to \(String(describing: self._Email.text!))?", preferredStyle: .alert)
+                        let alertActionOkay = UIAlertAction(title: "Okay", style: .default) {
+                            (_) in
+                            user.sendEmailVerification(completion: nil)
+                        }
+                        let alertActionCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                        
+                        alertVC.addAction(alertActionOkay)
+                        alertVC.addAction(alertActionCancel)
+                        self.present(alertVC, animated: true, completion: nil)
+                    } else {
+                         self.performSegue(withIdentifier: "loginToHome", sender: self)
+                    }
             }
             else{
                 let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -79,4 +95,5 @@ class loginPage: UIViewController, UITextFieldDelegate {
             }
         }
     }
+}
 }
