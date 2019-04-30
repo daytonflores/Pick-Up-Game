@@ -36,7 +36,12 @@ class profileTab: UIViewController {
         
         // get user data from database
 //        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in    // only updates on first load
-       
+        _UserName.layer.borderWidth = 0.5
+        _UserName.layer.borderColor = UIColor.black.cgColor
+        _UserSport.layer.borderWidth = 0.5
+        _UserSport.layer.borderColor = UIColor.black.cgColor
+        _UserDescription.layer.borderWidth = 0.5
+        _UserDescription.layer.borderColor = UIColor.black.cgColor
         readRef = Database.database().reference().child("users").child(uid)
         
         photoext = String(uid + ".jpeg")
@@ -55,6 +60,8 @@ class profileTab: UIViewController {
                     } else {
                         // Data for "images/island.jpg" is returned
                         let image = UIImage(data: data!)
+                        self._ProfilePic.layer.borderWidth = 0.5
+                        self._ProfilePic.layer.borderColor = UIColor.black.cgColor
                         self._ProfilePic.image = image
                     }
                 }

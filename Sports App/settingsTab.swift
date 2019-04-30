@@ -27,10 +27,42 @@ class settingsTab: UIViewController {
     @IBOutlet var _tennisSwitch: UISwitch!
     @IBOutlet var _volleyballSwitch: UISwitch!
     
+    @IBOutlet weak var baseballL: UILabel!
+    @IBOutlet weak var basketballL: UILabel!
+    @IBOutlet weak var footballL: UILabel!
+    @IBOutlet weak var hockeyL: UILabel!
+    @IBOutlet weak var soccerL: UILabel!
+    @IBOutlet weak var tennisL: UILabel!
+    @IBOutlet weak var volleyballL: UILabel!
+    @IBOutlet weak var filterEventFeedL: UILabel!
+    @IBOutlet weak var editProfileButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.baseballL.layer.borderWidth = 0.5
+        self.baseballL.layer.borderColor = UIColor.black.cgColor
+        self.basketballL.layer.borderWidth = 0.5
+        self.basketballL.layer.borderColor = UIColor.black.cgColor
+        self.footballL.layer.borderWidth = 0.5
+        self.footballL.layer.borderColor = UIColor.black.cgColor
+        self.hockeyL.layer.borderWidth = 0.5
+        self.hockeyL.layer.borderColor = UIColor.black.cgColor
+        self.soccerL.layer.borderWidth = 0.5
+        self.soccerL.layer.borderColor = UIColor.black.cgColor
+        self.tennisL.layer.borderWidth = 0.5
+        self.tennisL.layer.borderColor = UIColor.black.cgColor
+        self.volleyballL.layer.borderWidth = 0.5
+        self.volleyballL.layer.borderColor = UIColor.black.cgColor
+        self.filterEventFeedL.layer.borderWidth = 0.5
+        self.filterEventFeedL.layer.borderColor = UIColor.black.cgColor
+        self.editProfileButton.layer.borderWidth = 0.5
+        self.editProfileButton.layer.borderColor = UIColor.black.cgColor
+        self.logoutButton.layer.borderWidth = 0.5
+        self.logoutButton.layer.borderColor = UIColor.black.cgColor
+        
         readRef = Database.database().reference().child("users").child(uid).child("filters")
         // Do any additional setup after loading the view.
         

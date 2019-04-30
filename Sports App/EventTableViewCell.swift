@@ -11,9 +11,9 @@ import Firebase
 
 class EventTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var location: UILabel!
+    
+    @IBOutlet weak var location: UITextView!
     @IBOutlet weak var user: UILabel!
-    //@IBOutlet weak var sport: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet var _ProfilePic: UIImageView!
     @IBOutlet weak var _Sport: UILabel!
@@ -27,13 +27,17 @@ class EventTableViewCell: UITableViewCell {
     let storageRef = Storage.storage().reference()
     
     func setCell(post: Post) {
+        self.location?.layer.borderWidth = 0.5
+        self.location?.layer.borderColor = UIColor.black.cgColor
+        self.time?.layer.borderWidth = 0.5
+        self.time?.layer.borderColor = UIColor.black.cgColor
         location?.text = post.location
         //sport?.text = post.sport
         time?.text = post.time
         
         let date = NSDate(timeIntervalSince1970: Double(post.time) as! TimeInterval)
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy\n hh:mm a" 
+        formatter.dateFormat = "MM/dd/yy\nE h:mm a" 
         let datestring = formatter.string(from: date as Date)
         time.text = datestring
         
@@ -82,6 +86,10 @@ class EventTableViewCell: UITableViewCell {
         
         ref.child("users").child(post.creator).observe(DataEventType.value, with: { (snapshot) in        // updates if database entry changes
             let value = snapshot.value as? NSDictionary
+            self.user?.layer.borderWidth = 0.5
+            self.user?.layer.borderColor = UIColor.black.cgColor
+            self._Sport?.layer.borderWidth = 0.5
+            self._Sport?.layer.borderColor = UIColor.black.cgColor
             self.username = value?["username"] as? String ?? ""
             self.user?.text = self.username! + " wants to play"
             self._Sport?.text = post.sport

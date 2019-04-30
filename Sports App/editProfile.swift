@@ -18,6 +18,7 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
     @IBOutlet weak var _AboutMe: UITextView!
     @IBOutlet weak var _selectSport: UIButton!
     @IBOutlet weak var _sportTable: UITableView!
+    @IBOutlet weak var _ChangePhoto: UIButton!
     
     var username: String?
     var aboutme: String?
@@ -39,6 +40,17 @@ class editProfile: UIViewController, UITextFieldDelegate, UITextViewDelegate, UI
         self._Username.delegate = self
         self._AboutMe.delegate = self
         _sportTable.isHidden = true
+        
+        self._ProfilePic.layer.borderWidth = 0.5
+        self._ProfilePic.layer.borderColor = UIColor.black.cgColor
+        self._ChangePhoto.layer.borderWidth = 0.5
+        self._ChangePhoto.layer.borderColor = UIColor.black.cgColor
+        self._Username.layer.borderWidth = 0.5
+        self._Username.layer.borderColor = UIColor.black.cgColor
+        self._sportTable.layer.borderWidth = 0.5
+        self._sportTable.layer.borderColor = UIColor.black.cgColor
+        self._AboutMe.layer.borderWidth = 0.5
+        self._AboutMe.layer.borderColor = UIColor.black.cgColor
         
         readRef = Database.database().reference().child("users").child(uid)
         

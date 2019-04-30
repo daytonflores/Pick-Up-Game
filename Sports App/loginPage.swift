@@ -19,6 +19,10 @@ class loginPage: UIViewController, UITextFieldDelegate {
         self._Email.delegate = self
         self._Password.delegate = self
         // Do any additional setup after loading the view.
+        self._Email.layer.borderWidth = 0.5
+        self._Email.layer.borderColor = UIColor.black.cgColor
+        self._Password.layer.borderWidth = 0.5
+        self._Password.layer.borderColor = UIColor.black.cgColor
     }
     
     

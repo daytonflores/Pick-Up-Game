@@ -19,30 +19,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.JPEG" translatesAutoresizingMaskIntoConstraints="NO" id="rSe-g4-RfY">
-                                <rect key="frame" x="20" y="77" width="334" height="308"/>
+                                <rect key="frame" x="10" y="156" width="354" height="354"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="rSe-g4-RfY" secondAttribute="height" multiplier="167:154" id="W3b-Q1-BIO"/>
+                                    <constraint firstAttribute="height" constant="354" id="91Q-IQ-x0h"/>
+                                    <constraint firstAttribute="width" secondItem="rSe-g4-RfY" secondAttribute="height" multiplier="1:1" id="nn6-nw-Sm3"/>
+                                    <constraint firstAttribute="width" constant="354" id="pWA-XS-paI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Play!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h76-hO-gkY">
-                                <rect key="frame" x="124" y="393" width="127" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="h76-hO-gkY" secondAttribute="height" multiplier="127:42" id="K0A-dx-vWF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="h76-hO-gkY" firstAttribute="top" secondItem="rSe-g4-RfY" secondAttribute="bottom" constant="8" id="3vJ-Aq-hke"/>
-                            <constraint firstItem="rSe-g4-RfY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="57" id="BwO-O7-0K7"/>
-                            <constraint firstItem="rSe-g4-RfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="E4a-EE-iBp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h76-hO-gkY" secondAttribute="trailing" constant="124" id="N6V-Sf-Uai"/>
-                            <constraint firstItem="h76-hO-gkY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="fLz-d0-MiA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h76-hO-gkY" secondAttribute="bottom" constant="232" id="sKG-qz-YTq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rSe-g4-RfY" secondAttribute="trailing" constant="21" id="tah-Jw-taU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rSe-g4-RfY" secondAttribute="trailing" constant="11" id="OLZ-w6-IG8"/>
+                            <constraint firstItem="rSe-g4-RfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="f5O-QB-l9b"/>
+                            <constraint firstItem="rSe-g4-RfY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="136" id="yAh-Ux-biV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

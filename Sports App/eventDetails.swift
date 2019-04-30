@@ -18,6 +18,7 @@ class eventDetails: UIViewController {
     @IBOutlet var _dateLabel: UILabel!
     @IBOutlet var _aboutEvent: UITextView!
     @IBOutlet var _creator: UIButton!
+    @IBOutlet weak var _createdBy: UILabel!
     
     let ref = Database.database().reference()
     
@@ -34,11 +35,22 @@ class eventDetails: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self._eventSport.layer.borderWidth = 0.5
+        self._eventSport.layer.borderColor = UIColor.black.cgColor
+        self._dateLabel.layer.borderWidth = 0.5
+        self._dateLabel.layer.borderColor = UIColor.black.cgColor
+        self._aboutEvent.layer.borderWidth = 0.5
+        self._aboutEvent.layer.borderColor = UIColor.black.cgColor
+        self._creator.layer.borderWidth = 0.5
+        self._creator.layer.borderColor = UIColor.black.cgColor
+        self._createdBy.layer.borderWidth = 0.5
+        self._createdBy.layer.borderColor = UIColor.black.cgColor
+        
         self._eventSport.text = selectedsport
         self._aboutEvent.text = aboutevent
         let date = NSDate(timeIntervalSince1970: Double(datetime!) as! TimeInterval)
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy hh:mm a" //yyyy
+        formatter.dateFormat = "MM/dd/yy\nE h:mm a" //yyyy
         let datestring = formatter.string(from: date as Date)
         self._dateLabel.text = datestring
         

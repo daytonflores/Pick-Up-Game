@@ -19,6 +19,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var _dateLabel: UILabel!
     @IBOutlet weak var _datePicker: UIDatePicker!
     @IBOutlet weak var _aboutEvent: UITextView!
+    @IBOutlet weak var _createButton: UIButton!
     
     var latitudevalue: String?
     var longitudevalue: String?
@@ -39,7 +40,16 @@ class createEvent: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         _sportTable.isHidden = true
-
+        _aboutEvent.layer.borderWidth = 0.5
+        _aboutEvent.layer.borderColor = UIColor.black.cgColor
+        _dateLabel.layer.borderWidth = 0.5
+        _dateLabel.layer.borderColor = UIColor.black.cgColor
+        _selectSport.layer.borderWidth = 0.5
+        _selectSport.layer.borderColor = UIColor.black.cgColor
+        _createButton.layer.borderWidth = 0.5
+        _createButton.layer.borderColor = UIColor.black.cgColor
+        _datePicker.layer.borderWidth = 0.5
+        _datePicker.layer.borderColor = UIColor.black.cgColor
         // Do any additional setup after loading the view.
     }
     

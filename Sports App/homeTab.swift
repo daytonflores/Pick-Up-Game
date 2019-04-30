@@ -24,6 +24,7 @@ class homeTab: UIViewController {
     var selectedsport: String?
     var aboutevent: String?
     var address: String?
+    var filtersport: String?
     var readRef: DatabaseReference!
     
     let uid = String((Auth.auth().currentUser!).uid)
@@ -50,14 +51,23 @@ class homeTab: UIViewController {
                 
                 let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
                 let dateString:String = String(format:"%f", dateDouble)
+                //self.filtersport = post.sport
                 self.readRef = Database.database().reference().child("users").child(self.uid).child("filters")
-                if (post.time > dateString) && (true) {
-                    self.post.append(post)
-                    self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
-                    //print(self.post)
-                    self.tableView.reloadData()
+                self.readRef.child(post.sport).observeSingleEvent(of: .value, with: { (snapshot) in
+                    // Get user value
+                    let value = snapshot.value as? String
+                    
+                    if value == "on"{
+                        if (post.time > dateString) {
+                            self.post.append(post)
+                            self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
+                            //print(self.post)
+                            self.tableView.reloadData()
+                        }
+                    }
+                }) { (error) in
+                    print(error.localizedDescription)
                 }
-
             }
         }
         
@@ -77,7 +87,32 @@ extension homeTab: UITableViewDataSource {
             as! EventTableViewCell
         let eventCell = post[indexPath.row]
         cell.setCell(post: eventCell)
+        let sportcolor = eventCell.sport
         
+        if sportcolor == "Basketball"{
+            cell.backgroundColor = UIColor.orange
+        }
+        else if sportcolor == "Football"{
+            cell.backgroundColor = UIColor.brown
+        }
+        else if sportcolor == "Tennis"{
+            cell.backgroundColor = UIColor.yellow
+        }
+        else if sportcolor == "Soccer"{
+            cell.backgroundColor = UIColor.green
+        }
+        else if sportcolor == "Volleyball"{
+            cell.backgroundColor = UIColor.purple
+        }
+        else if sportcolor == "Hockey"{
+            cell.backgroundColor = UIColor.red
+        }
+        else if sportcolor == "Baseball"{
+            cell.backgroundColor = UIColor.blue
+        }
+        else{
+            cell.backgroundColor = UIColor.white
+        }
         //cell.textLabel?.text = post[indexPath.row].location
         //cell.location.text = post[indexPath.row].location
         return cell
