@@ -73,6 +73,7 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
         else{
             Auth.auth().createUser(withEmail: _Email.text!, password: _Password.text!){ (user, error) in
                 if error == nil {
+                    Auth.auth().currentUser?.sendEmailVerification { (error) in
                     let uid = String((Auth.auth().currentUser!).uid)
                     self.ref = Database.database().reference()
                     self.ref.child("users").child(uid).setValue(["username": "Anonymous",
@@ -88,6 +89,7 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                     self.ref.child("users").child(uid).child("filters").child("tennis").setValue("off")
                     self.ref.child("users").child(uid).child("filters").child("volleyball").setValue("off")
                     self.performSegue(withIdentifier: "gotoHomeTab", sender: nil)
+                    }
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
