@@ -81,13 +81,13 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                                                                  "photo": "https://firebasestorage.googleapis.com/v0/b/tryone-de29a.appspot.com/o/Anonymous.jpg?alt=media&token=4ed6f927-cfc7-4693-91dc-8774c36ce257",
                                                                  "sports": "",
                                                                  "events": ""])
-                    self.ref.child("users").child(uid).child("filters").child("baseball").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("basketball").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("football").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("hockey").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("soccer").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("tennis").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("volleyball").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Baseball").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Basketball").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Football").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Hockey").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Soccer").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Tennis").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Volleyball").setValue("off")
                     self.performSegue(withIdentifier: "gotoHomeTab", sender: nil)
                     }
                 }
