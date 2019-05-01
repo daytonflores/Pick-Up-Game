@@ -34,13 +34,7 @@ class creatorProfile: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self._UserName.layer.borderWidth = 0.5
-        self._UserName.layer.borderColor = UIColor.black.cgColor
-        self._UserSport.layer.borderWidth = 0.5
-        self._UserSport.layer.borderColor = UIColor.black.cgColor
-        self._UserDescription.layer.borderWidth = 0.5
-        self._UserDescription.layer.borderColor = UIColor.black.cgColor
+
         // get user data from database
         //        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in    // only updates on first load
         
