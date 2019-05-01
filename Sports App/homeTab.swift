@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 
 
-class homeTab: UIViewController {
+class homeTab: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var locationCell: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -25,6 +25,7 @@ class homeTab: UIViewController {
     var aboutevent: String?
     var address: String?
     var filtersport: String?
+    var searchedCity: String?
     var readRef: DatabaseReference!
     
     let uid = String((Auth.auth().currentUser!).uid)
@@ -47,7 +48,8 @@ class homeTab: UIViewController {
                 let latitudeText = dict["latitude"] as! String
                 let longitudeText = dict["longitude"] as! String
                 let descriptionText = dict["description"] as! String
-                let post = Post(locationText: locationText, timeText: timeText, sportText: sportText, creatorText: creatorText, latitudeText: latitudeText, longitudeText: longitudeText, descriptionText: descriptionText)
+                let cityText = dict["city"] as! String
+                let post = Post(locationText: locationText, timeText: timeText, sportText: sportText, creatorText: creatorText, latitudeText: latitudeText, longitudeText: longitudeText, descriptionText: descriptionText, cityText: cityText)
                 
                 let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
                 let dateString:String = String(format:"%f", dateDouble)
@@ -58,20 +60,51 @@ class homeTab: UIViewController {
                     // Get user value
                     let value = snapshot.value as? String
                     
-                        if (post.time > dateString) && (value == "on") {
+                    if (post.time > dateString) && (value == "on") {//}&& (post.city == self.searchedCity) {
                             
                             self.post.append(post)
                             self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
+                        
                             //print(self.post)
                             
                         }
                         else if (value == "off"){
                             self.post.removeAll(where: {post.sport == $0.sport})
                         }
+                        else if (post.city != self.searchedCity){
+                           // self.post.removeAll(where: {post.city != $0.city})
+                    }
                     self.tableView.reloadData()
                 }
             }
         }
+        
+    }
+    
+    
+    @IBAction func searchButton(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //Ignore user
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        //Activity Indicator
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        
+        self.view.addSubview(activityIndicator)
+        
+        //Hide search bar
+        //searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        
         
     }
     
@@ -131,6 +164,8 @@ extension homeTab: UITableViewDelegate {
         aboutevent = post[indexPath.row].description
         datetime = post[indexPath.row].time
 
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         performSegue(withIdentifier: "homeTabToEventDetails", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

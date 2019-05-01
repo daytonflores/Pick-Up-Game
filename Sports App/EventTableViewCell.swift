@@ -37,7 +37,7 @@ class EventTableViewCell: UITableViewCell {
         
         let date = NSDate(timeIntervalSince1970: Double(post.time) as! TimeInterval)
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yy\nE h:mm a" 
+        formatter.dateFormat = "EEEE, MMMM dd\nh:mm a" 
         let datestring = formatter.string(from: date as Date)
         time.text = datestring
         

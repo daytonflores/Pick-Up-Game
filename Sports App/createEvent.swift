@@ -91,6 +91,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
                                                                    "datetime": self.datetime,
                                                                    "address": self.address,
                                                                    "timeplace": self.timeplace,
+                                                                   "city": self.city,
                                                                    "latitude": self.latitudevalue,
                                                                    "longitude": self.longitudevalue,
                                                                    "description": self.aboutevent])

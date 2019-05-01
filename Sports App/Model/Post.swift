@@ -15,8 +15,9 @@ class Post {
     var latitude: String
     var longitude: String
     var description: String
+    var city: String
     
-    init(locationText: String, timeText: String, sportText: String, creatorText: String, latitudeText: String, longitudeText: String, descriptionText: String) {
+    init(locationText: String, timeText: String, sportText: String, creatorText: String, latitudeText: String, longitudeText: String, descriptionText: String, cityText: String) {
         location = locationText
         time = timeText
         sport = sportText
@@ -24,6 +25,7 @@ class Post {
         latitude = latitudeText
         longitude = longitudeText
         description = descriptionText
+        city = cityText
     }
     
 }
