@@ -93,6 +93,51 @@ class EventTableViewCell: UITableViewCell {
             self.username = value?["username"] as? String ?? ""
             self.user?.text = self.username! + " wants to play"
             self._Sport?.text = post.sport
+            if post.sport == "Basketball"{
+                self.location?.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.2)
+            }
+            else if post.sport == "Football"{
+                self.location?.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 0.2)
+            }
+            else if post.sport == "Tennis"{
+                self.location?.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+            }
+            else if post.sport == "Soccer"{
+                self.location?.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.2)
+            }
+            else if post.sport == "Volleyball"{
+                self.location?.backgroundColor = UIColor(red: 8.0, green: 0.0, blue: 8.0, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 8.0, green: 0.0, blue: 8.0, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 8.0, green: 0.0, blue: 8.0, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 8.0, green: 0.0, blue: 8.0, alpha: 0.2)
+            }
+            else if post.sport == "Hockey"{
+                self.location?.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.2)
+            }
+            else if post.sport == "Baseball"{
+                self.location?.backgroundColor = UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.2)
+                self.time?.backgroundColor = UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.2)
+                self.user?.backgroundColor = UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.2)
+                self._Sport?.backgroundColor = UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.2)
+            }
+            else{
+                self.location?.backgroundColor = UIColor.white
+            }
         })
         
     }

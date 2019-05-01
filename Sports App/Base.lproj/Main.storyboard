@@ -59,7 +59,6 @@
                                                 </imageView>
                                                 <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIk-hL-rvq">
                                                     <rect key="frame" x="16" y="8" width="382" height="40"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="aRs-QB-hSb"/>
                                                     </constraints>
@@ -68,7 +67,6 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-FQ-i2j">
                                                     <rect key="frame" x="16" y="190.5" width="382" height="40"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="KKH-LO-YuA"/>
                                                     </constraints>
@@ -77,17 +75,15 @@
                                                 </label>
                                                 <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtE-8P-qDh">
                                                     <rect key="frame" x="144" y="56" width="254" height="40"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="zLv-lA-ki0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Location" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fn-YA-BdJ">
                                                     <rect key="frame" x="144" y="104" width="254" height="72"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="72" id="z3K-nW-zkF"/>
                                                     </constraints>
@@ -191,18 +187,18 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="YOV-D3-wRM"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axz-Vs-yh6">
-                                                <rect key="frame" x="170" y="570" width="74.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT ME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axz-Vs-yh6">
+                                                <rect key="frame" x="173.5" y="578" width="67.5" height="20.5"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20.5" id="BM1-Al-mlf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -217,11 +213,11 @@
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis convallis quam et imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque justo ipsum, hendrerit sed lobortis vitae, tempor tempus urna. Aenean luctus odio quis sapien gravida varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at dui et lectus iaculis sollicitudin vitae sit amet dui. Fusce et elementum purus. Aliquam non euismod risus.
 
 </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCt-VF-GPw">
-                                                <rect key="frame" x="146" y="463" width="122" height="21"/>
+                                                <rect key="frame" x="149" y="471" width="116.5" height="21"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
@@ -229,9 +225,10 @@
                                                     <constraint firstAttribute="height" constant="21" id="eoI-MW-qaD"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="I'm interested in">
+                                                    <fragment content="I'M INTERESTED IN">
                                                         <attributes>
-                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                            <font key="NSFont" size="13" name=".SFNSText"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -260,19 +257,19 @@
                                             <constraint firstItem="axz-Vs-yh6" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="BaX-KD-Uxx"/>
                                             <constraint firstItem="0PJ-Tu-DZW" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="16" id="CFQ-da-2aM"/>
                                             <constraint firstItem="xeq-Pv-Jxx" firstAttribute="top" secondItem="c5g-6a-e4s" secondAttribute="top" id="FIL-q8-FcL"/>
-                                            <constraint firstItem="wkZ-dO-3Fv" firstAttribute="top" secondItem="ZCt-VF-GPw" secondAttribute="bottom" constant="8" id="Hbo-F0-8Yd"/>
+                                            <constraint firstItem="wkZ-dO-3Fv" firstAttribute="top" secondItem="ZCt-VF-GPw" secondAttribute="bottom" id="Hbo-F0-8Yd"/>
                                             <constraint firstItem="vYs-P5-4Az" firstAttribute="top" secondItem="7vS-Ye-BNZ" secondAttribute="bottom" constant="24" id="OsD-2L-S8I"/>
                                             <constraint firstAttribute="trailing" secondItem="wkZ-dO-3Fv" secondAttribute="trailing" constant="16" id="R23-Z7-6Hi"/>
                                             <constraint firstAttribute="trailing" secondItem="0PJ-Tu-DZW" secondAttribute="trailing" constant="16" id="Wl8-Jp-Pza"/>
-                                            <constraint firstItem="ZCt-VF-GPw" firstAttribute="top" secondItem="vYs-P5-4Az" secondAttribute="bottom" constant="49" id="dQr-dd-st4"/>
+                                            <constraint firstItem="ZCt-VF-GPw" firstAttribute="top" secondItem="vYs-P5-4Az" secondAttribute="bottom" constant="57" id="dQr-dd-st4"/>
                                             <constraint firstItem="wkZ-dO-3Fv" firstAttribute="leading" secondItem="c5g-6a-e4s" secondAttribute="leading" constant="16" id="i7N-fT-DPc"/>
                                             <constraint firstItem="ZCt-VF-GPw" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="iaG-61-un3"/>
-                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="top" secondItem="axz-Vs-yh6" secondAttribute="bottom" constant="8" id="jFN-Pw-Thw"/>
+                                            <constraint firstItem="0PJ-Tu-DZW" firstAttribute="top" secondItem="axz-Vs-yh6" secondAttribute="bottom" id="jFN-Pw-Thw"/>
                                             <constraint firstItem="vYs-P5-4Az" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="mAZ-7p-7jG"/>
                                             <constraint firstItem="0PJ-Tu-DZW" firstAttribute="centerX" secondItem="c5g-6a-e4s" secondAttribute="centerX" id="nyx-dt-iEx"/>
                                             <constraint firstAttribute="height" constant="1000" id="raJ-5N-dXY"/>
                                             <constraint firstItem="7vS-Ye-BNZ" firstAttribute="top" secondItem="xeq-Pv-Jxx" secondAttribute="bottom" constant="8" id="wa0-ZJ-gxW"/>
-                                            <constraint firstItem="axz-Vs-yh6" firstAttribute="top" secondItem="wkZ-dO-3Fv" secondAttribute="bottom" constant="33" id="wbc-yD-zT4"/>
+                                            <constraint firstItem="axz-Vs-yh6" firstAttribute="top" secondItem="wkZ-dO-3Fv" secondAttribute="bottom" constant="41" id="wbc-yD-zT4"/>
                                             <constraint firstAttribute="trailing" secondItem="xeq-Pv-Jxx" secondAttribute="trailing" id="yrJ-mH-H3u"/>
                                         </constraints>
                                     </view>
@@ -1086,29 +1083,29 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="230" id="xJN-t9-saf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-bc-6vs">
-                                                <rect key="frame" x="16" y="382" width="89.5" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATED BY:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZO-bc-6vs">
+                                                <rect key="frame" x="16" y="382" width="87" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Vq6-xG-bvV"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About the Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-oF-gE8">
-                                                <rect key="frame" x="16" y="472" width="382" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT THE EVENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-oF-gE8">
+                                                <rect key="frame" x="16" y="480" width="382" height="19.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19.5" id="viq-pa-KzL"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2w-4h-wYw">
-                                                <rect key="frame" x="113.5" y="382" width="284.5" height="50"/>
+                                                <rect key="frame" x="111" y="382" width="287" height="50"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="9qd-tH-ZsH"/>
@@ -1135,9 +1132,8 @@
                                             <constraint firstItem="Pm8-oF-gE8" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="XPq-Z6-Kva"/>
                                             <constraint firstAttribute="trailing" secondItem="Pm8-oF-gE8" secondAttribute="trailing" constant="16" id="aIE-9R-f5y"/>
                                             <constraint firstAttribute="trailing" secondItem="Oxx-NC-wNZ" secondAttribute="trailing" constant="16" id="cNS-Yb-jn5"/>
-                                            <constraint firstItem="DZJ-HH-sPN" firstAttribute="top" secondItem="Pm8-oF-gE8" secondAttribute="bottom" constant="8" id="dWQ-1P-fHj"/>
-                                            <constraint firstItem="DZJ-HH-sPN" firstAttribute="top" secondItem="Pm8-oF-gE8" secondAttribute="bottom" constant="8" id="kO0-ev-8Dq"/>
-                                            <constraint firstItem="Pm8-oF-gE8" firstAttribute="top" secondItem="k2w-4h-wYw" secondAttribute="bottom" constant="40" id="nio-28-2v0"/>
+                                            <constraint firstItem="DZJ-HH-sPN" firstAttribute="top" secondItem="Pm8-oF-gE8" secondAttribute="bottom" id="kO0-ev-8Dq"/>
+                                            <constraint firstItem="Pm8-oF-gE8" firstAttribute="top" secondItem="k2w-4h-wYw" secondAttribute="bottom" constant="48" id="nio-28-2v0"/>
                                             <constraint firstAttribute="trailing" secondItem="DZJ-HH-sPN" secondAttribute="trailing" constant="16" id="pS6-fO-7sG"/>
                                             <constraint firstAttribute="trailing" secondItem="k2w-4h-wYw" secondAttribute="trailing" constant="16" id="qqa-IX-RiY"/>
                                             <constraint firstItem="k2w-4h-wYw" firstAttribute="top" secondItem="2n9-46-abs" secondAttribute="bottom" constant="8" id="rmZ-zI-60f"/>
@@ -1215,7 +1211,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1U-ND-Rpn">
-                                                <rect key="frame" x="20" y="564.5" width="374" height="125"/>
+                                                <rect key="frame" x="20" y="557" width="374" height="125"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
@@ -1225,20 +1221,20 @@
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis convallis quam et imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque justo ipsum, hendrerit sed lobortis vitae, tempor tempus urna. Aenean luctus odio quis sapien gravida varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at dui et lectus iaculis sollicitudin vitae sit amet dui. Fusce et elementum purus. Aliquam non euismod risus.
 
 </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-zV-MVf">
-                                                <rect key="frame" x="170" y="538" width="74.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT ME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-zV-MVf">
+                                                <rect key="frame" x="173.5" y="541" width="67.5" height="16"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Sport" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xu-lR-5Xu">
-                                                <rect key="frame" x="16" y="448" width="382" height="45"/>
+                                                <rect key="frame" x="16" y="443" width="382" height="45"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                     <bool key="isElement" value="YES"/>
@@ -1249,27 +1245,27 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm interested in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jid-1Z-O3S">
-                                                <rect key="frame" x="146" y="419" width="122" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'M INTERESTED IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jid-1Z-O3S">
+                                                <rect key="frame" x="149" y="427" width="116.5" height="16"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                 </accessibility>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.76086923279999996" green="0.76350886029999998" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="jid-1Z-O3S" firstAttribute="top" secondItem="cYw-f7-GgW" secondAttribute="top" constant="419" id="9lx-TX-qiG"/>
-                                            <constraint firstItem="p1U-ND-Rpn" firstAttribute="top" secondItem="Pb4-zV-MVf" secondAttribute="bottom" constant="6" id="DuS-Gj-vaT"/>
+                                            <constraint firstItem="jid-1Z-O3S" firstAttribute="top" secondItem="cYw-f7-GgW" secondAttribute="top" constant="427" id="9lx-TX-qiG"/>
+                                            <constraint firstItem="p1U-ND-Rpn" firstAttribute="top" secondItem="Pb4-zV-MVf" secondAttribute="bottom" id="DuS-Gj-vaT"/>
                                             <constraint firstAttribute="trailing" secondItem="p1U-ND-Rpn" secondAttribute="trailing" constant="20" id="Pku-Sa-gL8"/>
                                             <constraint firstAttribute="height" constant="1000" id="fKA-nJ-zM4"/>
                                             <constraint firstItem="7xu-lR-5Xu" firstAttribute="leading" secondItem="cYw-f7-GgW" secondAttribute="leading" constant="16" id="jhA-yd-Zka"/>
-                                            <constraint firstItem="7xu-lR-5Xu" firstAttribute="top" secondItem="jid-1Z-O3S" secondAttribute="bottom" constant="8" id="lvZ-Q4-ZSu"/>
+                                            <constraint firstItem="7xu-lR-5Xu" firstAttribute="top" secondItem="jid-1Z-O3S" secondAttribute="bottom" id="lvZ-Q4-ZSu"/>
                                             <constraint firstItem="jid-1Z-O3S" firstAttribute="centerX" secondItem="cYw-f7-GgW" secondAttribute="centerX" id="rgf-qg-9rR"/>
                                             <constraint firstItem="Pb4-zV-MVf" firstAttribute="centerX" secondItem="cYw-f7-GgW" secondAttribute="centerX" id="sox-4H-n0g"/>
-                                            <constraint firstItem="Pb4-zV-MVf" firstAttribute="top" secondItem="7xu-lR-5Xu" secondAttribute="bottom" constant="45" id="wQ1-ax-aqh"/>
+                                            <constraint firstItem="Pb4-zV-MVf" firstAttribute="top" secondItem="7xu-lR-5Xu" secondAttribute="bottom" constant="53" id="wQ1-ax-aqh"/>
                                             <constraint firstAttribute="trailing" secondItem="7xu-lR-5Xu" secondAttribute="trailing" constant="16" id="zVr-ex-aED"/>
                                             <constraint firstItem="p1U-ND-Rpn" firstAttribute="leading" secondItem="cYw-f7-GgW" secondAttribute="leading" constant="20" id="zt2-LG-WRU"/>
                                         </constraints>
@@ -1289,7 +1285,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="DRr-V1-mfU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
