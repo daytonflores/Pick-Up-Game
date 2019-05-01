@@ -53,20 +53,22 @@ class homeTab: UIViewController {
                 let dateString:String = String(format:"%f", dateDouble)
                 //self.filtersport = post.sport
                 self.readRef = Database.database().reference().child("users").child(self.uid).child("filters")
-                self.readRef.child(post.sport).observeSingleEvent(of: .value, with: { (snapshot) in
+                self.readRef.child(post.sport).observe(.value) {
+                    (snapshot) in
                     // Get user value
                     let value = snapshot.value as? String
                     
-                    if value == "on"{
-                        if (post.time > dateString) {
+                        if (post.time > dateString) && (value == "on") {
+                            
                             self.post.append(post)
                             self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
                             //print(self.post)
-                            self.tableView.reloadData()
+                            
                         }
-                    }
-                }) { (error) in
-                    print(error.localizedDescription)
+                        else if (value == "off"){
+                            self.post.removeAll(where: {post.sport == $0.sport})
+                        }
+                    self.tableView.reloadData()
                 }
             }
         }

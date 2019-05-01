@@ -42,22 +42,6 @@ class settingsTab: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.baseballL.layer.borderWidth = 0.5
-        self.baseballL.layer.borderColor = UIColor.black.cgColor
-        self.basketballL.layer.borderWidth = 0.5
-        self.basketballL.layer.borderColor = UIColor.black.cgColor
-        self.footballL.layer.borderWidth = 0.5
-        self.footballL.layer.borderColor = UIColor.black.cgColor
-        self.hockeyL.layer.borderWidth = 0.5
-        self.hockeyL.layer.borderColor = UIColor.black.cgColor
-        self.soccerL.layer.borderWidth = 0.5
-        self.soccerL.layer.borderColor = UIColor.black.cgColor
-        self.tennisL.layer.borderWidth = 0.5
-        self.tennisL.layer.borderColor = UIColor.black.cgColor
-        self.volleyballL.layer.borderWidth = 0.5
-        self.volleyballL.layer.borderColor = UIColor.black.cgColor
-        self.filterEventFeedL.layer.borderWidth = 0.5
-        self.filterEventFeedL.layer.borderColor = UIColor.black.cgColor
         self.editProfileButton.layer.borderWidth = 0.5
         self.editProfileButton.layer.borderColor = UIColor.black.cgColor
         self.logoutButton.layer.borderWidth = 0.5
