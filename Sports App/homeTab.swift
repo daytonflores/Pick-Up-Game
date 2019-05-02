@@ -60,7 +60,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
                     // Get user value
                     let value = snapshot.value as? String
                     
-                    if (post.time > dateString) && (value == "on") {//}&& (post.city == self.searchedCity) {
+                    if (post.time > dateString) && (value == "on") {
                             
                             self.post.append(post)
                             self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
@@ -71,14 +71,22 @@ class homeTab: UIViewController, UISearchBarDelegate {
                         else if (value == "off"){
                             self.post.removeAll(where: {post.sport == $0.sport})
                         }
-                        else if (post.city != self.searchedCity){
-                           // self.post.removeAll(where: {post.city != $0.city})
+                    self.tableView.reloadData()
+                }
+                Database.database().reference().child("users").child(self.uid).child("searched").observe(.value) {
+                    (snapshot) in
+                    let value = snapshot.value as? String
+                    if (post.city != value) {
+                        self.post.removeAll(where: {$0.city != value})                    
+                    }
+                    else{
+                        self.post.append(post)
                     }
                     self.tableView.reloadData()
                 }
+                
             }
         }
-        
     }
     
     
@@ -105,6 +113,10 @@ class homeTab: UIViewController, UISearchBarDelegate {
         //searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
         
+        Database.database().reference().child("users").child(uid).child("searched").setValue(searchBar.text)
+        
+        activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
         
     }
     
