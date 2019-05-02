@@ -54,37 +54,32 @@ class homeTab: UIViewController, UISearchBarDelegate {
                 let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
                 let dateString:String = String(format:"%f", dateDouble)
                 //self.filtersport = post.sport
-                self.readRef = Database.database().reference().child("users").child(self.uid).child("filters")
-                self.readRef.child(post.sport).observe(.value) {
+                self.readRef = Database.database().reference().child("users").child(self.uid)
+                self.readRef.observe(.value) {
                     (snapshot) in
                     // Get user value
-                    let value = snapshot.value as? String
+                    let value = snapshot.value as? NSDictionary
+                    let checkFilter = value?["filters"] as? NSDictionary
+                    let checkSearched = value?["searched"] as? String ?? ""
+                    let checker = checkFilter?[post.sport] as? String ?? ""
                     
-                    if (post.time > dateString) && (value == "on") {
-                            
-                            self.post.append(post)
-                            self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
+                    if (post.time > dateString) && (checker == "on") && (checkSearched == post.city) {
                         
-                            //print(self.post)
-                            
-                        }
-                        else if (value == "off"){
-                            self.post.removeAll(where: {post.sport == $0.sport})
-                        }
-                    self.tableView.reloadData()
-                }
-                Database.database().reference().child("users").child(self.uid).child("searched").observe(.value) {
-                    (snapshot) in
-                    let value = snapshot.value as? String
-                    if (post.city != value) {
-                        self.post.removeAll(where: {$0.city != value})                    
-                    }
-                    else{
+                        
                         self.post.append(post)
+                        self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
+                        
+                        //print(self.post)
+                        
+                    }
+                    else if (checker == "off"){
+                        self.post.removeAll(where: {post.sport == $0.sport})
+                    }
+                    else if (checkSearched != post.city){
+                        self.post.removeAll(where: {$0.city != checkSearched})
                     }
                     self.tableView.reloadData()
                 }
-                
             }
         }
     }
