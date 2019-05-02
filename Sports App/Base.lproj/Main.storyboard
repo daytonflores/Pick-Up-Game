@@ -38,15 +38,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="239" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ip9-wE-Yzy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="185" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ip9-wE-Yzy">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="239" id="Aa9-Cf-yWX" customClass="EventTableViewCell" customModule="Sports_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="239"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="185" id="Aa9-Cf-yWX" customClass="EventTableViewCell" customModule="Sports_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aa9-Cf-yWX" id="6bq-js-gb1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="238.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="184.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VHF-0W-wxj">
@@ -61,14 +61,6 @@
                                                     <rect key="frame" x="16" y="8" width="382" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="aRs-QB-hSb"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-FQ-i2j">
-                                                    <rect key="frame" x="16" y="190.5" width="382" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="KKH-LO-YuA"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
@@ -99,11 +91,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="1Fn-YA-BdJ" secondAttribute="trailing" constant="16" id="IYN-3v-W2N"/>
                                                 <constraint firstItem="FtE-8P-qDh" firstAttribute="leading" secondItem="VHF-0W-wxj" secondAttribute="trailing" constant="8" id="Mw4-xS-gZu"/>
                                                 <constraint firstItem="FtE-8P-qDh" firstAttribute="top" secondItem="KIk-hL-rvq" secondAttribute="bottom" constant="8" id="QwM-2q-3eM"/>
-                                                <constraint firstAttribute="trailing" secondItem="p5t-FQ-i2j" secondAttribute="trailing" constant="16" id="VX1-aD-hb3"/>
                                                 <constraint firstItem="KIk-hL-rvq" firstAttribute="leading" secondItem="6bq-js-gb1" secondAttribute="leading" constant="16" id="X1I-pY-G2D"/>
                                                 <constraint firstItem="VHF-0W-wxj" firstAttribute="top" secondItem="KIk-hL-rvq" secondAttribute="bottom" constant="8" id="YYk-2q-da8"/>
-                                                <constraint firstItem="p5t-FQ-i2j" firstAttribute="leading" secondItem="6bq-js-gb1" secondAttribute="leading" constant="16" id="dTW-Go-HHj"/>
-                                                <constraint firstAttribute="bottom" secondItem="p5t-FQ-i2j" secondAttribute="bottom" constant="8" id="fwU-Sm-W8d"/>
                                                 <constraint firstItem="1Fn-YA-BdJ" firstAttribute="top" secondItem="FtE-8P-qDh" secondAttribute="bottom" constant="8" id="hp5-eU-5nn"/>
                                                 <constraint firstAttribute="trailing" secondItem="FtE-8P-qDh" secondAttribute="trailing" constant="16" id="qaQ-e3-dBI"/>
                                                 <constraint firstItem="KIk-hL-rvq" firstAttribute="top" secondItem="6bq-js-gb1" secondAttribute="top" constant="8" id="yrf-oF-UQ5"/>
@@ -111,7 +100,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="_ProfilePic" destination="VHF-0W-wxj" id="oFh-02-eJj"/>
-                                            <outlet property="_Sport" destination="p5t-FQ-i2j" id="Qoz-XT-oQp"/>
                                             <outlet property="location" destination="1Fn-YA-BdJ" id="oSM-6e-r6L"/>
                                             <outlet property="time" destination="FtE-8P-qDh" id="0Dx-bV-yR6"/>
                                             <outlet property="user" destination="KIk-hL-rvq" id="8a9-Tz-ufY"/>
@@ -1507,8 +1495,7 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RBv-Xb-wa2"/>
-        <segue reference="LkN-xU-BI1"/>
-        <segue reference="8Po-fp-hAi"/>
+        <segue reference="Zgj-Ms-F5O"/>
+        <segue reference="7RB-IJ-ZsE"/>
     </inferredMetricsTieBreakers>
 </document>

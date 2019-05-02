@@ -133,25 +133,25 @@ extension homeTab: UITableViewDataSource {
         let sportcolor = eventCell.sport
         
         if sportcolor == "Basketball"{
-            cell.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.1)
         }
         else if sportcolor == "Football"{
-            cell.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 0.1)
         }
         else if sportcolor == "Tennis"{
-            cell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.1)
         }
         else if sportcolor == "Soccer"{
-            cell.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.1)
         }
         else if sportcolor == "Volleyball"{
-            cell.backgroundColor = UIColor(red: 8.0, green: 0.0, blue: 8.0, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 8.0, green: 0.0, blue: 8.0, alpha: 0.1)
         }
         else if sportcolor == "Hockey"{
-            cell.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.1)
         }
         else if sportcolor == "Baseball"{
-            cell.backgroundColor = UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.3)
+            cell.backgroundColor = UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.1)
         }
         else{
             cell.backgroundColor = UIColor.white
