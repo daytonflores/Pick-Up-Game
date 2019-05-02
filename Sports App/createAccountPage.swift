@@ -81,13 +81,14 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                                                                  "photo": "https://firebasestorage.googleapis.com/v0/b/tryone-de29a.appspot.com/o/Anonymous.jpg?alt=media&token=4ed6f927-cfc7-4693-91dc-8774c36ce257",
                                                                  "sports": "",
                                                                  "events": ""])
-                    self.ref.child("users").child(uid).child("filters").child("Baseball").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("Basketball").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("Football").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("Hockey").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("Soccer").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("Tennis").setValue("off")
-                    self.ref.child("users").child(uid).child("filters").child("Volleyball").setValue("off")
+                    self.ref.child("users").child(uid).child("filters").child("Baseball").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("Basketball").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("Football").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("Hockey").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("Soccer").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("Tennis").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("Volleyball").setValue("on")
+                    self.ref.child("users").child(uid).child("searched").setValue("Las Vegas")
                     let alertController = UIAlertController(title: "Check Your Email", message: "A verification link has been sent to your email.", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: { (alert) -> Void in
                         self.performSegue(withIdentifier: "createToLogin", sender: nil)
