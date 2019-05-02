@@ -110,7 +110,7 @@ class EventTableViewCell: UITableViewCell {
             self._Sport?.layer.borderWidth = 0.5
             self._Sport?.layer.borderColor = UIColor.black.cgColor
             self.username = value?["username"] as? String ?? ""
-            self.user?.text = self.username! + " wants to play"
+            self.user?.text = self.username! + " wants to play " + post.sport
             self._Sport?.text = post.sport
             if post.sport == "Basketball"{
                 self.location?.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 0.1)
