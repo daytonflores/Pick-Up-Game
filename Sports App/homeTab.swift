@@ -76,7 +76,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
                         self.post.removeAll(where: {post.sport == $0.sport})
                     }
                     else if (checkSearched != post.city){
-                        self.post.removeAll(where: {$0.city != checkSearched})
+                        self.post.removeAll(where: {$0.city != post.city})
                     }
                     self.tableView.reloadData()
                 }
