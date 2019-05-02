@@ -53,6 +53,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
                 
                 let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
                 let dateString:String = String(format:"%f", dateDouble)
+                
                 //self.filtersport = post.sport
                 self.readRef = Database.database().reference().child("users").child(self.uid)
                 self.readRef.observe(.value) {
