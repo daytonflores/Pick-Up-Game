@@ -88,6 +88,7 @@ class createAccountPage: UIViewController, UITextFieldDelegate {
                     self.ref.child("users").child(uid).child("filters").child("Soccer").setValue("on")
                     self.ref.child("users").child(uid).child("filters").child("Tennis").setValue("on")
                     self.ref.child("users").child(uid).child("filters").child("Volleyball").setValue("on")
+                    self.ref.child("users").child(uid).child("filters").child("myEvents").setValue("off")
                     self.ref.child("users").child(uid).child("searched").setValue("Las Vegas")
                     let alertController = UIAlertController(title: "Check Your Email", message: "A verification link has been sent to your email.", preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: { (alert) -> Void in

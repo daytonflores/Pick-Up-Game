@@ -352,6 +352,15 @@
                                     <action selector="volleyballSwitch:" destination="9KI-N4-ET5" eventType="valueChanged" id="Bhj-RM-j96"/>
                                 </connections>
                             </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAV-0S-1lF">
+                                <rect key="frame" x="349" y="413" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="xPv-V1-cMk"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="myEventSwitch:" destination="9KI-N4-ET5" eventType="valueChanged" id="pA2-1Z-EKs"/>
+                                </connections>
+                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbs-Ki-Na5">
                                 <rect key="frame" x="16" y="140" width="325" height="31"/>
                                 <constraints>
@@ -448,9 +457,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Created Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHF-ov-t5F">
+                                <rect key="frame" x="16" y="413" width="325" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="mfn-zg-qAH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.8666666666666667" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="i8V-bG-3V9" firstAttribute="trailing" secondItem="TAV-0S-1lF" secondAttribute="trailing" constant="16" id="0uc-bF-aNd"/>
                             <constraint firstItem="l4B-KI-aKi" firstAttribute="leading" secondItem="uCd-5v-Iic" secondAttribute="trailing" constant="8" id="18N-jF-bTz"/>
                             <constraint firstItem="OrG-Ce-SXM" firstAttribute="leading" secondItem="i8V-bG-3V9" secondAttribute="leading" constant="16" id="1e2-4a-thw"/>
                             <constraint firstItem="bCN-Os-fBD" firstAttribute="leading" secondItem="i8V-bG-3V9" secondAttribute="leading" constant="16" id="1iA-6g-fXt"/>
@@ -481,6 +500,7 @@
                             <constraint firstItem="IDo-jJ-3NV" firstAttribute="leading" secondItem="i8V-bG-3V9" secondAttribute="leading" constant="16" id="Rii-ko-QoH"/>
                             <constraint firstItem="3ea-w7-JON" firstAttribute="trailing" secondItem="i8V-bG-3V9" secondAttribute="trailing" id="T6W-0e-pjm"/>
                             <constraint firstItem="Mqp-jM-09e" firstAttribute="top" secondItem="KK5-vJ-wer" secondAttribute="bottom" constant="8" id="Tag-5m-R1F"/>
+                            <constraint firstItem="JHF-ov-t5F" firstAttribute="top" secondItem="uCd-5v-Iic" secondAttribute="bottom" constant="8" id="W37-b4-dOB"/>
                             <constraint firstItem="i8V-bG-3V9" firstAttribute="trailing" secondItem="KK5-vJ-wer" secondAttribute="trailing" constant="16" id="XQc-zH-0bk"/>
                             <constraint firstItem="l4B-KI-aKi" firstAttribute="leading" secondItem="uCd-5v-Iic" secondAttribute="trailing" constant="8" id="YeH-oc-AJS"/>
                             <constraint firstItem="Sa8-GU-wbX" firstAttribute="top" secondItem="3ea-w7-JON" secondAttribute="bottom" constant="27" id="Z9K-8x-aLh"/>
@@ -496,15 +516,18 @@
                             <constraint firstItem="Mqp-jM-09e" firstAttribute="leading" secondItem="IDo-jJ-3NV" secondAttribute="trailing" constant="8" id="iVy-Wq-04P"/>
                             <constraint firstItem="i8V-bG-3V9" firstAttribute="bottom" secondItem="t6x-Jb-J5L" secondAttribute="bottom" constant="16" id="iy3-eH-2cR"/>
                             <constraint firstItem="Mqp-jM-09e" firstAttribute="leading" secondItem="IDo-jJ-3NV" secondAttribute="trailing" constant="8" id="kLa-5H-OLG"/>
+                            <constraint firstItem="JHF-ov-t5F" firstAttribute="leading" secondItem="i8V-bG-3V9" secondAttribute="leading" constant="16" id="kTA-MZ-0b9"/>
                             <constraint firstItem="OrG-Ce-SXM" firstAttribute="top" secondItem="IDo-jJ-3NV" secondAttribute="bottom" constant="8" id="lmI-Iv-J4L"/>
                             <constraint firstItem="hm2-oh-DK7" firstAttribute="leading" secondItem="OrG-Ce-SXM" secondAttribute="trailing" constant="8" id="oAx-Yl-YAL"/>
                             <constraint firstItem="t6x-Jb-J5L" firstAttribute="top" secondItem="BnI-ub-PPl" secondAttribute="bottom" constant="8" id="qwi-rh-qZe"/>
                             <constraint firstItem="ia3-qp-HDg" firstAttribute="top" secondItem="OrG-Ce-SXM" secondAttribute="bottom" constant="8" id="r3q-DI-9Oz"/>
                             <constraint firstItem="i8V-bG-3V9" firstAttribute="trailing" secondItem="l4B-KI-aKi" secondAttribute="trailing" constant="16" id="rRV-RH-oOf"/>
+                            <constraint firstItem="TAV-0S-1lF" firstAttribute="top" secondItem="uCd-5v-Iic" secondAttribute="bottom" constant="8" id="s87-Fx-4Rs"/>
                             <constraint firstItem="IDo-jJ-3NV" firstAttribute="top" secondItem="bCN-Os-fBD" secondAttribute="bottom" constant="8" id="wzG-7V-9AI"/>
                             <constraint firstItem="3ea-w7-JON" firstAttribute="leading" secondItem="i8V-bG-3V9" secondAttribute="leading" id="y8z-V4-wWy"/>
                             <constraint firstItem="pbs-Ki-Na5" firstAttribute="leading" secondItem="i8V-bG-3V9" secondAttribute="leading" constant="16" id="yds-a6-h3k"/>
                             <constraint firstItem="Rvv-J9-YUT" firstAttribute="top" secondItem="K7U-CU-9o9" secondAttribute="bottom" constant="8" id="ymP-De-NKR"/>
+                            <constraint firstItem="TAV-0S-1lF" firstAttribute="leading" secondItem="JHF-ov-t5F" secondAttribute="trailing" constant="8" id="zZ7-fm-sd9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i8V-bG-3V9"/>
                     </view>
@@ -525,6 +548,7 @@
                         <outlet property="footballL" destination="IDo-jJ-3NV" id="tbV-v6-2Vx"/>
                         <outlet property="hockeyL" destination="OrG-Ce-SXM" id="n5A-ZW-Dnz"/>
                         <outlet property="logoutButton" destination="t6x-Jb-J5L" id="Drj-sn-3rj"/>
+                        <outlet property="myEvents" destination="TAV-0S-1lF" id="zfg-vG-4jB"/>
                         <outlet property="soccerL" destination="ia3-qp-HDg" id="fId-ar-YpL"/>
                         <outlet property="tennisL" destination="gCE-7p-NSd" id="erL-Lh-aIl"/>
                         <outlet property="volleyballL" destination="uCd-5v-Iic" id="Qe5-Aj-HUo"/>
@@ -1496,6 +1520,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zgj-Ms-F5O"/>
-        <segue reference="7RB-IJ-ZsE"/>
+        <segue reference="8Po-fp-hAi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -62,22 +62,25 @@ class homeTab: UIViewController, UISearchBarDelegate {
                     let value = snapshot.value as? NSDictionary
                     let checkFilter = value?["filters"] as? NSDictionary
                     let checkSearched = value?["searched"] as? String ?? ""
-                    let checker = checkFilter?[post.sport] as? String ?? ""
+                    let filterChecker = checkFilter?[post.sport] as? String ?? ""
+                    let createdChecker = checkFilter?["myEvents"] as? String ?? ""
                     
-                    if (post.time > dateString) && (checker == "on") && (checkSearched == post.city) {
+                    self.post.append(post)
+                    
+                    if (post.time > dateString) {
                         
-                        
-                        self.post.append(post)
                         self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
                         
-                        //print(self.post)
-                        
                     }
-                    else if (checker == "off"){
+                    if (filterChecker == "off"){
                         self.post.removeAll(where: {post.sport == $0.sport})
                     }
-                    else if (checkSearched != post.city){
+                    if (checkSearched != post.city){
                         self.post.removeAll(where: {$0.city != post.city})
+                    }
+                    if (createdChecker == "on") {
+                        
+                        self.post.removeAll(where: {$0.creator != self.uid})
                     }
                     self.tableView.reloadData()
                 }
