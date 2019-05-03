@@ -26,6 +26,7 @@ class settingsTab: UIViewController {
     @IBOutlet var _soccerSwitch: UISwitch!
     @IBOutlet var _tennisSwitch: UISwitch!
     @IBOutlet var _volleyballSwitch: UISwitch!
+    @IBOutlet weak var myEvents: UISwitch!
     
     @IBOutlet weak var baseballL: UILabel!
     @IBOutlet weak var basketballL: UILabel!
@@ -127,6 +128,17 @@ class settingsTab: UIViewController {
             }
         }
         
+        readRef.child("myEvents").observeSingleEvent(of: .value){
+            (snapshot) in
+            let myEvents = snapshot.value as? String
+            if(myEvents == "on"){
+                self.myEvents.setOn(true, animated:false)
+            }
+            else{
+                self.myEvents.setOn(false, animated:false)
+            }
+        }
+        
     }
     
     var readRef: DatabaseReference!
@@ -208,6 +220,14 @@ class settingsTab: UIViewController {
         }
     }
     
+    @IBAction func myEventSwitch(_ sender: UISwitch) {
+        if (sender.isOn == true) {
+            self.readRef.child("myEvents").setValue("on")
+        }
+        else{
+            self.readRef.child("myEvents").setValue("off")
+        }
+    }
     
     @IBAction func settingsTabUnwind(segue: UIStoryboardSegue)
     {
