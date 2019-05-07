@@ -19,10 +19,14 @@ class eventDetails: UIViewController {
     @IBOutlet var _aboutEvent: UITextView!
     @IBOutlet var _creator: UIButton!
     @IBOutlet weak var _createdBy: UILabel!
+    @IBOutlet weak var _deleteButton: UIButton!
     
     let ref = Database.database().reference()
     
+    let uid = Auth.auth().currentUser?.uid
+    
     var readRef: DatabaseReference!
+    var id: String?
     var creator: String?
     var latitudevalue: String?
     var longitudevalue: String?
@@ -34,6 +38,12 @@ class eventDetails: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(creator == Auth.auth().currentUser?.uid) {
+            _deleteButton.isHidden = false
+        } else {
+            _deleteButton.isHidden = true
+        }
         
         self._creator.layer.borderWidth = 0.5
         self._creator.layer.borderColor = UIColor.black.cgColor
@@ -100,6 +110,24 @@ class eventDetails: UIViewController {
     
     @IBAction func eventDetailsUnwind(segue: UIStoryboardSegue)
     {
+    }
+    
+    @IBAction func _clickDeleteEvent(_ sender: Any) {
+        let refreshAlert = UIAlertController(title: "Delete?", message: "", preferredStyle: UIAlertController.Style.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
+            
+            
+            self.ref.child("event").child(self.id!).removeValue()
+            self.ref.child("users").child(self.uid!).child("events").child(self.id!).removeValue()
+            self.performSegue(withIdentifier: "eventDeleted", sender: nil)
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     @IBAction func _clickCreatedBy(_ sender: Any) {

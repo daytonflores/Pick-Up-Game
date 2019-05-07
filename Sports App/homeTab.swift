@@ -17,6 +17,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var locationCell: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var post = [Post]()
+    var id: String?
     var creator: String?
     var latitudevalue: String?
     var longitudevalue: String?
@@ -41,6 +42,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
         Database.database().reference().child("event").observe(.childAdded) { (snapshot: DataSnapshot) in
 
             if let dict = snapshot.value as? [String: Any] {
+                let idText = snapshot.key
                 let locationText = dict["address"] as! String
                 let timeText = dict["datetime"] as! String
                 let sportText = dict["sports"] as! String
@@ -49,7 +51,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
                 let longitudeText = dict["longitude"] as! String
                 let descriptionText = dict["description"] as! String
                 let cityText = dict["city"] as! String
-                let post = Post(locationText: locationText, timeText: timeText, sportText: sportText, creatorText: creatorText, latitudeText: latitudeText, longitudeText: longitudeText, descriptionText: descriptionText, cityText: cityText)
+                let post = Post(idText: idText, locationText: locationText, timeText: timeText, sportText: sportText, creatorText: creatorText, latitudeText: latitudeText, longitudeText: longitudeText, descriptionText: descriptionText, cityText: cityText)
                 
                 let dateDouble:Double = NSDate().timeIntervalSince1970 - 7200   // events 2 hours old and newer
                 let dateString:String = String(format:"%f", dateDouble)
@@ -169,6 +171,7 @@ extension homeTab: UITableViewDataSource {
 
 extension homeTab: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        id = post[indexPath.row].id
         creator = post[indexPath.row].creator
         selectedsport = post[indexPath.row].sport
         address = post[indexPath.row].location
@@ -184,6 +187,7 @@ extension homeTab: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "homeTabToEventDetails") {
             if let vc = segue.destination as? eventDetails{
+                vc.id = id
                 vc.creator = creator
                 vc.selectedsport = selectedsport
                 vc.address = address

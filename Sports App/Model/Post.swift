@@ -8,6 +8,7 @@
 
 import Foundation
 class Post {
+    var id: String
     var location: String
     var time: String
     var sport: String
@@ -17,7 +18,8 @@ class Post {
     var description: String
     var city: String
     
-    init(locationText: String, timeText: String, sportText: String, creatorText: String, latitudeText: String, longitudeText: String, descriptionText: String, cityText: String) {
+    init(idText: String, locationText: String, timeText: String, sportText: String, creatorText: String, latitudeText: String, longitudeText: String, descriptionText: String, cityText: String) {
+        id = idText
         location = locationText
         time = timeText
         sport = sportText
