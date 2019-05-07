@@ -67,10 +67,9 @@ class homeTab: UIViewController, UISearchBarDelegate {
                     let filterChecker = checkFilter?[post.sport] as? String ?? ""
                     let createdChecker = checkFilter?["myEvents"] as? String ?? ""
                     
-                    self.post.append(post)
                     
                     if (post.time > dateString) {
-                        
+                        self.post.append(post)
                         self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
                         
                     }
