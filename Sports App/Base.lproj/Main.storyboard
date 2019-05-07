@@ -191,12 +191,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-Tu-DZW">
-                                                <rect key="frame" x="16" y="598.5" width="382" height="125"/>
+                                                <rect key="frame" x="16" y="598.5" width="382" height="314"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="125" id="CJb-Uw-ohG"/>
+                                                    <constraint firstAttribute="height" constant="314" id="Hbs-Gq-vTo"/>
                                                 </constraints>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis convallis quam et imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque justo ipsum, hendrerit sed lobortis vitae, tempor tempus urna. Aenean luctus odio quis sapien gravida varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at dui et lectus iaculis sollicitudin vitae sit amet dui. Fusce et elementum purus. Aliquam non euismod risus.
 
@@ -1129,7 +1129,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSL-Bg-Qkb">
-                                                <rect key="frame" x="157" y="456" width="100" height="30"/>
+                                                <rect key="frame" x="163.5" y="456" width="87" height="30"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <state key="normal" title="Delete Event"/>
                                                 <connections>
@@ -1139,7 +1139,6 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.76086923279999996" green="0.76350886029999998" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="hSL-Bg-Qkb" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="157" id="1QM-4z-3Zj"/>
                                             <constraint firstItem="k2w-4h-wYw" firstAttribute="leading" secondItem="oZO-bc-6vs" secondAttribute="trailing" constant="8" id="4ad-2N-nwd"/>
                                             <constraint firstItem="2n9-46-abs" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="5i8-oY-qb3"/>
                                             <constraint firstItem="Oxx-NC-wNZ" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="9rV-Sv-i1X"/>
@@ -1149,19 +1148,20 @@
                                             <constraint firstItem="oZO-bc-6vs" firstAttribute="top" secondItem="2n9-46-abs" secondAttribute="bottom" constant="8" id="DxM-SV-KGR"/>
                                             <constraint firstItem="VXr-om-byX" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="GBb-3i-WJa"/>
                                             <constraint firstItem="Oxx-NC-wNZ" firstAttribute="top" secondItem="3dc-ke-ssN" secondAttribute="top" constant="8" id="Giy-LA-K4z"/>
+                                            <constraint firstItem="hSL-Bg-Qkb" firstAttribute="centerX" secondItem="3dc-ke-ssN" secondAttribute="centerX" id="HsZ-bH-6Ea"/>
                                             <constraint firstAttribute="trailing" secondItem="VXr-om-byX" secondAttribute="trailing" constant="16" id="Oww-Yq-Qe0"/>
                                             <constraint firstAttribute="height" constant="900" id="QBS-kx-a4h"/>
                                             <constraint firstItem="DZJ-HH-sPN" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="Skf-rh-M4g"/>
                                             <constraint firstItem="Pm8-oF-gE8" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="XPq-Z6-Kva"/>
                                             <constraint firstAttribute="trailing" secondItem="Pm8-oF-gE8" secondAttribute="trailing" constant="16" id="aIE-9R-f5y"/>
                                             <constraint firstAttribute="trailing" secondItem="Oxx-NC-wNZ" secondAttribute="trailing" constant="16" id="cNS-Yb-jn5"/>
+                                            <constraint firstItem="hSL-Bg-Qkb" firstAttribute="centerX" secondItem="3dc-ke-ssN" secondAttribute="centerX" id="cWK-r2-XPj"/>
                                             <constraint firstItem="DZJ-HH-sPN" firstAttribute="top" secondItem="Pm8-oF-gE8" secondAttribute="bottom" id="kO0-ev-8Dq"/>
                                             <constraint firstAttribute="trailing" secondItem="DZJ-HH-sPN" secondAttribute="trailing" constant="16" id="pS6-fO-7sG"/>
                                             <constraint firstAttribute="trailing" secondItem="k2w-4h-wYw" secondAttribute="trailing" constant="16" id="qqa-IX-RiY"/>
                                             <constraint firstItem="k2w-4h-wYw" firstAttribute="top" secondItem="2n9-46-abs" secondAttribute="bottom" constant="8" id="rmZ-zI-60f"/>
                                             <constraint firstItem="oZO-bc-6vs" firstAttribute="leading" secondItem="3dc-ke-ssN" secondAttribute="leading" constant="16" id="sNs-fi-Etd"/>
                                             <constraint firstItem="k2w-4h-wYw" firstAttribute="leading" secondItem="oZO-bc-6vs" secondAttribute="trailing" constant="8" id="sY2-G5-NcP"/>
-                                            <constraint firstAttribute="trailing" secondItem="hSL-Bg-Qkb" secondAttribute="trailing" constant="157" id="ukC-XA-Vf9"/>
                                             <constraint firstItem="VXr-om-byX" firstAttribute="top" secondItem="Oxx-NC-wNZ" secondAttribute="bottom" constant="8" id="wTW-5P-JyH"/>
                                             <constraint firstItem="2n9-46-abs" firstAttribute="top" secondItem="VXr-om-byX" secondAttribute="bottom" constant="8" id="yDN-oM-gWi"/>
                                         </constraints>
@@ -1237,12 +1237,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1U-ND-Rpn">
-                                                <rect key="frame" x="20" y="557" width="374" height="125"/>
+                                                <rect key="frame" x="20" y="557" width="374" height="314"/>
                                                 <accessibility key="accessibilityConfiguration">
                                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                                 </accessibility>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="125" id="MBO-94-xA4"/>
+                                                    <constraint firstAttribute="height" constant="314" id="WSr-JL-A09"/>
                                                 </constraints>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris venenatis convallis quam et imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque justo ipsum, hendrerit sed lobortis vitae, tempor tempus urna. Aenean luctus odio quis sapien gravida varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut at dui et lectus iaculis sollicitudin vitae sit amet dui. Fusce et elementum purus. Aliquam non euismod risus.
 
@@ -1533,7 +1533,7 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LkN-xU-BI1"/>
+        <segue reference="pNM-cw-h25"/>
         <segue reference="8Po-fp-hAi"/>
     </inferredMetricsTieBreakers>
 </document>
