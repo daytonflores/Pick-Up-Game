@@ -95,7 +95,7 @@ class homeTab: UIViewController, UISearchBarDelegate {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         present(searchController, animated: true, completion: nil)
-        searchController.searchBar.placeholder = "Filter by City"
+        searchController.searchBar.placeholder = "Filter by city..."
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

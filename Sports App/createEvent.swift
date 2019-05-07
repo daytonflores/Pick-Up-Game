@@ -71,7 +71,13 @@ class createEvent: UIViewController, UISearchBarDelegate {
         creator = String((Auth.auth().currentUser!).uid)
 
         if ((selectedsport == "Select Sport") || (latitudevalue == nil || datetime == nil || address == nil)) {
-            print("Error")
+            let refreshAlert = UIAlertController(title: "Empty Fields", message: "Please fill out event's location, sport, and day/time.", preferredStyle: UIAlertController.Style.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: { (action: UIAlertAction!) in
+                
+            }))
+            
+            present(refreshAlert, animated: true, completion: nil)
         }
         else {
             ref = Database.database().reference()
@@ -147,6 +153,7 @@ class createEvent: UIViewController, UISearchBarDelegate {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         present(searchController, animated: true, completion: nil)
+        searchController.searchBar.placeholder = "Enter event location..."
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
