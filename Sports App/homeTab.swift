@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-
+import MapKit
 
 
 class homeTab: UIViewController, UISearchBarDelegate {
@@ -119,12 +119,66 @@ class homeTab: UIViewController, UISearchBarDelegate {
         
         //Hide search bar
         //searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
+    
+        //create the search request
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = searchBar.text
         
-        Database.database().reference().child("users").child(uid).child("searched").setValue(searchBar.text)
+        let activeSearch = MKLocalSearch(request: searchRequest)
         
-        activityIndicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
+        activeSearch.start { (response, error) in
+            
+            activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
+            if response == nil{
+                print("ERROR")
+            }
+            else{
+                //remove annotations
+                
+                //getting data
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                //create annotation
+                let annotation = MKPointAnnotation()
+                annotation.title = searchBar.text
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                
+                //zoom in on annotation
+                let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                let region = MKCoordinateRegion(center: coordinate, span: span)
+                self.latitudevalue = String(latitude!)
+                self.longitudevalue = String(longitude!)
+                ////////////////
+                
+                let center = CLLocation(latitude: latitude!, longitude: longitude!)
+                let geoCoder = CLGeocoder()
+                
+                geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
+                    guard let self = self else {return}
+                    
+                    if let _ = error {
+                        return
+                    }
+                    guard let placemark = placemarks?.first else{
+                        return
+                    }
+                
+                    let city = placemark.locality ?? ""
+
+                    Database.database().reference().child("users").child(self.uid).child("searched").setValue(city)
+                    
+                }
+                
+            }
+            
+        }
+
         
     }
     
