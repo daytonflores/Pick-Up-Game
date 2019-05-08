@@ -68,19 +68,23 @@ class homeTab: UIViewController, UISearchBarDelegate {
                     let createdChecker = checkFilter?["myEvents"] as? String ?? ""
                     
                     
-                    if (post.time > dateString) {
+                    if(!self.post.contains(where: {$0.id == post.id})){
                         self.post.append(post)
-                        self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
-                        
                     }
+
+                    self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
+                    if(post.time < dateString){
+                        // remove from firebase
+                    }
+                    self.post.removeAll(where: {$0.time < dateString})
+                    
                     if (filterChecker == "off"){
                         self.post.removeAll(where: {post.sport == $0.sport})
                     }
                     if (checkSearched != post.city){
-                        self.post.removeAll(where: {$0.city != post.city})
+                        self.post.removeAll(where: {$0.city != checkSearched})
                     }
                     if (createdChecker == "on") {
-                        
                         self.post.removeAll(where: {$0.creator != self.uid})
                     }
                     self.tableView.reloadData()
