@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		03063A872213B48D008BFD7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03063A862213B48D008BFD7C /* GoogleService-Info.plist */; };
 		2F1EBC9E226664980043D388 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1EBC9C226664980043D388 /* EventTableViewCell.swift */; };
-		2F1EBC9F226664980043D388 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1EBC9D226664980043D388 /* EventTableViewCell.xib */; };
 		2FEB0DD62265C79000428CA5 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB0DD52265C79000428CA5 /* EventModel.swift */; };
 		3C7DE515220CE84A00F5941F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7DE514220CE84A00F5941F /* AppDelegate.swift */; };
 		3C7DE51C220CE84A00F5941F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C7DE51A220CE84A00F5941F /* Main.storyboard */; };
@@ -35,7 +34,6 @@
 		03063A862213B48D008BFD7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0E15E669458D914DC5284D9A /* Pods-Sports App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sports App.release.xcconfig"; path = "Target Support Files/Pods-Sports App/Pods-Sports App.release.xcconfig"; sourceTree = "<group>"; };
 		2F1EBC9C226664980043D388 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		2F1EBC9D226664980043D388 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		2FEB0DD52265C79000428CA5 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		37B6A11211C9F8B65D4983AF /* Pods_Sports_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sports_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7DE511220CE84A00F5941F /* Sports App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sports App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +95,6 @@
 				3C7DE51A220CE84A00F5941F /* Main.storyboard */,
 				549C6CE5226FF1940035625F /* creatorProfile.swift */,
 				2F1EBC9C226664980043D388 /* EventTableViewCell.swift */,
-				2F1EBC9D226664980043D388 /* EventTableViewCell.xib */,
 				2FEB0DD52265C79000428CA5 /* EventModel.swift */,
 				3C8D73F2224F3C7100AA7713 /* eventDetails.swift */,
 				DCD08854226E7DDB00EC1E04 /* Model */,
@@ -204,7 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F1EBC9F226664980043D388 /* EventTableViewCell.xib in Resources */,
 				3C7DE521220CE84C00F5941F /* LaunchScreen.storyboard in Resources */,
 				03063A872213B48D008BFD7C /* GoogleService-Info.plist in Resources */,
 				DC1106142228AF0200D170FF /* Logo.JPEG in Resources */,

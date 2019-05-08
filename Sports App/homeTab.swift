@@ -75,6 +75,8 @@ class homeTab: UIViewController, UISearchBarDelegate {
                     self.post = self.post.sorted {$0.time < $1.time}            // sort posts by time
                     if(post.time < dateString){
                         // remove from firebase
+                        Database.database().reference().child("event").child(post.id).removeValue()
+                        Database.database().reference().child("users").child(self.uid).child("events").child(post.id).removeValue()
                     }
                     self.post.removeAll(where: {$0.time < dateString})
                     
