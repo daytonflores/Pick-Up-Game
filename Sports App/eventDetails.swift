@@ -47,6 +47,8 @@ class eventDetails: UIViewController {
         
         self._creator.layer.borderWidth = 0.5
         self._creator.layer.borderColor = UIColor.black.cgColor
+        self._deleteButton.layer.borderWidth = 0.5
+        self._deleteButton.layer.borderColor = UIColor.black.cgColor
         
         self._eventSport.text = selectedsport
         self._aboutEvent.text = aboutevent
